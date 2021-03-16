@@ -1,4 +1,5 @@
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { Toolbar } from "@material-ui/core";
 
 import bg from "../assets/tornado-bg.svg";
 
@@ -14,7 +15,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Header() {
   const classes = useStyles();
-  return <div className={classes.root}>header</div>;
+  return (
+    <div className={classes.root}>
+      <Toolbar id="back-to-top-anchor" />
+      header
+    </div>
+  );
 }
 
 export default Header;

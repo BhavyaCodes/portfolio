@@ -81,7 +81,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             <Typography variant="h6">Scroll to see button</Typography>
           </Toolbar>
         </AppBar>
-        <Toolbar id="back-to-top-anchor" />
         <Component {...pageProps} />
         <ScrollTop>
           <Fab color="secondary" size="medium" aria-label="scroll back to top">
