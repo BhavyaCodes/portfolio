@@ -23,7 +23,6 @@ function Header() {
     })
   );
 
-  console.log("darkMode", darkMode);
   const handleThemeChange = () => {
     if (setDarkMode) {
       setDarkMode((prevState) => {
