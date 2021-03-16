@@ -17,7 +17,7 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Zoom from "@material-ui/core/Zoom";
 
 import { DarkModeProvider, DarkModeContext } from "../context/themeContext";
-
+import DarkModeIcon from "../components/DarkModeIcon";
 interface Props {
   children: React.ReactElement;
 }
@@ -109,6 +109,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
         <AppBar>
           <Toolbar>
             <Typography variant="h6">Scroll to see button</Typography>
+            <DarkModeIcon />
           </Toolbar>
         </AppBar>
         <Component {...pageProps} />
