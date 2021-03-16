@@ -1,10 +1,5 @@
-import {
-  useState,
-  createContext,
-  ReactNode,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import { createContext, ReactNode, Dispatch, SetStateAction } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export const DarkModeContext = createContext<boolean>(true);
 export const DispatchDarkModeContext = createContext<Dispatch<
@@ -12,7 +7,7 @@ export const DispatchDarkModeContext = createContext<Dispatch<
 > | null>(null);
 
 export const DarkModeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<boolean>(true);
+  const [theme, setTheme] = useLocalStorage("darkMode", true);
   return (
     <DarkModeContext.Provider value={theme}>
       <DispatchDarkModeContext.Provider value={setTheme}>
