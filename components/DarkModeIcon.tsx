@@ -21,10 +21,11 @@ const DarkModeIcon = () => {
 
   return (
     <DarkModeSwitch
-      style={{ marginBottom: "2rem" }}
-      checked={darkMode}
+      style={{}}
+      checked={!darkMode}
       onChange={toggleDarkMode}
       size={30}
+      sunColor="yellow"
     />
   );
 };

@@ -4,7 +4,6 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-// import theme from "../src/theme";
 
 import { createMuiTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -22,17 +21,16 @@ interface Props {
   children: React.ReactElement;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      position: "fixed",
-      bottom: theme.spacing(2),
-      right: theme.spacing(2),
-    },
-  })
-);
-
 function ScrollTop(props: Props) {
+  const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+      root: {
+        position: "fixed",
+        bottom: theme.spacing(2),
+        right: theme.spacing(2),
+      },
+    })
+  );
   const { children } = props;
   const classes = useStyles();
   const trigger = useScrollTrigger({
@@ -68,6 +66,15 @@ export default function MyAppWithTheme(props: AppProps) {
 }
 
 export function MyApp({ Component, pageProps }: AppProps) {
+  const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+      navbarRight: {
+        marginLeft: "auto",
+        marginRight: theme.spacing(0),
+      },
+    })
+  );
+  const classes = useStyles();
   const darkMode = useContext(DarkModeContext);
   const paletteType = darkMode ? "dark" : "light";
   const theme = createMuiTheme({
@@ -109,7 +116,9 @@ export function MyApp({ Component, pageProps }: AppProps) {
         <AppBar>
           <Toolbar>
             <Typography variant="h6">Scroll to see button</Typography>
-            <DarkModeIcon />
+            <div className={classes.navbarRight}>
+              <DarkModeIcon />
+            </div>
           </Toolbar>
         </AppBar>
         <Component {...pageProps} />
