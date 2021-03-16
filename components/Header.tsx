@@ -3,7 +3,7 @@ import { Toolbar } from "@material-ui/core";
 
 import bg from "../assets/tornado-bg.svg";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((_theme: Theme) =>
   createStyles({
     root: {
       height: "100vh",
