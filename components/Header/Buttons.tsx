@@ -27,7 +27,6 @@ function Buttons() {
         >
           <IconButton
             aria-label="Github profile"
-            aria-controls="menu-appbar"
             aria-haspopup="true"
             color="inherit"
           >
@@ -42,7 +41,6 @@ function Buttons() {
         >
           <IconButton
             aria-label="Github repository link"
-            aria-controls="menu-appbar"
             aria-haspopup="true"
             color="inherit"
           >
@@ -57,7 +55,6 @@ function Buttons() {
         >
           <IconButton
             aria-label="Github repository link"
-            aria-controls="menu-appbar"
             aria-haspopup="true"
             color="inherit"
           >

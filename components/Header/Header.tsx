@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { Toolbar, Grid, Container } from "@material-ui/core";
+import { Toolbar, Grid, Container, IconButton } from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import programmer from "assets/programmer2.svg";
 import { DarkModeContext } from "context/themeContext";
@@ -11,7 +12,7 @@ import HeaderText from "./HeaderText2";
 function Header() {
   const darkMode = useContext(DarkModeContext);
 
-  const useStyles = makeStyles((_theme: Theme) =>
+  const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       root: {
         height: "100vh",
@@ -32,6 +33,13 @@ function Header() {
         alignContent: "center",
         justifyContent: "center",
       },
+      downArrowContainer: {
+        textAlign: "center",
+      },
+      downArrow: {
+        position: "relative",
+        bottom: theme.spacing(2),
+      },
     })
   );
 
@@ -49,6 +57,11 @@ function Header() {
           </Grid>
         </Grid>
       </Container>
+      <div className={classes.downArrowContainer}>
+        <IconButton aria-label="scroll down" className={classes.downArrow}>
+          <ExpandMoreIcon fontSize="large" />
+        </IconButton>
+      </div>
     </div>
   );
 }
