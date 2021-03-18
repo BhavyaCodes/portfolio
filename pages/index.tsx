@@ -1,13 +1,15 @@
 import Link from "next/link";
-import Layout from "../components/Layout";
+import Layout from "components/Layout";
 import { Button } from "@material-ui/core";
 
-import Header from "../components/Header";
+import Header from "components/Header";
+import Skills from "components/Skills";
 
 const IndexPage = () => {
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
+    <Layout title="Bhavya's portfolio">
       <Header />
+      <Skills />
       <h1>Hello Next.js 👋</h1>
       <p>
         <Link href="/about">
