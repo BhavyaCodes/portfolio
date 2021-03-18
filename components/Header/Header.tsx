@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { Toolbar, Grid, Box, Container } from "@material-ui/core";
+import { Toolbar, Grid, Container } from "@material-ui/core";
 
-import programmer from "../assets/programmer.svg";
-import { DarkModeContext } from "../context/themeContext";
-import lightHeader from "../assets/light-header.svg";
-import darkHeader from "../assets/dark-header.svg";
+import programmer from "assets/programmer2.svg";
+import { DarkModeContext } from "context/themeContext";
+import lightHeader from "assets/light-header.svg";
+import darkHeader from "assets/dark-header.svg";
 import HeaderText from "./HeaderText2";
 
 function Header() {
