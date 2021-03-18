@@ -1,5 +1,6 @@
 import { Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import Buttons from "./Buttons";
 
 function HeaderText2() {
   const useStyles = makeStyles((_theme: Theme) =>
@@ -31,6 +32,7 @@ function HeaderText2() {
         I specialize in developing and deploying responsive websites and web
         applications
       </Typography>
+      <Buttons />
     </Box>
   );
 }
