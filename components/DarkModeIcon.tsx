@@ -6,7 +6,6 @@ import {
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const DarkModeIcon = () => {
-  // const [isDarkMode, setDarkMode] = React.useState(false);
   const darkMode = useContext(DarkModeContext);
   const setDarkMode = useContext(DispatchDarkModeContext);
 
@@ -15,9 +14,6 @@ const DarkModeIcon = () => {
       setDarkMode((prevMode) => !prevMode);
     }
   };
-  // const toggleDarkMode = (checked: boolean) => {
-  //   setDarkMode(checked);
-  // };
 
   return (
     <DarkModeSwitch
