@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { Toolbar, Grid, Container, IconButton } from "@material-ui/core";
+import { Toolbar, Grid, Container, IconButton, Link } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import programmer from "assets/programmer2.svg";
@@ -58,9 +58,11 @@ function Header() {
         </Grid>
       </Container>
       <div className={classes.downArrowContainer}>
-        <IconButton aria-label="scroll down" className={classes.downArrow}>
-          <ExpandMoreIcon fontSize="large" />
-        </IconButton>
+        <Link href="#skills">
+          <IconButton aria-label="scroll down" className={classes.downArrow}>
+            <ExpandMoreIcon fontSize="large" />
+          </IconButton>
+        </Link>
       </div>
     </div>
   );
