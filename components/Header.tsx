@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { Toolbar, Grid, Box, Container } from "@material-ui/core";
-import programmer from "../assets/programmer.svg";
 
+import programmer from "../assets/programmer.svg";
 import { DarkModeContext } from "../context/themeContext";
 import lightHeader from "../assets/light-header.svg";
 import darkHeader from "../assets/dark-header.svg";
+import HeaderText from "./HeaderText2";
 
 function Header() {
   const darkMode = useContext(DarkModeContext);
@@ -29,6 +30,7 @@ function Header() {
       gridItem: {
         display: "flex",
         alignContent: "center",
+        justifyContent: "center",
       },
     })
   );
@@ -40,7 +42,7 @@ function Header() {
       <Container className={classes.container}>
         <Grid container>
           <Grid item md={6} xs={12} className={classes.gridItem}>
-            <div></div>
+            <HeaderText />
           </Grid>
           <Grid item md={6} xs={12} className={classes.gridItem}>
             <img className={classes.headerImg} src={programmer} />
