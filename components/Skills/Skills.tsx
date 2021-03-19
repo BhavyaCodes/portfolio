@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTrail, config, animated as a } from "react-spring";
+import { useTrail, animated as a } from "react-spring";
 
 import { Box, Grid, Typography, Container, Toolbar } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
