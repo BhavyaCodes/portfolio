@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useTrail, config, animated as a } from "react-spring";
+
 import { Box, Grid, Typography, Container, Toolbar } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
@@ -115,21 +118,52 @@ function Skills() {
   );
   const classes = useStyles();
 
+  const [toggle, setToggle] = useState(true);
+  const trail = useTrail(iconsArray.length, {
+    config: { mass: 1, tension: 375, friction: 25 },
+    trail: 400 / iconsArray.length,
+    opacity: toggle ? 1 : 0,
+    transform: toggle ? "scale(1)" : "scale(0)",
+    from: { opacity: 0, transform: "scale(0)" },
+  });
+
   const renderIcons = () => {
-    return iconsArray.map((obj) => (
-      <Grid key={obj.title} item className={classes.gridItem} xs={2}>
-        <Icon
-          title={obj.title}
-          logo={obj.logo}
-          spin={obj.spin}
-          invert={obj.invert}
-        />
+    return trail.map(({ transform, ...rest }, index) => (
+      <Grid
+        key={iconsArray[index].title}
+        item
+        className={classes.gridItem}
+        xs={2}
+      >
+        <a.div
+          key={index}
+          style={{
+            transform,
+            ...rest,
+          }}
+        >
+          <a.div>
+            <Icon
+              title={iconsArray[index].title}
+              logo={iconsArray[index].logo}
+              spin={iconsArray[index].spin}
+              invert={iconsArray[index].invert}
+            ></Icon>
+          </a.div>
+        </a.div>
       </Grid>
     ));
   };
 
   return (
     <>
+      <button
+        onClick={() => {
+          setToggle((state) => !state);
+        }}
+      >
+        {toggle ? "true" : "false"}
+      </button>
       <Toolbar id="skills" />
       <Container>
         <Grid container>
