@@ -3,13 +3,16 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Buttons from "./Buttons";
 
 function HeaderText2() {
-  const useStyles = makeStyles((_theme: Theme) =>
+  const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       root: {
         display: "flex",
         alignContent: "center",
         justifyContent: "center",
         flexDirection: "column",
+        [theme.breakpoints.down("md")]: {
+          marginTop: theme.spacing(6),
+        },
       },
       title: {
         paddingRight: "20%",
