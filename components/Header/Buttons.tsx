@@ -9,8 +9,18 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 function Buttons() {
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-      button: {
+      bigButton: {
         marginRight: theme.spacing(2),
+        [theme.breakpoints.down("sm")]: {
+          width: "48%",
+          marginRight: theme.spacing(0),
+        },
+      },
+      bigButtonsContainer: {
+        [theme.breakpoints.down("sm")]: {
+          display: "flex",
+          justifyContent: "space-between",
+        },
       },
     })
   );
@@ -18,7 +28,7 @@ function Buttons() {
   const classes = useStyles();
   return (
     <>
-      <Box ml={-1}>
+      <Box mx={-1}>
         <Link
           href="https://github.com/Juggernaut9"
           target="_blank"
@@ -62,12 +72,12 @@ function Buttons() {
           </IconButton>
         </Link>
       </Box>
-      <Box mt={2}>
+      <Box className={classes.bigButtonsContainer} mt={2}>
         <Button
           variant="contained"
           color="secondary"
           disableElevation
-          className={classes.button}
+          className={classes.bigButton}
           startIcon={<ForumIcon />}
         >
           Get in touch
@@ -75,7 +85,7 @@ function Buttons() {
         <Button
           variant="outlined"
           color="secondary"
-          className={classes.button}
+          className={classes.bigButton}
           startIcon={<CodeIcon />}
         >
           See my work
