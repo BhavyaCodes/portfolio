@@ -114,6 +114,20 @@ function Skills() {
     })
   );
   const classes = useStyles();
+
+  const renderIcons = () => {
+    return iconsArray.map((obj) => (
+      <Grid key={obj.title} item className={classes.gridItem} xs={2}>
+        <Icon
+          title={obj.title}
+          logo={obj.logo}
+          spin={obj.spin}
+          invert={obj.invert}
+        />
+      </Grid>
+    ));
+  };
+
   return (
     <>
       <Toolbar id="skills" />
@@ -140,48 +154,7 @@ function Skills() {
               </Typography>
               <div>
                 <Grid container className={classes.gridContainer}>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="git" logo={git} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon invert={true} title="github" logo={github} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="javascript" logo={javascript} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="materialui" logo={materialui} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="mongodb" logo={mongodb} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon invert={true} title="nextjs" logo={nextjs} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="nodejs" logo={nodejs} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="postgresql" logo={postgresql} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon spin={true} title="react" logo={react} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="redux" logo={redux} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="sass" logo={sass} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="typescript" logo={typescript} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="expressjs" logo={expressjs} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="bootstrap" logo={bootstrap} />
-                  </Grid>
+                  {renderIcons()}
                 </Grid>
               </div>
             </Grid>
@@ -193,53 +166,3 @@ function Skills() {
 }
 
 export default Skills;
-
-{
-  /* <Grid container className={classes.gridContainer}>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="git" logo={git} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon invert={true} title="github" logo={github} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="javascript" logo={javascript} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="materialui" logo={materialui} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="mongodb" logo={mongodb} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon invert={true} title="nextjs" logo={nextjs} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="nodejs" logo={nodejs} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="postgresql" logo={postgresql} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon spin={true} title="react" logo={react} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="redux" logo={redux} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="sass" logo={sass} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="typescript" logo={typescript} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="expressjs" logo={expressjs} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="bootstrap" logo={bootstrap} />
-                  </Grid> */
-}
-
-{
-  /* const icons = [{title: 'git', icon: git}] */
-}
