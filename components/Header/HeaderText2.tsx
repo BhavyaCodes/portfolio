@@ -10,11 +10,15 @@ function HeaderText2() {
         alignContent: "center",
         justifyContent: "center",
         flexDirection: "column",
+      },
+      title: {
         paddingRight: "20%",
       },
-      title: {},
       hi: {
         color: "red",
+      },
+      paragraph: {
+        paddingRight: "20%",
       },
     })
   );
@@ -28,7 +32,7 @@ function HeaderText2() {
       <Typography variant="h4" gutterBottom>
         A fullstack developer
       </Typography>
-      <Typography>
+      <Typography className={classes.paragraph}>
         I specialize in developing and deploying responsive websites and web
         applications
       </Typography>
