@@ -15,7 +15,7 @@ function Header() {
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       root: {
-        height: "100vh",
+        minHeight: "100vh",
         backgroundImage: `url(${darkMode ? darkHeader : lightHeader})`,
         backgroundSize: "cover",
         display: "flex",
