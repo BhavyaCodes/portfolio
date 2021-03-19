@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTrail, animated as a } from "react-spring";
+import { useIntersection } from "react-use";
 
 import { Box, Grid, Typography, Container, Toolbar } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
@@ -118,7 +119,14 @@ function Skills() {
   );
   const classes = useStyles();
 
-  const [toggle, setToggle] = useState(true);
+  const intersectionRef = useRef(null);
+  const intersection = useIntersection(intersectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1,
+  });
+
+  const [toggle, setToggle] = useState(false);
   const trail = useTrail(iconsArray.length, {
     config: { mass: 1, tension: 375, friction: 25 },
     trail: 400 / iconsArray.length,
@@ -126,6 +134,12 @@ function Skills() {
     transform: toggle ? "scale(1)" : "scale(0)",
     from: { opacity: 0, transform: "scale(0)" },
   });
+
+  useEffect(() => {
+    if (intersection?.isIntersecting) {
+      setToggle(true);
+    }
+  }, [intersection]);
 
   const renderIcons = () => {
     return trail.map(({ transform, ...rest }, index) => (
@@ -155,15 +169,16 @@ function Skills() {
     ));
   };
 
+  // console.log(intersection);
   return (
     <>
-      <button
+      {/* <button
         onClick={() => {
           setToggle((state) => !state);
         }}
       >
         {toggle ? "true" : "false"}
-      </button>
+      </button> */}
       <Toolbar id="skills" />
       <Container>
         <Grid container>
@@ -187,13 +202,22 @@ function Skills() {
                 My Tech Stack
               </Typography>
               <div>
-                <Grid container className={classes.gridContainer}>
+                <Grid
+                  container
+                  className={classes.gridContainer}
+                  ref={intersectionRef}
+                >
                   {renderIcons()}
                 </Grid>
               </div>
             </Grid>
           </Box>
         </Grid>
+        {/* <div style={{ position: "fixed", bottom: "10px" }}>
+          {intersection &&
+            intersection?.intersectionRatio! > 0.5 &&
+            "intersecting"}
+        </div> */}
       </Container>
     </>
   );
