@@ -26,7 +26,6 @@ function Icon({
       logo: {
         width: "60%",
         flexGrow: 1,
-        fill: "white",
         filter: `invert(${invertState ? "100%" : "0%"})`,
         animation: `${spin ? "$App-logo-spin infinite 20s linear" : ""}`,
       },

@@ -17,7 +17,7 @@ import mongodb from "assets/icons/mongodb.svg";
 import nextjs from "assets/icons/nextjs.svg";
 import nodejs from "assets/icons/nodejs.svg";
 import postgresql from "assets/icons/postgresql.svg";
-import react from "assets/icons/react.svg";
+import react from "assets/icons/react.png";
 import redux from "assets/icons/redux.svg";
 import sass from "assets/icons/sass.svg";
 import typescript from "assets/icons/typescript.svg";
@@ -130,9 +130,9 @@ function Skills() {
   const trail = useTrail(iconsArray.length, {
     config: { mass: 1, tension: 375, friction: 25 },
     trail: 400 / iconsArray.length,
-    opacity: toggle ? 1 : 0,
+    // opacity: toggle ? 1 : 0,
     transform: toggle ? "scale(1)" : "scale(0)",
-    from: { opacity: 0, transform: "scale(0)" },
+    from: { transform: "scale(0)" },
   });
 
   useEffect(() => {
