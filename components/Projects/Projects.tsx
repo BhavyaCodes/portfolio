@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, Container } from "@material-ui/core";
 import Project from "./Project";
+import dogmash from "assets/project/dogmash/dogmash.png";
 
 function Projects() {
   return (
@@ -10,6 +11,7 @@ function Projects() {
         index={1}
         title="title"
         description="description here https://www.google.com"
+        image={dogmash}
       />
       <Project
         index={2}

@@ -1,13 +1,24 @@
-import { Grid, Box, Typography } from "@material-ui/core";
 import Linkify from "react-linkify";
+
+import { Grid, Box, Typography } from "@material-ui/core";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 type AppProps = {
   index: number;
   title: string;
   description: string;
+  image?: string;
 };
 
-function Project({ index, title, description }: AppProps) {
+function Project({ index, title, description, image }: AppProps) {
+  const useStyles = makeStyles((_theme: Theme) =>
+    createStyles({
+      image: {
+        width: "100%",
+      },
+    })
+  );
+  const classes = useStyles();
   return (
     <>
       <Typography variant="h2" align="center">
@@ -34,7 +45,7 @@ function Project({ index, title, description }: AppProps) {
         </Box>
         <Box clone order={{ xs: 1, md: index % 2 === 0 ? 1 : 2 }}>
           <Grid item md={6} xs={12}>
-            image here
+            <img className={classes.image} src={image} />
           </Grid>
         </Box>
       </Grid>
