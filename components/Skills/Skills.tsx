@@ -130,7 +130,6 @@ function Skills() {
   const trail = useTrail(iconsArray.length, {
     config: { mass: 1, tension: 375, friction: 25 },
     trail: 400 / iconsArray.length,
-    // opacity: toggle ? 1 : 0,
     transform: toggle ? "scale(1)" : "scale(0)",
     from: { transform: "scale(0)" },
   });
@@ -147,7 +146,8 @@ function Skills() {
         key={iconsArray[index].title}
         item
         className={classes.gridItem}
-        xs={2}
+        md={2}
+        xs={3}
       >
         <a.div
           key={index}
@@ -169,16 +169,8 @@ function Skills() {
     ));
   };
 
-  // console.log(intersection);
   return (
     <>
-      {/* <button
-        onClick={() => {
-          setToggle((state) => !state);
-        }}
-      >
-        {toggle ? "true" : "false"}
-      </button> */}
       <Toolbar id="skills" />
       <Container>
         <Grid container>
@@ -213,11 +205,6 @@ function Skills() {
             </Grid>
           </Box>
         </Grid>
-        {/* <div style={{ position: "fixed", bottom: "10px" }}>
-          {intersection &&
-            intersection?.intersectionRatio! > 0.5 &&
-            "intersecting"}
-        </div> */}
       </Container>
     </>
   );
