@@ -24,6 +24,7 @@ import typescript from "assets/icons/typescript.svg";
 import expressjs from "assets/icons/expressjs.png";
 import bootstrap from "assets/icons/bootstrap.svg";
 import bash from "assets/icons/bash.svg";
+import s3 from "assets/icons/s3.png";
 
 type iconsArray = {
   title: string;
@@ -67,6 +68,10 @@ const iconsArray: iconsArray[] = [
   {
     title: "JavaScript",
     logo: javascript,
+  },
+  {
+    title: "aws S3",
+    logo: s3,
   },
   {
     title: "Material-UI",
