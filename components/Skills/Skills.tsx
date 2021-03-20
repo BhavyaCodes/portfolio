@@ -1,3 +1,7 @@
+import { useState, useRef, useEffect } from "react";
+import { useTrail, animated as a } from "react-spring";
+import { useIntersection } from "react-use";
+
 import { Box, Grid, Typography, Container, Toolbar } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
@@ -13,12 +17,81 @@ import mongodb from "assets/icons/mongodb.svg";
 import nextjs from "assets/icons/nextjs.svg";
 import nodejs from "assets/icons/nodejs.svg";
 import postgresql from "assets/icons/postgresql.svg";
-import react from "assets/icons/react.svg";
+import react from "assets/icons/react.png";
 import redux from "assets/icons/redux.svg";
 import sass from "assets/icons/sass.svg";
 import typescript from "assets/icons/typescript.svg";
 import expressjs from "assets/icons/expressjs.png";
 import bootstrap from "assets/icons/bootstrap.svg";
+
+type iconsArray = {
+  title: string;
+  logo: any;
+  invert?: boolean;
+  spin?: boolean;
+};
+
+const iconsArray: iconsArray[] = [
+  {
+    title: "git",
+    logo: git,
+  },
+  {
+    title: "github",
+    logo: github,
+    invert: true,
+  },
+  {
+    title: "javascript",
+    logo: javascript,
+  },
+  {
+    title: "materialui",
+    logo: materialui,
+  },
+  {
+    title: "mongodb",
+    logo: mongodb,
+  },
+  {
+    title: "nextjs",
+    logo: nextjs,
+    invert: true,
+  },
+  {
+    title: "nodejs",
+    logo: nodejs,
+  },
+  {
+    title: "postgresql",
+    logo: postgresql,
+  },
+  {
+    title: "react",
+    logo: react,
+    spin: true,
+  },
+  {
+    title: "redux",
+    logo: redux,
+  },
+  {
+    title: "sass",
+    logo: sass,
+  },
+  {
+    title: "typescript",
+    logo: typescript,
+  },
+  {
+    title: "expressjs",
+    logo: expressjs,
+  },
+  {
+    title: "bootstrap",
+    logo: bootstrap,
+  },
+];
 
 function Skills() {
   const useStyles = makeStyles((theme: Theme) =>
@@ -45,8 +118,67 @@ function Skills() {
     })
   );
   const classes = useStyles();
+
+  const intersectionRef = useRef(null);
+  const intersection = useIntersection(intersectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  });
+
+  const [toggle, setToggle] = useState(false);
+  const trail = useTrail(iconsArray.length, {
+    config: { mass: 1, tension: 375, friction: 25 },
+    trail: 400 / iconsArray.length,
+    // opacity: toggle ? 1 : 0,
+    transform: toggle ? "scale(1)" : "scale(0)",
+    from: { transform: "scale(0)" },
+  });
+
+  useEffect(() => {
+    if (intersection?.isIntersecting) {
+      setToggle(true);
+    }
+  }, [intersection]);
+
+  const renderIcons = () => {
+    return trail.map(({ transform, ...rest }, index) => (
+      <Grid
+        key={iconsArray[index].title}
+        item
+        className={classes.gridItem}
+        xs={2}
+      >
+        <a.div
+          key={index}
+          style={{
+            transform,
+            ...rest,
+          }}
+        >
+          <a.div>
+            <Icon
+              title={iconsArray[index].title}
+              logo={iconsArray[index].logo}
+              spin={iconsArray[index].spin}
+              invert={iconsArray[index].invert}
+            ></Icon>
+          </a.div>
+        </a.div>
+      </Grid>
+    ));
+  };
+
+  // console.log(intersection);
   return (
     <>
+      {/* <button
+        onClick={() => {
+          setToggle((state) => !state);
+        }}
+      >
+        {toggle ? "true" : "false"}
+      </button> */}
       <Toolbar id="skills" />
       <Container>
         <Grid container>
@@ -70,54 +202,22 @@ function Skills() {
                 My Tech Stack
               </Typography>
               <div>
-                <Grid container className={classes.gridContainer}>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="git" logo={git} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon invert={true} title="github" logo={github} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="javascript" logo={javascript} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="materialui" logo={materialui} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="mongodb" logo={mongodb} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon invert={true} title="nextjs" logo={nextjs} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="nodejs" logo={nodejs} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="postgresql" logo={postgresql} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon spin={true} title="react" logo={react} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="redux" logo={redux} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="sass" logo={sass} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="typescript" logo={typescript} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="expressjs" logo={expressjs} />
-                  </Grid>
-                  <Grid item className={classes.gridItem} xs={2}>
-                    <Icon title="bootstrap" logo={bootstrap} />
-                  </Grid>
+                <Grid
+                  container
+                  className={classes.gridContainer}
+                  ref={intersectionRef}
+                >
+                  {renderIcons()}
                 </Grid>
               </div>
             </Grid>
           </Box>
         </Grid>
+        {/* <div style={{ position: "fixed", bottom: "10px" }}>
+          {intersection &&
+            intersection?.intersectionRatio! > 0.5 &&
+            "intersecting"}
+        </div> */}
       </Container>
     </>
   );
