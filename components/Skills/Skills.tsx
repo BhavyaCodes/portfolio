@@ -23,6 +23,7 @@ import sass from "assets/icons/sass.svg";
 import typescript from "assets/icons/typescript.svg";
 import expressjs from "assets/icons/expressjs.png";
 import bootstrap from "assets/icons/bootstrap.svg";
+import bash from "assets/icons/bash.svg";
 
 type iconsArray = {
   title: string;
@@ -33,63 +34,68 @@ type iconsArray = {
 
 const iconsArray: iconsArray[] = [
   {
-    title: "git",
-    logo: git,
+    title: "TypeScript",
+    logo: typescript,
   },
   {
-    title: "github",
-    logo: github,
-    invert: true,
-  },
-  {
-    title: "javascript",
-    logo: javascript,
-  },
-  {
-    title: "materialui",
-    logo: materialui,
-  },
-  {
-    title: "mongodb",
-    logo: mongodb,
-  },
-  {
-    title: "nextjs",
-    logo: nextjs,
-    invert: true,
-  },
-  {
-    title: "nodejs",
+    title: "node.js",
     logo: nodejs,
   },
   {
-    title: "postgresql",
-    logo: postgresql,
-  },
-  {
-    title: "react",
+    title: "react.js",
     logo: react,
     spin: true,
   },
   {
-    title: "redux",
+    title: "next.js",
+    logo: nextjs,
+    invert: true,
+  },
+  {
+    title: "mongoDB",
+    logo: mongodb,
+  },
+  {
+    title: "git",
+    logo: git,
+  },
+  {
+    title: "GitHub",
+    logo: github,
+    invert: true,
+  },
+  {
+    title: "JavaScript",
+    logo: javascript,
+  },
+  {
+    title: "Material-UI",
+    logo: materialui,
+  },
+  {
+    title: "Postgres",
+    logo: postgresql,
+  },
+  {
+    title: "Redux",
     logo: redux,
   },
   {
-    title: "sass",
+    title: "Sass",
     logo: sass,
   },
+
   {
-    title: "typescript",
-    logo: typescript,
-  },
-  {
-    title: "expressjs",
+    title: "express.js",
     logo: expressjs,
   },
   {
-    title: "bootstrap",
+    title: "Bootstrap",
     logo: bootstrap,
+  },
+  {
+    title: "bash shell",
+    logo: bash,
   },
 ];
 
