@@ -1,5 +1,5 @@
 import { useMemo, useContext } from "react";
-import Linkify from "react-linkify";
+import ReactMarkdown from "react-markdown";
 
 import { Grid, Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
@@ -27,21 +27,12 @@ function Project({ index, title, description, image, stack }: AppProps) {
   const classes = useStyles();
 
   const renderDescription = () => {
-    return description.map((para) => (
-      <Linkify
-        componentDecorator={(decoratedHref, decoratedText, key) => (
-          <a
-            target="_blank"
-            href={decoratedHref}
-            key={key}
-            rel="noopener noreferrer"
-          >
-            {decoratedText}
-          </a>
-        )}
-      >
-        <Typography gutterBottom>{para}</Typography>
-      </Linkify>
+    return description.map((para, index) => (
+      <Typography key={index} gutterBottom>
+        <ReactMarkdown renderers={{ paragraph: "span" }} linkTarget="_blank">
+          {para}
+        </ReactMarkdown>
+      </Typography>
     ));
   };
 

@@ -24,7 +24,7 @@ function Projects() {
       <Project
         index={1}
         title="title"
-        description={["description here https://www.google.com", "asdfsdf"]}
+        description={["asdadadgergerg", "para 2"]}
         image={dogmash}
         stack={useMemo(() => {
           return [
@@ -43,7 +43,7 @@ function Projects() {
       <Project
         index={2}
         title="title"
-        description={["description here https://www.google.com", "asdfsdf"]}
+        description={["asdadadgergerg", "para 2"]}
         stack={useMemo(() => {
           return [
             { label: "nodejs", logo: nodejs },
@@ -55,7 +55,10 @@ function Projects() {
       <Project
         index={3}
         title="title"
-        description={["description here https://www.google.com", "asdfsdf"]}
+        description={[
+          "**description here** [Handlebars templates](http://handlebarsjs.com/)",
+          "asdfsdf",
+        ]}
         stack={useMemo(() => {
           return [
             { label: "nodejs", logo: nodejs },
