@@ -1,5 +1,5 @@
 import { useMemo, useContext } from "react";
-import Linkify from "react-linkify";
+import ReactMarkdown from "react-markdown";
 
 import { Grid, Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
@@ -10,7 +10,7 @@ import { DarkModeContext } from "context/themeContext";
 type AppProps = {
   index: number;
   title: string;
-  description: string;
+  description: string[];
   image?: string;
   stack?: { label: string; logo: string; invert?: boolean }[];
 };
@@ -19,12 +19,28 @@ function Project({ index, title, description, image, stack }: AppProps) {
   const darkMode = useContext(DarkModeContext);
   const useStyles = makeStyles((_theme: Theme) =>
     createStyles({
+      textSide: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      },
       image: {
         width: "100%",
       },
     })
   );
   const classes = useStyles();
+
+  const renderDescription = () => {
+    return description.map((para, index) => (
+      <Typography key={index} gutterBottom>
+        <ReactMarkdown renderers={{ paragraph: "span" }} linkTarget="_blank">
+          {para}
+        </ReactMarkdown>
+      </Typography>
+    ));
+  };
+
   return (
     <>
       <Typography variant="h2" align="center">
@@ -32,21 +48,8 @@ function Project({ index, title, description, image, stack }: AppProps) {
       </Typography>
       <Grid container>
         <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
-          <Grid item md={6} xs={12}>
-            <Linkify
-              componentDecorator={(decoratedHref, decoratedText, key) => (
-                <a
-                  target="_blank"
-                  href={decoratedHref}
-                  key={key}
-                  rel="noopener noreferrer"
-                >
-                  {decoratedText}
-                </a>
-              )}
-            >
-              {description}
-            </Linkify>
+          <Grid item md={6} xs={12} className={classes.textSide}>
+            <Box>{renderDescription()}</Box>
             <TechChips
               stack={useMemo(() => {
                 return stack;
