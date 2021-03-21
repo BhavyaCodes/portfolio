@@ -165,7 +165,7 @@ function Skills() {
   }, [intersection]);
 
   const renderIcons = () => {
-    return trail.map(({ transform, ...rest }, index) => (
+    return trail.map(({ transform }, index) => (
       <Grid
         key={iconsArray[index].title}
         item
@@ -177,7 +177,6 @@ function Skills() {
           key={index}
           style={{
             transform,
-            ...rest,
           }}
         >
           <a.div>
