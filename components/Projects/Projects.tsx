@@ -4,8 +4,6 @@ import Project from "./Project";
 
 import { DarkModeContext } from "context/themeContext";
 
-import dogmash from "assets/project/dogmash/dogmash.png";
-
 import materialui from "assets/icons/materialui.svg";
 import mongodb from "assets/icons/mongodb.svg";
 import nextjs from "assets/icons/nextjs.svg";
@@ -25,7 +23,7 @@ function Projects() {
         index={1}
         title="title"
         description={["asdadadgergerg", "para 2"]}
-        image={dogmash}
+        image="/project/dogmash/dogmash.png"
         stack={useMemo(() => {
           return [
             { label: "nodejs", logo: nodejs },
