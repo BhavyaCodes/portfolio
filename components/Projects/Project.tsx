@@ -19,6 +19,11 @@ function Project({ index, title, description, image, stack }: AppProps) {
   const darkMode = useContext(DarkModeContext);
   const useStyles = makeStyles((_theme: Theme) =>
     createStyles({
+      textSide: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      },
       image: {
         width: "100%",
       },
@@ -43,8 +48,8 @@ function Project({ index, title, description, image, stack }: AppProps) {
       </Typography>
       <Grid container>
         <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
-          <Grid item md={6} xs={12}>
-            {renderDescription()}
+          <Grid item md={6} xs={12} className={classes.textSide}>
+            <Box>{renderDescription()}</Box>
             <TechChips
               stack={useMemo(() => {
                 return stack;
