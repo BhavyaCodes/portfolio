@@ -21,7 +21,7 @@ function Projects() {
       <Typography variant="h2">Projects I have worked on</Typography>
       <Project
         index={1}
-        title="title"
+        title="Dogmash"
         description={["asdadadgergerg", "para 2"]}
         image="/project/dogmash/dogmash.png"
         stack={useMemo(() => {
@@ -40,12 +40,13 @@ function Projects() {
       />
       <Project
         index={2}
-        title="title"
+        title="Get It Done - Goal tracker App"
+        image="/project/get-it-done/get-it-done.png"
         description={["asdadadgergerg", "para 2"]}
         stack={useMemo(() => {
           return [
-            { label: "nodejs", logo: nodejs },
-            { label: "expressjs", logo: expressjs },
+            { label: "react.js", logo: react },
+            { label: "material-ui", logo: materialui },
             { label: "aws-s3", logo: s3 },
           ];
         }, [])}
@@ -67,7 +68,7 @@ function Projects() {
       />
       <Project
         index={4}
-        title="title"
+        title="asasdf"
         description={["description here https://www.google.com", "asdfsdf"]}
         stack={useMemo(() => {
           return [

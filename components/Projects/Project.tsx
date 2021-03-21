@@ -1,5 +1,6 @@
 import { useMemo, useContext } from "react";
 import ReactMarkdown from "react-markdown";
+import Image from "next/image";
 
 import { Grid, Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
@@ -17,16 +18,22 @@ type AppProps = {
 
 function Project({ index, title, description, image, stack }: AppProps) {
   const darkMode = useContext(DarkModeContext);
-  const useStyles = makeStyles((_theme: Theme) =>
+  const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       textSide: {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        padding: theme.spacing(1),
       },
-      image: {
+      imageContainer: {
         width: "100%",
+        position: "relative",
+        padding: theme.spacing(1),
       },
+      // image: {
+      //   width: "100% !important",
+      // },
     })
   );
   const classes = useStyles();
@@ -59,7 +66,18 @@ function Project({ index, title, description, image, stack }: AppProps) {
         </Box>
         <Box clone order={{ xs: 1, md: index % 2 === 0 ? 1 : 2 }}>
           <Grid item md={6} xs={12}>
-            <img className={classes.image} src={image} />
+            {/* <img className={classes.image} src={image} /> */}
+            {image && (
+              <Box className={classes.imageContainer}>
+                <Image
+                  src={image}
+                  width={1903}
+                  height={894}
+                  quality={100}
+                  layout="responsive"
+                />
+              </Box>
+            )}
           </Grid>
         </Box>
       </Grid>
@@ -68,3 +86,12 @@ function Project({ index, title, description, image, stack }: AppProps) {
 }
 
 export default Project;
+
+// {image && (
+//   <Image
+//     className={classes.image}
+//     src={image}
+//     objectFit="contain"
+//     layout="fill"
+//   />
+// )}
