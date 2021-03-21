@@ -30,9 +30,10 @@ function Chip({ label, logo, invert }: AppProps) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        width: "100%",
       },
       image: {
-        maxWidth: "100%",
+        width: "100%",
         filter: `invert(${invert ? "100%" : "0%"})`,
       },
       label: {
