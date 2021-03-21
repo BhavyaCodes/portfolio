@@ -1,4 +1,11 @@
-import { useState, useRef, useEffect, useContext, useMemo } from "react";
+import {
+  useState,
+  useRef,
+  useEffect,
+  useContext,
+  useMemo,
+  useCallback,
+} from "react";
 import { useTrail, animated as a } from "react-spring";
 import { useIntersection } from "react-use";
 
@@ -151,7 +158,9 @@ function Skills() {
   });
 
   const [toggle, setToggle] = useState(false);
-  const trail = useTrail(iconsArray.length, {
+
+  const useTrailCallback = useCallback(useTrail, [iconsArray]);
+  const trail = useTrailCallback(iconsArray.length, {
     config: { mass: 1, tension: 375, friction: 25 },
     trail: 400 / iconsArray.length,
     transform: toggle ? "scale(1)" : "scale(0)",
