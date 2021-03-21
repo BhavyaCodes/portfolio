@@ -1,10 +1,7 @@
 import { useSpring, animated as a } from "react-spring";
-import { useContext, useState, useEffect } from "react";
 
 import { Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-
-import { DarkModeContext } from "context/themeContext";
 
 type AppProps = {
   label: string;
@@ -13,9 +10,6 @@ type AppProps = {
 };
 
 function Chip({ label, logo, invert }: AppProps) {
-  const [invertState, setInvertState] = useState(false);
-  const darkMode = useContext(DarkModeContext);
-
   const useStyles = makeStyles((_theme: Theme) =>
     createStyles({
       root: {
@@ -39,11 +33,10 @@ function Chip({ label, logo, invert }: AppProps) {
       },
       image: {
         maxWidth: "100%",
-        filter: `invert(${invertState ? "100%" : "0%"})`,
+        filter: `invert(${invert ? "100%" : "0%"})`,
       },
       label: {
         position: "relative",
-        // width: "300%",
         opacity: 0,
       },
     })
@@ -57,15 +50,6 @@ function Chip({ label, logo, invert }: AppProps) {
   }));
 
   const trans: any = (zoom: number) => `scale(${zoom})`;
-
-  useEffect(() => {
-    if (darkMode !== undefined) {
-      if (darkMode && invert) {
-        return setInvertState(true);
-      }
-      setInvertState(false);
-    }
-  }, [darkMode]);
 
   return (
     <>
