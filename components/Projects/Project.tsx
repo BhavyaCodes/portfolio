@@ -10,7 +10,7 @@ import { DarkModeContext } from "context/themeContext";
 type AppProps = {
   index: number;
   title: string;
-  description: string;
+  description: string[];
   image?: string;
   stack?: { label: string; logo: string; invert?: boolean }[];
 };
@@ -25,6 +25,26 @@ function Project({ index, title, description, image, stack }: AppProps) {
     })
   );
   const classes = useStyles();
+
+  const renderDescription = () => {
+    return description.map((para) => (
+      <Linkify
+        componentDecorator={(decoratedHref, decoratedText, key) => (
+          <a
+            target="_blank"
+            href={decoratedHref}
+            key={key}
+            rel="noopener noreferrer"
+          >
+            {decoratedText}
+          </a>
+        )}
+      >
+        <Typography gutterBottom>{para}</Typography>
+      </Linkify>
+    ));
+  };
+
   return (
     <>
       <Typography variant="h2" align="center">
@@ -33,20 +53,7 @@ function Project({ index, title, description, image, stack }: AppProps) {
       <Grid container>
         <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
           <Grid item md={6} xs={12}>
-            <Linkify
-              componentDecorator={(decoratedHref, decoratedText, key) => (
-                <a
-                  target="_blank"
-                  href={decoratedHref}
-                  key={key}
-                  rel="noopener noreferrer"
-                >
-                  {decoratedText}
-                </a>
-              )}
-            >
-              {description}
-            </Linkify>
+            {renderDescription()}
             <TechChips
               stack={useMemo(() => {
                 return stack;
