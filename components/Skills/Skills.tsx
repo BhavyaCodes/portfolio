@@ -25,6 +25,8 @@ import expressjs from "assets/icons/expressjs.png";
 import bootstrap from "assets/icons/bootstrap.svg";
 import bash from "assets/icons/bash.svg";
 import s3 from "assets/icons/s3.png";
+import socketio from "assets/icons/socketio.svg";
+import vercel from "assets/icons/vercel.svg";
 
 type iconsArray = {
   title: string;
@@ -101,6 +103,15 @@ const iconsArray: iconsArray[] = [
   {
     title: "bash shell",
     logo: bash,
+  },
+  {
+    title: "socket.io",
+    logo: socketio,
+  },
+  {
+    title: "vercel",
+    logo: vercel,
+    invert: true,
   },
 ];
 
