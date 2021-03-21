@@ -1,9 +1,17 @@
-import { useState, useRef, useEffect } from "react";
+import {
+  useState,
+  useRef,
+  useEffect,
+  useContext,
+  useMemo,
+  useCallback,
+} from "react";
 import { useTrail, animated as a } from "react-spring";
 import { useIntersection } from "react-use";
 
 import { Box, Grid, Typography, Container, Toolbar } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { DarkModeContext } from "context/themeContext";
 
 import Icon from "./Icon";
 
@@ -24,6 +32,9 @@ import typescript from "assets/icons/typescript.svg";
 import expressjs from "assets/icons/expressjs.png";
 import bootstrap from "assets/icons/bootstrap.svg";
 import bash from "assets/icons/bash.svg";
+import s3 from "assets/icons/s3.png";
+import socketio from "assets/icons/socketio.svg";
+import vercel from "assets/icons/vercel.svg";
 
 type iconsArray = {
   title: string;
@@ -32,74 +43,88 @@ type iconsArray = {
   spin?: boolean;
 };
 
-const iconsArray: iconsArray[] = [
-  {
-    title: "TypeScript",
-    logo: typescript,
-  },
-  {
-    title: "node.js",
-    logo: nodejs,
-  },
-  {
-    title: "react.js",
-    logo: react,
-    spin: true,
-  },
-  {
-    title: "next.js",
-    logo: nextjs,
-    invert: true,
-  },
-  {
-    title: "mongoDB",
-    logo: mongodb,
-  },
-  {
-    title: "git",
-    logo: git,
-  },
-  {
-    title: "GitHub",
-    logo: github,
-    invert: true,
-  },
-  {
-    title: "JavaScript",
-    logo: javascript,
-  },
-  {
-    title: "Material-UI",
-    logo: materialui,
-  },
-  {
-    title: "Postgres",
-    logo: postgresql,
-  },
-  {
-    title: "Redux",
-    logo: redux,
-  },
-  {
-    title: "Sass",
-    logo: sass,
-  },
-
-  {
-    title: "express.js",
-    logo: expressjs,
-  },
-  {
-    title: "Bootstrap",
-    logo: bootstrap,
-  },
-  {
-    title: "bash shell",
-    logo: bash,
-  },
-];
-
 function Skills() {
+  const darkMode = useContext(DarkModeContext);
+  const iconsArray: iconsArray[] = useMemo(() => {
+    return [
+      {
+        title: "TypeScript",
+        logo: typescript,
+      },
+      {
+        title: "node.js",
+        logo: nodejs,
+      },
+      {
+        title: "react.js",
+        logo: react,
+        spin: true,
+      },
+      {
+        title: "next.js",
+        logo: nextjs,
+        invert: darkMode,
+      },
+      {
+        title: "mongoDB",
+        logo: mongodb,
+      },
+      {
+        title: "git",
+        logo: git,
+      },
+      {
+        title: "GitHub",
+        logo: github,
+        invert: darkMode,
+      },
+      {
+        title: "JavaScript",
+        logo: javascript,
+      },
+      {
+        title: "aws S3",
+        logo: s3,
+      },
+      {
+        title: "Material-UI",
+        logo: materialui,
+      },
+      {
+        title: "Postgres",
+        logo: postgresql,
+      },
+      {
+        title: "Redux",
+        logo: redux,
+      },
+      {
+        title: "Sass",
+        logo: sass,
+      },
+      {
+        title: "express.js",
+        logo: expressjs,
+      },
+      {
+        title: "Bootstrap",
+        logo: bootstrap,
+      },
+      {
+        title: "bash shell",
+        logo: bash,
+      },
+      {
+        title: "socket.io",
+        logo: socketio,
+      },
+      {
+        title: "vercel",
+        logo: vercel,
+        invert: darkMode,
+      },
+    ];
+  }, [darkMode]);
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       gridItem: {
@@ -133,7 +158,9 @@ function Skills() {
   });
 
   const [toggle, setToggle] = useState(false);
-  const trail = useTrail(iconsArray.length, {
+
+  const useTrailCallback = useCallback(useTrail, [iconsArray]);
+  const trail = useTrailCallback(iconsArray.length, {
     config: { mass: 1, tension: 375, friction: 25 },
     trail: 400 / iconsArray.length,
     transform: toggle ? "scale(1)" : "scale(0)",
@@ -147,7 +174,7 @@ function Skills() {
   }, [intersection]);
 
   const renderIcons = () => {
-    return trail.map(({ transform, ...rest }, index) => (
+    return trail.map(({ transform }, index) => (
       <Grid
         key={iconsArray[index].title}
         item
@@ -159,7 +186,6 @@ function Skills() {
           key={index}
           style={{
             transform,
-            ...rest,
           }}
         >
           <a.div>

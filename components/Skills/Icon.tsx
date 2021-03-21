@@ -1,9 +1,8 @@
-import { useContext, useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useSpring, animated as a } from "react-spring";
 
 import { Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { DarkModeContext } from "context/themeContext";
 
 function Icon({
   title,
@@ -21,7 +20,6 @@ function Icon({
     xys: [0, 0, 1],
     config: { mass: 1, tension: 500, friction: 15 },
   }));
-  const [invertState, setInvertState] = useState(false);
   const useStyles = makeStyles((_theme: Theme) =>
     createStyles({
       root: {
@@ -33,7 +31,7 @@ function Icon({
       logo: {
         width: "100%",
         flexGrow: 1,
-        filter: `invert(${invertState ? "100%" : "0%"})`,
+        filter: `invert(${invert ? "100%" : "0%"})`,
         animation: `${spin ? "$App-logo-spin infinite 20s linear" : ""}`,
       },
       logoContainer: {
@@ -48,13 +46,7 @@ function Icon({
   );
 
   const classes = useStyles();
-  const darkMode = useContext(DarkModeContext);
 
-  // const calc = (x: number, y: number) => [
-  //   -(y - window.innerHeight / 2) / 20,
-  //   (x - window.innerWidth / 2) / 20,
-  //   1.1,
-  // ];
   const calc = (x: number, y: number) => [
     -(
       y -
@@ -71,15 +63,6 @@ function Icon({
   ];
   const trans: any = (x: number, y: number, s: number) =>
     `perspective(25px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
-
-  useEffect(() => {
-    if (darkMode !== undefined) {
-      if (darkMode && invert) {
-        return setInvertState(true);
-      }
-      setInvertState(false);
-    }
-  }, [darkMode]);
 
   return (
     <Box className={classes.root}>
