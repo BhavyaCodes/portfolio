@@ -43,7 +43,7 @@ function Chip({ label, logo, invert }: AppProps) {
       },
       label: {
         position: "relative",
-        width: "300%",
+        // width: "300%",
         opacity: 0,
       },
     })
