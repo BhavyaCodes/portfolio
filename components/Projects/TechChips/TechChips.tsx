@@ -5,6 +5,7 @@ type appProps = {
   stack?: {
     label: string;
     logo: string;
+    invert?: boolean;
   }[];
 };
 
@@ -13,7 +14,7 @@ function TechChips({ stack }: appProps) {
     <Grid container spacing={2} style={{ maxWidth: "100%" }}>
       {stack!.map((obj) => (
         <Grid item xs={2} md={1}>
-          <Chip label={obj.label} logo={obj.logo} />
+          <Chip label={obj.label} logo={obj.logo} invert={obj.invert} />
         </Grid>
       ))}
     </Grid>

@@ -9,7 +9,7 @@ type AppProps = {
   title: string;
   description: string;
   image?: string;
-  stack?: { label: string; logo: string }[];
+  stack?: { label: string; logo: string; invert?: boolean }[];
 };
 
 function Project({ index, title, description, image, stack }: AppProps) {

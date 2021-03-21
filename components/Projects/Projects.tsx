@@ -28,7 +28,7 @@ function Projects() {
           { label: "aws-s3", logo: s3 },
           { label: "materialui", logo: materialui },
           { label: "mongodb", logo: mongodb },
-          { label: "nextjs", logo: nextjs },
+          { label: "nextjs", logo: nextjs, invert: true },
           { label: "react", logo: react },
           { label: "typescript", logo: typescript },
           { label: "bootstrap", logo: bootstrap },
