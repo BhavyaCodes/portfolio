@@ -9,17 +9,11 @@ import TechChips from "components/Projects/TechChips";
 
 import { DarkModeContext } from "context/themeContext";
 
-type AppProps = {
+import { ProjectType } from "./Projects";
+
+interface AppProps extends ProjectType {
   index: number;
-  title: string;
-  description: string[];
-  images?: {
-    webm?: string;
-    mp4?: string;
-    main: string;
-  };
-  stack?: { label: string; logo: string; invert?: boolean }[];
-};
+}
 
 function Project({ index, title, description, images, stack }: AppProps) {
   const darkMode = useContext(DarkModeContext);
@@ -36,9 +30,6 @@ function Project({ index, title, description, images, stack }: AppProps) {
         position: "relative",
         padding: theme.spacing(1),
       },
-      // image: {
-      //   width: "100% !important",
-      // },
     })
   );
   const classes = useStyles();
