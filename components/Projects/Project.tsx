@@ -110,6 +110,7 @@ function Project({
                   height={894}
                   quality={100}
                   layout="responsive"
+                  priority
                 />
                 <Box style={{ textAlign: "center" }}>
                   {images?.webm && (
