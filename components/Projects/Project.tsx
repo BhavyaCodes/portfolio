@@ -90,8 +90,11 @@ function Project({ index, title, description, images, stack }: AppProps) {
                       style={{ width: "100%" }}
                     >
                       <source src={images.video} type="video/webm" />
-                      {/* // <source src="eye-of-the-tiger-video.mp4" type="video/mp4">
-                // <img src="eye-of-the-tiger-fallback.gif" /> */}
+                      <source
+                        src="/project/covid-19/rick.mp4"
+                        type="video/mp4"
+                      />
+                      {/* <img src="eye-of-the-tiger-fallback.gif" /> */}
                     </video>
                   )}
                 </LazyLoad>
