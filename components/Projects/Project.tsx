@@ -37,6 +37,9 @@ function Project({
         position: "relative",
         padding: theme.spacing(1),
       },
+      chip: {
+        borderRadius: "100px",
+      },
     })
   );
   const classes = useStyles();
@@ -60,30 +63,36 @@ function Project({
         <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
           <Grid item md={6} xs={12} className={classes.textSide}>
             <Box>{renderDescription()}</Box>
-            {links.github && (
-              <Button
-                variant="contained"
-                color="primary"
-                href={links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                endIcon={<GitHubIcon />}
-              >
-                Link
-              </Button>
-            )}
-            {links.live && (
-              <Button
-                variant="contained"
-                color="primary"
-                href={links.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                endIcon={<OpenInNewIcon />}
-              >
-                Link
-              </Button>
-            )}
+            <Box>
+              {links.github && (
+                <Button
+                  className={classes.chip}
+                  variant="contained"
+                  color="primary"
+                  href={links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  endIcon={<GitHubIcon />}
+                  size="small"
+                >
+                  Link
+                </Button>
+              )}
+              {links.live && (
+                <Button
+                  className={classes.chip}
+                  variant="contained"
+                  color="primary"
+                  href={links.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  endIcon={<OpenInNewIcon />}
+                  size="small"
+                >
+                  Live link
+                </Button>
+              )}
+            </Box>
             <TechChips
               stack={useMemo(() => {
                 return stack;
