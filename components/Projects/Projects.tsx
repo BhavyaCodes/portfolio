@@ -25,7 +25,6 @@ function Projects() {
         description={["asdadadgergerg", "para 2"]}
         images={{
           main: "/project/dogmash/dogmash.png",
-          loading: "/project/dogmash/loading.png",
         }}
         stack={useMemo(() => {
           return [
@@ -73,10 +72,10 @@ function Projects() {
         index={4}
         title="covid-19 India tracker"
         description={["description here https://www.google.com", "asdfsdf"]}
-        // images={{
-        //   main: "/project/covid-19/gif.gif",
-        //   loading: "/project/covid-19/loading.png",
-        // }}
+        images={{
+          video: "/project/covid-19/covid-3.webm",
+          main: "/project/covid-19/loading.png",
+        }}
         stack={useMemo(() => {
           return [
             { label: "nodejs", logo: nodejs },

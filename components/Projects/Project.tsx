@@ -1,6 +1,7 @@
 import { useMemo, useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
+import LazyLoad from "react-lazyload";
 
 import { Grid, Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
@@ -13,7 +14,7 @@ type AppProps = {
   title: string;
   description: string[];
   images?: {
-    loading?: string;
+    video?: string;
     main: string;
   };
   stack?: { label: string; logo: string; invert?: boolean }[];
@@ -78,6 +79,22 @@ function Project({ index, title, description, images, stack }: AppProps) {
                   quality={100}
                   layout="responsive"
                 />
+                <LazyLoad>
+                  {images?.video && (
+                    <video
+                      autoPlay
+                      loop
+                      playsInline
+                      poster="covid-19 demo video"
+                      muted
+                      style={{ width: "100%" }}
+                    >
+                      <source src={images.video} type="video/webm" />
+                      {/* // <source src="eye-of-the-tiger-video.mp4" type="video/mp4">
+                // <img src="eye-of-the-tiger-fallback.gif" /> */}
+                    </video>
+                  )}
+                </LazyLoad>
               </Box>
             )}
           </Grid>
