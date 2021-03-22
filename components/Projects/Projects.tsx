@@ -73,7 +73,9 @@ function Projects() {
         title="covid-19 India tracker"
         description={["description here https://www.google.com", "asdfsdf"]}
         images={{
-          video: "/project/covid-19/covid-3.webm",
+          webm: "/project/covid-19/covid-3.webm",
+          mp4: "/project/covid-19/rick.mp4",
+          gif: "/project/covid-19/gif.gif",
           main: "/project/covid-19/loading.png",
         }}
         stack={useMemo(() => {

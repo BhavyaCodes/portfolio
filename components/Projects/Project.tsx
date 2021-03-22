@@ -14,7 +14,9 @@ type AppProps = {
   title: string;
   description: string[];
   images?: {
-    video?: string;
+    webm?: string;
+    mp4?: string;
+    gif?: string;
     main: string;
   };
   stack?: { label: string; logo: string; invert?: boolean }[];
@@ -80,7 +82,7 @@ function Project({ index, title, description, images, stack }: AppProps) {
                   layout="responsive"
                 />
                 <LazyLoad>
-                  {images?.video && (
+                  {images && (
                     <video
                       autoPlay
                       loop
@@ -89,12 +91,9 @@ function Project({ index, title, description, images, stack }: AppProps) {
                       muted
                       style={{ width: "100%" }}
                     >
-                      <source src={images.video} type="video/webm" />
-                      <source
-                        src="/project/covid-19/rick.mp4"
-                        type="video/mp4"
-                      />
-                      {/* <img src="eye-of-the-tiger-fallback.gif" /> */}
+                      <source src={images.webm} type="video/webm" />
+                      <source src={images.mp4} type="video/mp4" />
+                      <img src={images.gif} />
                     </video>
                   )}
                 </LazyLoad>
