@@ -1,7 +1,6 @@
 import { useMemo, useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
-import LazyLoad from "react-lazyload";
 
 import { Grid, Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
@@ -10,7 +9,6 @@ import TechChips from "components/Projects/TechChips";
 import { DarkModeContext } from "context/themeContext";
 
 import { ProjectType } from "./Projects";
-
 interface AppProps extends ProjectType {
   index: number;
 }
@@ -71,28 +69,27 @@ function Project({ index, title, description, images, stack }: AppProps) {
                   quality={100}
                   layout="responsive"
                 />
-                <LazyLoad>
-                  <Box style={{ textAlign: "center" }}>
-                    {images?.webm && (
-                      <video
-                        autoPlay
-                        loop
-                        playsInline
-                        poster="/assets/Spinner-3.gif"
-                        muted
-                        style={{
-                          objectFit: "scale-down",
-                          maxWidth: "100%",
-                          marginLeft: "auto",
-                          minHeight: "200px",
-                        }}
-                      >
-                        <source src={images.webm} type="video/webm" />
-                        <source src={images.mp4} type="video/mp4" />
-                      </video>
-                    )}
-                  </Box>
-                </LazyLoad>
+                <Box style={{ textAlign: "center" }}>
+                  {images?.webm && (
+                    <video
+                      autoPlay
+                      loop
+                      playsInline
+                      preload="auto"
+                      poster="/assets/Spinner-3.gif"
+                      muted
+                      style={{
+                        objectFit: "scale-down",
+                        maxWidth: "100%",
+                        marginLeft: "auto",
+                        minHeight: "200px",
+                      }}
+                    >
+                      <source src={images.webm} type="video/webm" />
+                      <source src={images.mp4} type="video/mp4" />
+                    </video>
+                  )}
+                </Box>
               </Box>
             )}
           </Grid>
@@ -103,12 +100,3 @@ function Project({ index, title, description, images, stack }: AppProps) {
 }
 
 export default Project;
-
-// {image && (
-//   <Image
-//     className={classes.image}
-//     src={image}
-//     objectFit="contain"
-//     layout="fill"
-//   />
-// )}
