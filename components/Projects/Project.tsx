@@ -1,5 +1,6 @@
 import { useMemo, useContext } from "react";
 import ReactMarkdown from "react-markdown";
+import Image from "next/image";
 
 import { Grid, Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
@@ -7,25 +8,25 @@ import TechChips from "components/Projects/TechChips";
 
 import { DarkModeContext } from "context/themeContext";
 
-type AppProps = {
+import { ProjectType } from "./Projects";
+interface AppProps extends ProjectType {
   index: number;
-  title: string;
-  description: string[];
-  image?: string;
-  stack?: { label: string; logo: string; invert?: boolean }[];
-};
+}
 
-function Project({ index, title, description, image, stack }: AppProps) {
+function Project({ index, title, description, images, stack }: AppProps) {
   const darkMode = useContext(DarkModeContext);
-  const useStyles = makeStyles((_theme: Theme) =>
+  const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       textSide: {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        padding: theme.spacing(1),
       },
-      image: {
+      imageContainer: {
         width: "100%",
+        position: "relative",
+        padding: theme.spacing(1),
       },
     })
   );
@@ -59,7 +60,38 @@ function Project({ index, title, description, image, stack }: AppProps) {
         </Box>
         <Box clone order={{ xs: 1, md: index % 2 === 0 ? 1 : 2 }}>
           <Grid item md={6} xs={12}>
-            <img className={classes.image} src={image} />
+            {images && (
+              <Box className={classes.imageContainer}>
+                <Image
+                  src={images.main}
+                  width={1903}
+                  height={894}
+                  quality={100}
+                  layout="responsive"
+                />
+                <Box style={{ textAlign: "center" }}>
+                  {images?.webm && (
+                    <video
+                      autoPlay
+                      loop
+                      playsInline
+                      preload="auto"
+                      poster="/assets/Spinner-3.gif"
+                      muted
+                      style={{
+                        objectFit: "scale-down",
+                        maxWidth: "100%",
+                        marginLeft: "auto",
+                        minHeight: "200px",
+                      }}
+                    >
+                      <source src={images.webm} type="video/webm" />
+                      <source src={images.mp4} type="video/mp4" />
+                    </video>
+                  )}
+                </Box>
+              </Box>
+            )}
           </Grid>
         </Box>
       </Grid>

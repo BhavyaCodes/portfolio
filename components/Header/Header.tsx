@@ -3,10 +3,10 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { Toolbar, Grid, Container, IconButton, Link } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-import programmer from "assets/programmer2.svg";
+import programmer from "public/assets/programmer2.svg";
 import { DarkModeContext } from "context/themeContext";
-import lightHeader from "assets/light-header2.svg";
-import darkHeader from "assets/dark-header.svg";
+import lightHeader from "public/assets/light-header2.svg";
+import darkHeader from "public/assets/dark-header.svg";
 import HeaderText from "./HeaderText2";
 
 function Header() {
