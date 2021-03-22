@@ -22,6 +22,7 @@ export type ProjectType = {
     mp4?: string;
     main: string;
   };
+  links: { github?: string; live: string };
   stack?: { label: string; logo: string; invert?: boolean }[];
 };
 interface Projects extends ProjectType {}
@@ -47,6 +48,9 @@ function Projects() {
           { label: "typescript", logo: typescript },
           { label: "bootstrap", logo: bootstrap },
         ],
+        links: {
+          live: "https://dogmash.herokuapp.com/",
+        },
       },
       {
         title: "covid-19 India tracker",
@@ -61,24 +65,32 @@ function Projects() {
           { label: "expressjs", logo: expressjs },
           { label: "aws-s3", logo: s3 },
         ],
+        links: {
+          github:
+            "https://github.com/Juggernaut9/covid-tracker-material-ui-react",
+          live: "https://covid-tracker-beta.vercel.app/",
+        },
       },
     ],
     [darkMode]
   );
 
   const renderProjects = () => {
-    return projects.map(({ title, description, images, stack }, index) => {
-      return (
-        <Project
-          key={index}
-          index={index + 1}
-          title={title}
-          description={description}
-          images={images}
-          stack={stack}
-        />
-      );
-    });
+    return projects.map(
+      ({ title, description, images, stack, links }, index) => {
+        return (
+          <Project
+            key={index}
+            index={index + 1}
+            title={title}
+            description={description}
+            images={images}
+            stack={stack}
+            links={links}
+          />
+        );
+      }
+    );
   };
   return (
     <Container>

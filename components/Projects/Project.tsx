@@ -1,4 +1,4 @@
-import { useMemo, useContext } from "react";
+import { useMemo, useContext, memo } from "react";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
@@ -13,7 +13,14 @@ interface AppProps extends ProjectType {
   index: number;
 }
 
-function Project({ index, title, description, images, stack }: AppProps) {
+function Project({
+  index,
+  title,
+  description,
+  images,
+  stack,
+  links,
+}: AppProps) {
   const darkMode = useContext(DarkModeContext);
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -51,6 +58,8 @@ function Project({ index, title, description, images, stack }: AppProps) {
         <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
           <Grid item md={6} xs={12} className={classes.textSide}>
             <Box>{renderDescription()}</Box>
+            <p>{links.github}</p>
+            <p>{links.live}</p>
             <TechChips
               stack={useMemo(() => {
                 return stack;
@@ -99,4 +108,4 @@ function Project({ index, title, description, images, stack }: AppProps) {
   );
 }
 
-export default Project;
+export default memo(Project);
