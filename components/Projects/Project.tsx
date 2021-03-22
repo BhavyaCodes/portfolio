@@ -16,7 +16,6 @@ type AppProps = {
   images?: {
     webm?: string;
     mp4?: string;
-    gif?: string;
     main: string;
   };
   stack?: { label: string; logo: string; invert?: boolean }[];
