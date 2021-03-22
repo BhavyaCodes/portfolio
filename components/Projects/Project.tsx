@@ -39,6 +39,8 @@ function Project({
       },
       chip: {
         borderRadius: "100px",
+        marginBottom: theme.spacing(2),
+        marginRight: theme.spacing(2),
       },
     })
   );
@@ -89,7 +91,7 @@ function Project({
                   endIcon={<OpenInNewIcon />}
                   size="small"
                 >
-                  Live link
+                  Live project
                 </Button>
               )}
             </Box>
