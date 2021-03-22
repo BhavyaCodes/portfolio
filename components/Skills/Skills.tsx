@@ -15,26 +15,26 @@ import { DarkModeContext } from "context/themeContext";
 
 import Icon from "./Icon";
 
-import githubDots from "assets/github-dots.svg";
+import githubDots from "public/assets/github-dots.svg";
 
-import git from "assets/icons/git.svg";
-import github from "assets/icons/github.svg";
-import javascript from "assets/icons/javascript.svg";
-import materialui from "assets/icons/materialui.svg";
-import mongodb from "assets/icons/mongodb.svg";
-import nextjs from "assets/icons/nextjs.svg";
-import nodejs from "assets/icons/nodejs.svg";
-import postgresql from "assets/icons/postgresql.svg";
-import react from "assets/icons/react.png";
-import redux from "assets/icons/redux.svg";
-import sass from "assets/icons/sass.svg";
-import typescript from "assets/icons/typescript.svg";
-import expressjs from "assets/icons/expressjs.png";
-import bootstrap from "assets/icons/bootstrap.svg";
-import bash from "assets/icons/bash.svg";
-import s3 from "assets/icons/s3.png";
-import socketio from "assets/icons/socketio.svg";
-import vercel from "assets/icons/vercel.svg";
+import git from "public/assets/icons/git.svg";
+import github from "public/assets/icons/github.svg";
+import javascript from "public/assets/icons/javascript.svg";
+import materialui from "public/assets/icons/materialui.svg";
+import mongodb from "public/assets/icons/mongodb.svg";
+import nextjs from "public/assets/icons/nextjs.svg";
+import nodejs from "public/assets/icons/nodejs.svg";
+import postgresql from "public/assets/icons/postgresql.svg";
+import react from "public/assets/icons/react.png";
+import redux from "public/assets/icons/redux.svg";
+import sass from "public/assets/icons/sass.svg";
+import typescript from "public/assets/icons/typescript.svg";
+import expressjs from "public/assets/icons/expressjs.png";
+import bootstrap from "public/assets/icons/bootstrap.svg";
+import bash from "public/assets/icons/bash.svg";
+import s3 from "public/assets/icons/s3.png";
+import socketio from "public/assets/icons/socketio.svg";
+import vercel from "public/assets/icons/vercel.svg";
 
 type iconsArray = {
   title: string;

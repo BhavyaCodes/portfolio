@@ -12,11 +12,14 @@ type AppProps = {
   index: number;
   title: string;
   description: string[];
-  image?: string;
+  images?: {
+    loading?: string;
+    main: string;
+  };
   stack?: { label: string; logo: string; invert?: boolean }[];
 };
 
-function Project({ index, title, description, image, stack }: AppProps) {
+function Project({ index, title, description, images, stack }: AppProps) {
   const darkMode = useContext(DarkModeContext);
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -66,11 +69,10 @@ function Project({ index, title, description, image, stack }: AppProps) {
         </Box>
         <Box clone order={{ xs: 1, md: index % 2 === 0 ? 1 : 2 }}>
           <Grid item md={6} xs={12}>
-            {/* <img className={classes.image} src={image} /> */}
-            {image && (
+            {images && (
               <Box className={classes.imageContainer}>
                 <Image
-                  src={image}
+                  src={images.main}
                   width={1903}
                   height={894}
                   quality={100}

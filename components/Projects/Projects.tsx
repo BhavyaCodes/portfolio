@@ -4,15 +4,15 @@ import Project from "./Project";
 
 import { DarkModeContext } from "context/themeContext";
 
-import materialui from "assets/icons/materialui.svg";
-import mongodb from "assets/icons/mongodb.svg";
-import nextjs from "assets/icons/nextjs.svg";
-import nodejs from "assets/icons/nodejs.svg";
-import react from "assets/icons/react.png";
-import typescript from "assets/icons/typescript.svg";
-import expressjs from "assets/icons/expressjs.png";
-import bootstrap from "assets/icons/bootstrap.svg";
-import s3 from "assets/icons/s3.png";
+import materialui from "public/assets/icons/materialui.svg";
+import mongodb from "public/assets/icons/mongodb.svg";
+import nextjs from "public/assets/icons/nextjs.svg";
+import nodejs from "public/assets/icons/nodejs.svg";
+import react from "public/assets/icons/react.png";
+import typescript from "public/assets/icons/typescript.svg";
+import expressjs from "public/assets/icons/expressjs.png";
+import bootstrap from "public/assets/icons/bootstrap.svg";
+import s3 from "public/assets/icons/s3.png";
 
 function Projects() {
   const darkMode = useContext(DarkModeContext);
@@ -23,7 +23,10 @@ function Projects() {
         index={1}
         title="Dogmash"
         description={["asdadadgergerg", "para 2"]}
-        image="/project/dogmash/dogmash.png"
+        images={{
+          main: "/project/dogmash/dogmash.png",
+          loading: "/project/dogmash/loading.png",
+        }}
         stack={useMemo(() => {
           return [
             { label: "nodejs", logo: nodejs },
@@ -38,7 +41,7 @@ function Projects() {
           ];
         }, [darkMode])}
       />
-      <Project
+      {/* <Project
         index={2}
         title="Get It Done - Goal tracker App"
         image="/project/get-it-done/get-it-done.png"
@@ -50,8 +53,8 @@ function Projects() {
             { label: "aws-s3", logo: s3 },
           ];
         }, [])}
-      />
-      <Project
+      /> */}
+      {/* <Project
         index={3}
         title="title"
         description={[
@@ -65,11 +68,15 @@ function Projects() {
             { label: "aws-s3", logo: s3 },
           ];
         }, [])}
-      />
+      /> */}
       <Project
         index={4}
-        title="asasdf"
+        title="covid-19 India tracker"
         description={["description here https://www.google.com", "asdfsdf"]}
+        // images={{
+        //   main: "/project/covid-19/gif.gif",
+        //   loading: "/project/covid-19/loading.png",
+        // }}
         stack={useMemo(() => {
           return [
             { label: "nodejs", logo: nodejs },
