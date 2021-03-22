@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import LazyLoad from "react-lazyload";
 
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { Grid, Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import TechChips from "components/Projects/TechChips";
@@ -82,20 +83,27 @@ function Project({ index, title, description, images, stack }: AppProps) {
                   layout="responsive"
                 />
                 <LazyLoad>
-                  {images && (
-                    <video
-                      autoPlay
-                      loop
-                      playsInline
-                      poster="covid-19 demo video"
-                      muted
-                      style={{ width: "100%" }}
-                    >
-                      <source src={images.webm} type="video/webm" />
-                      <source src={images.mp4} type="video/mp4" />
-                      <img src={images.gif} />
-                    </video>
-                  )}
+                  <Box style={{ textAlign: "center" }}>
+                    {images?.webm && (
+                      <video
+                        autoPlay
+                        loop
+                        playsInline
+                        poster="/assets/Spinner-3.gif"
+                        muted
+                        style={{
+                          objectFit: "scale-down",
+                          maxWidth: "100%",
+                          marginLeft: "auto",
+                          minHeight: "200px",
+                        }}
+                      >
+                        <source src={images.webm} type="video/webm" />
+                        <source src={images.mp4} type="video/mp4" />
+                        <img src={images.gif} />
+                      </video>
+                    )}
+                  </Box>
                 </LazyLoad>
               </Box>
             )}
