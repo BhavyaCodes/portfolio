@@ -99,7 +99,6 @@ function Project({ index, title, description, images, stack }: AppProps) {
                       >
                         <source src={images.webm} type="video/webm" />
                         <source src={images.mp4} type="video/mp4" />
-                        <img src={images.gif} />
                       </video>
                     )}
                   </Box>

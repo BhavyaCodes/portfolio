@@ -75,7 +75,6 @@ function Projects() {
         images={{
           webm: "/project/covid-19/covid-3.webm",
           mp4: "/project/covid-19/rick.mp4",
-          gif: "/project/covid-19/gif.gif",
           main: "/project/covid-19/loading.png",
         }}
         stack={useMemo(() => {
