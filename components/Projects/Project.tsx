@@ -2,9 +2,11 @@ import { useMemo, useContext, memo } from "react";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
-import { Grid, Box, Typography } from "@material-ui/core";
+import { Grid, Box, Typography, Button } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import TechChips from "components/Projects/TechChips";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 
 import { DarkModeContext } from "context/themeContext";
 
@@ -58,8 +60,30 @@ function Project({
         <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
           <Grid item md={6} xs={12} className={classes.textSide}>
             <Box>{renderDescription()}</Box>
-            <p>{links.github}</p>
-            <p>{links.live}</p>
+            {links.github && (
+              <Button
+                variant="contained"
+                color="primary"
+                href={links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                endIcon={<GitHubIcon />}
+              >
+                Link
+              </Button>
+            )}
+            {links.live && (
+              <Button
+                variant="contained"
+                color="primary"
+                href={links.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                endIcon={<OpenInNewIcon />}
+              >
+                Link
+              </Button>
+            )}
             <TechChips
               stack={useMemo(() => {
                 return stack;
