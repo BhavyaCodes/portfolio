@@ -26,6 +26,11 @@ function Project({
   const darkMode = useContext(DarkModeContext);
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
+      root: {
+        "& strong": {
+          color: darkMode ? "#77f372" : "#0d9d74",
+        },
+      },
       textSide: {
         display: "flex",
         flexDirection: "column",
@@ -57,7 +62,7 @@ function Project({
   };
 
   return (
-    <>
+    <div className={classes.root}>
       <Typography variant="h2" align="center">
         {title}
       </Typography>
@@ -77,7 +82,7 @@ function Project({
                   endIcon={<GitHubIcon />}
                   size="small"
                 >
-                  Link
+                  Source code
                 </Button>
               )}
               {links.live && (
@@ -140,7 +145,7 @@ function Project({
           </Grid>
         </Box>
       </Grid>
-    </>
+    </div>
   );
 }
 
