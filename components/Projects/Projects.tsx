@@ -1,5 +1,5 @@
 import { useContext, useMemo } from "react";
-import { Typography, Container } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import Project from "./Project";
 
 import { DarkModeContext } from "context/themeContext";
@@ -94,10 +94,10 @@ function Projects() {
     );
   };
   return (
-    <Container>
+    <>
       <Typography variant="h2">Projects I have worked on</Typography>
       {renderProjects()}
-    </Container>
+    </>
   );
 }
 
