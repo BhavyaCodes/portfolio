@@ -21,7 +21,7 @@ export type ProjectType = {
   images?: {
     webm?: string;
     mp4?: string;
-    main: string;
+    main: { link: string; height: number; width: number };
   };
   links: { github?: string; live: string };
   stack?: { label: string; logo: string; invert?: boolean }[];
@@ -41,7 +41,11 @@ function Projects() {
           "This project also has **rate limiting** to avoid spam and uses **CSRF token** protection.",
         ],
         images: {
-          main: "/project/dogmash/dogmash.png",
+          main: {
+            link: "/project/dogmash/dogmash.png",
+            width: 1000,
+            height: 470,
+          },
         },
         stack: [
           { label: "nodejs", logo: nodejs },
@@ -66,7 +70,12 @@ function Projects() {
         images: {
           webm: "/project/covid-19/covid-3.webm",
           mp4: "/project/covid-19/rick.mp4",
-          main: "/project/covid-19/loading.png",
+          main: {
+            link: "/project/covid-19/covid.png",
+            width: 1000,
+            height: 466,
+          },
+          // main: "/project/covid-19/covid.png",
         },
         stack: [
           { label: "nodejs", logo: nodejs },

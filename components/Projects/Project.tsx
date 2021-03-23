@@ -32,6 +32,9 @@ function Project({
         "& strong": {
           color: darkMode ? "#77f372" : "#0d9d74",
         },
+        "& p": {
+          marginBottom: theme.spacing(2),
+        },
         backgroundColor: odd ? (darkMode ? "#070422" : "#ddf6ff") : "inherit",
         display: "block",
       },
@@ -132,14 +135,16 @@ function Project({
             <Grid item md={6} xs={12}>
               {images && (
                 <Box className={classes.imageContainer}>
-                  <Image
-                    src={images.main}
-                    width={1903}
-                    height={894}
-                    quality={100}
-                    layout="responsive"
-                    priority
-                  />
+                  <Box mb={2}>
+                    <Image
+                      src={images.main.link}
+                      width={images.main.width}
+                      height={images.main.height}
+                      quality={100}
+                      layout="intrinsic"
+                      priority
+                    />
+                  </Box>
                   <Box style={{ textAlign: "center" }}>
                     {images?.webm && (
                       <video
