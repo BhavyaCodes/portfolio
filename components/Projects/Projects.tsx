@@ -13,6 +13,7 @@ import nodejs from "public/assets/icons/nodejs.svg";
 import expressjs from "public/assets/icons/expressjs.png";
 import bootstrap from "public/assets/icons/bootstrap.svg";
 import s3 from "public/assets/icons/s3.png";
+import chartjs from "public/assets/icons/chartjs.svg";
 
 export type ProjectType = {
   title: string;
@@ -55,7 +56,13 @@ function Projects() {
       },
       {
         title: "covid-19 India tracker",
-        description: ["asdfsadf", "sdfgsdgdfg"],
+        description: [
+          "covid-19 tracker for India made using **react**",
+          "This web app can be used to track current and historical data of India and its states and union territories. The web app shows a vector **map of India**, user may hover over any state and will be able to see the total confirmed, recovered, active and deceased for that state",
+          "There is also a state-wise table of covid data which can be sorted by any column",
+          "The app also features historical data using **charts** made using **[chartjs](https://www.chartjs.com)**, user may view data of any state and also choose the time frame and option between **daily** and **cumulative** data",
+          "The application is styled using **material-ui** and is fully responsive for all screen sizes and has a **dark mode** toggle. ",
+        ],
         images: {
           webm: "/project/covid-19/covid-3.webm",
           mp4: "/project/covid-19/rick.mp4",
@@ -65,6 +72,7 @@ function Projects() {
           { label: "nodejs", logo: nodejs },
           { label: "expressjs", logo: expressjs },
           { label: "aws-s3", logo: s3 },
+          { label: "chartjs", logo: chartjs },
         ],
         links: {
           github:
