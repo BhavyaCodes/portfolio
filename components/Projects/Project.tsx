@@ -1,10 +1,12 @@
-import { useMemo, useContext } from "react";
+import { useMemo, useContext, memo } from "react";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
-import { Grid, Box, Typography } from "@material-ui/core";
+import { Grid, Box, Typography, Button } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import TechChips from "components/Projects/TechChips";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 
 import { DarkModeContext } from "context/themeContext";
 
@@ -13,10 +15,22 @@ interface AppProps extends ProjectType {
   index: number;
 }
 
-function Project({ index, title, description, images, stack }: AppProps) {
+function Project({
+  index,
+  title,
+  description,
+  images,
+  stack,
+  links,
+}: AppProps) {
   const darkMode = useContext(DarkModeContext);
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
+      root: {
+        "& strong": {
+          color: darkMode ? "#77f372" : "#0d9d74",
+        },
+      },
       textSide: {
         display: "flex",
         flexDirection: "column",
@@ -27,6 +41,11 @@ function Project({ index, title, description, images, stack }: AppProps) {
         width: "100%",
         position: "relative",
         padding: theme.spacing(1),
+      },
+      chip: {
+        borderRadius: "100px",
+        marginBottom: theme.spacing(2),
+        marginRight: theme.spacing(2),
       },
     })
   );
@@ -43,7 +62,7 @@ function Project({ index, title, description, images, stack }: AppProps) {
   };
 
   return (
-    <>
+    <div className={classes.root}>
       <Typography variant="h2" align="center">
         {title}
       </Typography>
@@ -51,6 +70,36 @@ function Project({ index, title, description, images, stack }: AppProps) {
         <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
           <Grid item md={6} xs={12} className={classes.textSide}>
             <Box>{renderDescription()}</Box>
+            <Box>
+              {links.github && (
+                <Button
+                  className={classes.chip}
+                  variant="contained"
+                  color="primary"
+                  href={links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  endIcon={<GitHubIcon />}
+                  size="small"
+                >
+                  Source code
+                </Button>
+              )}
+              {links.live && (
+                <Button
+                  className={classes.chip}
+                  variant="contained"
+                  color="primary"
+                  href={links.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  endIcon={<OpenInNewIcon />}
+                  size="small"
+                >
+                  Live project
+                </Button>
+              )}
+            </Box>
             <TechChips
               stack={useMemo(() => {
                 return stack;
@@ -68,6 +117,7 @@ function Project({ index, title, description, images, stack }: AppProps) {
                   height={894}
                   quality={100}
                   layout="responsive"
+                  priority
                 />
                 <Box style={{ textAlign: "center" }}>
                   {images?.webm && (
@@ -95,8 +145,8 @@ function Project({ index, title, description, images, stack }: AppProps) {
           </Grid>
         </Box>
       </Grid>
-    </>
+    </div>
   );
 }
 
-export default Project;
+export default memo(Project);
