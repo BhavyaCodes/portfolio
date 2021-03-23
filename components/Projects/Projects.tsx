@@ -25,7 +25,7 @@ const logos = {
   mongodb: "/assets/icons/mongodb.svg",
   nextjs: "/assets/icons/nextjs.svg",
   nodejs: "/assets/icons/nodejs.svg",
-  s3: "/assets/icons/s3.svg",
+  s3: "/assets/icons/s3.png",
   socketio: "/assets/icons/socketio.svg",
   typescript: "/assets/icons/typescript.svg",
   vercel: "/assets/icons/vercel.svg",
@@ -94,11 +94,9 @@ function Projects() {
           },
         },
         stack: [
-          { label: "nodejs", logo: logos.nodejs },
-          { label: "expressjs", logo: logos.expressjs },
-          { label: "aws-s3", logo: logos.s3 },
           { label: "chartjs", logo: logos.chartjs },
           { label: "reactjs", logo: logos.react },
+          { label: "material-ui", logo: logos.materialui },
         ],
         links: {
           github:
