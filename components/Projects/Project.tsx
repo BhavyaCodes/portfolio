@@ -11,6 +11,7 @@ import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import { DarkModeContext } from "context/themeContext";
 
 import { ProjectType } from "./Projects";
+import Wave from "./Wave";
 interface AppProps extends ProjectType {
   index: number;
 }
@@ -23,6 +24,7 @@ function Project({
   stack,
   links,
 }: AppProps) {
+  const odd = index % 2 === 1 ? true : false;
   const darkMode = useContext(DarkModeContext);
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -30,7 +32,7 @@ function Project({
         "& strong": {
           color: darkMode ? "#77f372" : "#0d9d74",
         },
-        backgroundColor: "#070422",
+        backgroundColor: odd ? (darkMode ? "#070422" : "#ddf6ff") : "inherit",
         display: "block",
       },
       wave: {
@@ -39,6 +41,7 @@ function Project({
       },
       container: {
         marginTop: theme.spacing(-2),
+        marginBottom: theme.spacing(-2),
       },
       textSide: {
         display: "flex",
@@ -70,97 +73,100 @@ function Project({
     ));
   };
 
-  return (
-    <>
-      <img src="/assets/wave.svg" className={classes.wave} />
-      <div className={classes.root}>
-        <Container className={classes.container}>
-          <Typography variant="h2" align="center">
-            {title}
-          </Typography>
-          <Grid container>
-            <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
-              <Grid item md={6} xs={12} className={classes.textSide}>
-                <Box>{renderDescription()}</Box>
-                <Box>
-                  {links.github && (
-                    <Button
-                      className={classes.chip}
-                      variant="contained"
-                      color="primary"
-                      href={links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      endIcon={<GitHubIcon />}
-                      size="small"
-                    >
-                      Source code
-                    </Button>
-                  )}
-                  {links.live && (
-                    <Button
-                      className={classes.chip}
-                      variant="contained"
-                      color="primary"
-                      href={links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      endIcon={<OpenInNewIcon />}
-                      size="small"
-                    >
-                      Live project
-                    </Button>
-                  )}
-                </Box>
-                <TechChips
-                  stack={useMemo(() => {
-                    return stack;
-                  }, [darkMode])}
-                />
-              </Grid>
-            </Box>
-            <Box clone order={{ xs: 1, md: index % 2 === 0 ? 1 : 2 }}>
-              <Grid item md={6} xs={12}>
-                {images && (
-                  <Box className={classes.imageContainer}>
-                    <Image
-                      src={images.main}
-                      width={1903}
-                      height={894}
-                      quality={100}
-                      layout="responsive"
-                      priority
-                    />
-                    <Box style={{ textAlign: "center" }}>
-                      {images?.webm && (
-                        <video
-                          autoPlay
-                          loop
-                          playsInline
-                          preload="auto"
-                          poster="/assets/Spinner-3.gif"
-                          muted
-                          style={{
-                            objectFit: "scale-down",
-                            maxWidth: "100%",
-                            marginLeft: "auto",
-                            minHeight: "200px",
-                          }}
-                        >
-                          <source src={images.webm} type="video/webm" />
-                          <source src={images.mp4} type="video/mp4" />
-                        </video>
-                      )}
-                    </Box>
-                  </Box>
+  const renderProject = () => (
+    <div className={classes.root}>
+      <Container className={classes.container}>
+        <Typography variant="h2" align="center">
+          {title}
+        </Typography>
+        <Grid container>
+          <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
+            <Grid item md={6} xs={12} className={classes.textSide}>
+              <Box>{renderDescription()}</Box>
+              <Box>
+                {links.github && (
+                  <Button
+                    className={classes.chip}
+                    variant="contained"
+                    color="primary"
+                    href={links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    endIcon={<GitHubIcon />}
+                    size="small"
+                  >
+                    Source code
+                  </Button>
                 )}
-              </Grid>
-            </Box>
-          </Grid>
-        </Container>
-      </div>
-    </>
+                {links.live && (
+                  <Button
+                    className={classes.chip}
+                    variant="contained"
+                    color="primary"
+                    href={links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    endIcon={<OpenInNewIcon />}
+                    size="small"
+                  >
+                    Live project
+                  </Button>
+                )}
+              </Box>
+              <TechChips
+                stack={useMemo(() => {
+                  return stack;
+                }, [darkMode])}
+              />
+            </Grid>
+          </Box>
+          <Box clone order={{ xs: 1, md: index % 2 === 0 ? 1 : 2 }}>
+            <Grid item md={6} xs={12}>
+              {images && (
+                <Box className={classes.imageContainer}>
+                  <Image
+                    src={images.main}
+                    width={1903}
+                    height={894}
+                    quality={100}
+                    layout="responsive"
+                    priority
+                  />
+                  <Box style={{ textAlign: "center" }}>
+                    {images?.webm && (
+                      <video
+                        autoPlay
+                        loop
+                        playsInline
+                        preload="auto"
+                        poster="/assets/Spinner-3.gif"
+                        muted
+                        style={{
+                          objectFit: "scale-down",
+                          maxWidth: "100%",
+                          marginLeft: "auto",
+                          minHeight: "200px",
+                        }}
+                      >
+                        <source src={images.webm} type="video/webm" />
+                        <source src={images.mp4} type="video/mp4" />
+                      </video>
+                    )}
+                  </Box>
+                </Box>
+              )}
+            </Grid>
+          </Box>
+        </Grid>
+      </Container>
+    </div>
   );
+  if (odd) {
+    return (
+      <Wave color={darkMode ? "#070422" : "#ddf6ff"}>{renderProject()}</Wave>
+    );
+  }
+  return renderProject();
 }
 
-export default memo(Project);
+export default Project;
