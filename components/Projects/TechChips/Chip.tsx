@@ -40,7 +40,6 @@ function Chip({ label, logo, invert }: AppProps) {
         position: "relative",
         opacity: 0,
         whiteSpace: "nowrap",
-        position: "relative",
         zIndex: 10,
       },
     })
