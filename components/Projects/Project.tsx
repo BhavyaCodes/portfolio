@@ -133,8 +133,8 @@ function Project({
           </Box>
           <Box clone order={{ xs: 1, md: index % 2 === 0 ? 1 : 2 }}>
             <Grid item md={6} xs={12}>
-              {images && (
-                <Box className={classes.imageContainer}>
+              <Box className={classes.imageContainer}>
+                {images.main && (
                   <Box mb={2}>
                     <Image
                       src={images.main.link}
@@ -145,29 +145,30 @@ function Project({
                       priority
                     />
                   </Box>
-                  <Box style={{ textAlign: "center" }}>
-                    {images?.webm && (
-                      <video
-                        autoPlay
-                        loop
-                        playsInline
-                        preload="auto"
-                        poster="/assets/Spinner-3.gif"
-                        muted
-                        style={{
-                          objectFit: "scale-down",
-                          maxWidth: "100%",
-                          marginLeft: "auto",
-                          minHeight: "200px",
-                        }}
-                      >
-                        <source src={images.webm} type="video/webm" />
-                        <source src={images.mp4} type="video/mp4" />
-                      </video>
-                    )}
-                  </Box>
+                )}
+                <Box style={{ textAlign: "center" }}>
+                  {images.webm && (
+                    <video
+                      autoPlay
+                      loop
+                      playsInline
+                      preload="auto"
+                      poster={images.poster || "/assets/Spinner-3.gif"}
+                      muted
+                      controls
+                      style={{
+                        objectFit: "scale-down",
+                        maxWidth: "100%",
+                        marginLeft: "auto",
+                        minHeight: "200px",
+                      }}
+                    >
+                      <source src={images.webm} type="video/webm" />
+                      <source src={images.mp4} type="video/mp4" />
+                    </video>
+                  )}
                 </Box>
-              )}
+              </Box>
             </Grid>
           </Box>
         </Grid>

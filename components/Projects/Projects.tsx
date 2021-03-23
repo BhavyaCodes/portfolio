@@ -8,7 +8,7 @@ import { DarkModeContext } from "context/themeContext";
 import mongodb from "public/assets/icons/mongodb.svg";
 // import nextjs from "public/assets/icons/nextjs.svg";
 import nodejs from "public/assets/icons/nodejs.svg";
-// import react from "public/assets/icons/react.png";
+import react from "public/assets/icons/react.png";
 // import typescript from "public/assets/icons/typescript.svg";
 import expressjs from "public/assets/icons/expressjs.png";
 import bootstrap from "public/assets/icons/bootstrap.svg";
@@ -18,10 +18,11 @@ import chartjs from "public/assets/icons/chartjs.svg";
 export type ProjectType = {
   title: string;
   description: string[];
-  images?: {
+  images: {
     webm?: string;
     mp4?: string;
-    main: { link: string; height: number; width: number };
+    main?: { link: string; height: number; width: number };
+    poster?: string;
   };
   links: { github?: string; live: string };
   stack?: { label: string; logo: string; invert?: boolean }[];
@@ -82,11 +83,29 @@ function Projects() {
           { label: "expressjs", logo: expressjs },
           { label: "aws-s3", logo: s3 },
           { label: "chartjs", logo: chartjs },
+          { label: "reactjs", logo: react },
         ],
         links: {
           github:
             "https://github.com/Juggernaut9/covid-tracker-material-ui-react",
           live: "https://covid-tracker-beta.vercel.app/",
+        },
+      },
+      {
+        title: "Connect-4 online multiplayer",
+        description: ["asdfsdaf", "sdfsdfsdfd"],
+        stack: [
+          { label: "nodejs", logo: nodejs },
+          { label: "reactjs", logo: react },
+        ],
+        links: {
+          github: "https://github.com/Juggernaut9/connect-4-online-multiplayer",
+          live: "https://konnect-4.vercel.app/",
+        },
+        images: {
+          poster: "/project/connect-4/poster.png",
+          mp4: "/project/connect-4/c4mp4.mp4",
+          webm: "/project/connect-4/c4webm.webm",
         },
       },
     ],
