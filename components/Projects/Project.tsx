@@ -49,6 +49,12 @@ function Project({
         justifyContent: "space-between",
         padding: theme.spacing(1),
       },
+      body: {
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      },
       imageContainer: {
         width: "100%",
         position: "relative",
@@ -57,7 +63,7 @@ function Project({
       chip: {
         borderRadius: "100px",
         marginBottom: theme.spacing(2),
-        marginRight: theme.spacing(2),
+        marginRight: theme.spacing(1),
       },
     })
   );
@@ -82,36 +88,38 @@ function Project({
         <Grid container>
           <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
             <Grid item md={6} xs={12} className={classes.textSide}>
-              <Box>{renderDescription()}</Box>
-              <Box>
-                {links.github && (
-                  <Button
-                    className={classes.chip}
-                    variant="contained"
-                    color="primary"
-                    href={links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    endIcon={<GitHubIcon />}
-                    size="small"
-                  >
-                    Source code
-                  </Button>
-                )}
-                {links.live && (
-                  <Button
-                    className={classes.chip}
-                    variant="contained"
-                    color="primary"
-                    href={links.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    endIcon={<OpenInNewIcon />}
-                    size="small"
-                  >
-                    Live project
-                  </Button>
-                )}
+              <Box className={classes.body}>
+                <Box>{renderDescription()}</Box>
+                <Box>
+                  {links.github && (
+                    <Button
+                      className={classes.chip}
+                      variant="contained"
+                      color="primary"
+                      href={links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      endIcon={<GitHubIcon />}
+                      size="small"
+                    >
+                      Source code
+                    </Button>
+                  )}
+                  {links.live && (
+                    <Button
+                      className={classes.chip}
+                      variant="contained"
+                      color="primary"
+                      href={links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      endIcon={<OpenInNewIcon />}
+                      size="small"
+                    >
+                      Live project
+                    </Button>
+                  )}
+                </Box>
               </Box>
               <TechChips
                 stack={useMemo(() => {
