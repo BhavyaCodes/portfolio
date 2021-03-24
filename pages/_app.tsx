@@ -4,7 +4,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@material-ui/core/styles";
-// import CssBaseline from "@material-ui/core/CssBaseline";
 
 import { createMuiTheme } from "@material-ui/core/styles";
 import {
@@ -23,13 +22,15 @@ import {
   ListItemText,
   Divider,
 } from "@material-ui/core";
-
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import CodeIcon from "@material-ui/icons/Code";
 import ForumIcon from "@material-ui/icons/Forum";
+import BuildIcon from "@material-ui/icons/Build";
+
 import { DarkModeProvider, DarkModeContext } from "../context/themeContext";
 import DarkModeIcon from "../components/DarkModeIcon";
 import "Layout.css";
@@ -147,6 +148,14 @@ export function MyApp({ Component, pageProps }: AppProps) {
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" />
+          </ListItem>
+        </Link>
+        <Link href="/#skills" passHref>
+          <ListItem button component="a" href="/#skills">
+            <ListItemIcon>
+              <BuildIcon />
+            </ListItemIcon>
+            <ListItemText primary="My Toolbelt" />
           </ListItem>
         </Link>
         <Link href="/#projects" passHref>
