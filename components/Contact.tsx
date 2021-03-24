@@ -17,19 +17,24 @@ import SendIcon from "@material-ui/icons/Send";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 function Contact() {
-  const useStyles = makeStyles((_theme: Theme) =>
+  const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       left: {
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        // justifyContent: "center",
         alignItems: "center",
+      },
+      leftContainer: {
+        flexGrow: 1,
       },
       iconsGrid: {
         flexGrow: 1,
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-around",
+        paddingTop: theme.spacing(5),
+        paddingBottom: theme.spacing(5),
       },
       socialItem: {
         display: "flex",
@@ -53,7 +58,7 @@ function Contact() {
           <Typography variant="h3" align="center">
             Connect with me
           </Typography>
-          <Grid container>
+          <Grid container className={classes.leftContainer}>
             <Grid item md={6} sm={12} className={classes.iconsGrid}>
               <Box className={classes.socialItem}>
                 <Link
