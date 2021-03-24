@@ -135,17 +135,15 @@ function Project({
             <Grid item md={6} xs={12}>
               <Box className={classes.imageContainer}>
                 {images.main && (
-                  <Box mb={2}>
-                    <Image
-                      src={images.main.link}
-                      width={images.main.width}
-                      height={images.main.height}
-                      quality={75}
-                      priority
-                      sizes="(min-width: 960px) 40vw, 90vw"
-                      layout="responsive"
-                    />
-                  </Box>
+                  <Image
+                    src={images.main.link}
+                    width={images.main.width}
+                    height={images.main.height}
+                    quality={75}
+                    priority
+                    sizes="(max-width: 960px) 90vw, 40vw"
+                    layout="responsive"
+                  />
                 )}
                 <Box style={{ textAlign: "center" }}>
                   {images.webm && (
