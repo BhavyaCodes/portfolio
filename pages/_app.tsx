@@ -22,17 +22,13 @@ import {
   ListItemText,
   Divider,
 } from "@material-ui/core";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-// import Toolbar from "@material-ui/core/Toolbar";
-// import Typography from "@material-ui/core/Typography";
+
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-// import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-// import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import MenuIcon from "@material-ui/icons/Menu";
-// import Zoom from "@material-ui/core/Zoom";
-
+import HomeIcon from "@material-ui/icons/Home";
+import CodeIcon from "@material-ui/icons/Code";
+import ForumIcon from "@material-ui/icons/Forum";
 import { DarkModeProvider, DarkModeContext } from "../context/themeContext";
 import DarkModeIcon from "../components/DarkModeIcon";
 import "Layout.css";
@@ -95,6 +91,9 @@ export function MyApp({ Component, pageProps }: AppProps) {
         alignItems: "center",
         justifyContent: "center",
       },
+      drawer: {
+        width: "240px",
+      },
     })
   );
   const classes = useStyles();
@@ -134,6 +133,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
       // className={clsx(classes.list, {
       //   [classes.fullList]: anchor === "top" || anchor === "bottom",
       // })}
+      className={classes.drawer}
       role="presentation"
       onClick={() => {
         setDrawerOpen(false);
@@ -142,7 +142,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
         setDrawerOpen(false);
       }}
     >
-      <List>
+      {/* <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
@@ -151,18 +151,28 @@ export function MyApp({ Component, pageProps }: AppProps) {
             <ListItemText primary={text} />
           </ListItem>
         ))}
+      </List> */}
+      <List>
+        <ListItem button>
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <CodeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Projects" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <ForumIcon />
+          </ListItemIcon>
+          <ListItemText primary="Contact" />
+        </ListItem>
       </List>
       <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
     </div>
   );
 
