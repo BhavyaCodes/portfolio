@@ -1,19 +1,30 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+// import CssBaseline from "@material-ui/core/CssBaseline";
 
 import { createMuiTheme } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  CssBaseline,
+  useScrollTrigger,
+  Fab,
+  Zoom,
+  IconButton,
+  Drawer,
+} from "@material-ui/core";
+// import Toolbar from "@material-ui/core/Toolbar";
+// import Typography from "@material-ui/core/Typography";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import Fab from "@material-ui/core/Fab";
+// import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+// import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import Zoom from "@material-ui/core/Zoom";
+import MenuIcon from "@material-ui/icons/Menu";
+// import Zoom from "@material-ui/core/Zoom";
 
 import { DarkModeProvider, DarkModeContext } from "../context/themeContext";
 import DarkModeIcon from "../components/DarkModeIcon";
@@ -67,11 +78,15 @@ export default function MyAppWithTheme(props: AppProps) {
 }
 
 export function MyApp({ Component, pageProps }: AppProps) {
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       navbarRight: {
         marginLeft: "auto",
         marginRight: theme.spacing(0),
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       },
     })
   );
@@ -103,6 +118,10 @@ export function MyApp({ Component, pageProps }: AppProps) {
     }
   }, []);
 
+  const handleMenuButton = () => {
+    setDrawerOpen(true);
+  };
+
   return (
     <>
       <Head>
@@ -119,9 +138,21 @@ export function MyApp({ Component, pageProps }: AppProps) {
             <Typography variant="h6">Scroll to see button</Typography>
             <div className={classes.navbarRight}>
               <DarkModeIcon />
+              <IconButton color="inherit" onClick={handleMenuButton}>
+                <MenuIcon />
+              </IconButton>
             </div>
           </Toolbar>
         </AppBar>
+        <Drawer
+          open={drawerOpen}
+          anchor="right"
+          onClose={() => {
+            setDrawerOpen(false);
+          }}
+        >
+          asdfasdf
+        </Drawer>
         <Component {...pageProps} />
         <ScrollTop>
           <Fab color="secondary" size="medium" aria-label="scroll back to top">
