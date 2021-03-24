@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState, ReactNode } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
+import Link from "next/link";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@material-ui/core/styles";
 // import CssBaseline from "@material-ui/core/CssBaseline";
@@ -130,9 +131,6 @@ export function MyApp({ Component, pageProps }: AppProps) {
 
   const renderDrawer: () => ReactNode = () => (
     <div
-      // className={clsx(classes.list, {
-      //   [classes.fullList]: anchor === "top" || anchor === "bottom",
-      // })}
       className={classes.drawer}
       role="presentation"
       onClick={() => {
@@ -142,35 +140,31 @@ export function MyApp({ Component, pageProps }: AppProps) {
         setDrawerOpen(false);
       }}
     >
-      {/* <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List> */}
       <List>
-        <ListItem button>
-          <ListItemIcon>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText primary="Home" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <CodeIcon />
-          </ListItemIcon>
-          <ListItemText primary="Projects" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <ForumIcon />
-          </ListItemIcon>
-          <ListItemText primary="Contact" />
-        </ListItem>
+        <Link href="/#home" passHref>
+          <ListItem button component="a" href="/#home">
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItem>
+        </Link>
+        <Link href="/#projects" passHref>
+          <ListItem button component="a" href="/#projects">
+            <ListItemIcon>
+              <CodeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Projects" />
+          </ListItem>
+        </Link>
+        <Link href="/#contact" passHref>
+          <ListItem button component="a" href="/#contact">
+            <ListItemIcon>
+              <ForumIcon />
+            </ListItemIcon>
+            <ListItemText primary="Contact" />
+          </ListItem>
+        </Link>
       </List>
       <Divider />
     </div>

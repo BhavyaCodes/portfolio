@@ -45,7 +45,7 @@ function Header() {
 
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="home">
       <Toolbar id="back-to-top-anchor" />
       <Container className={classes.container}>
         <Grid container>
