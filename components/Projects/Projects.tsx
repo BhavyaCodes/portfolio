@@ -1,5 +1,7 @@
 import { useContext, useMemo } from "react";
-import { Typography } from "@material-ui/core";
+import Link from "next/link";
+import { Typography, Button, Container } from "@material-ui/core";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Project from "./Project";
 
 import { DarkModeContext } from "context/themeContext";
@@ -154,6 +156,19 @@ function Projects() {
     <>
       <Typography variant="h2">Projects I have worked on</Typography>
       {renderProjects()}
+      <Container style={{ textAlign: "right" }}>
+        <Link href="/projects" passHref>
+          <Button
+            component="a"
+            color="secondary"
+            size="large"
+            variant="outlined"
+            endIcon={<ArrowForwardIosIcon />}
+          >
+            View All Projects
+          </Button>
+        </Link>
+      </Container>
     </>
   );
 }
