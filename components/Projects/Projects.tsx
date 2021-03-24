@@ -1,26 +1,46 @@
 import { useContext, useMemo } from "react";
-import { Typography, Container } from "@material-ui/core";
+import Link from "next/link";
+import { Typography, Button, Container } from "@material-ui/core";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Project from "./Project";
 
 import { DarkModeContext } from "context/themeContext";
 
 // import materialui from "public/assets/icons/materialui.svg";
-import mongodb from "public/assets/icons/mongodb.svg";
+// import mongodb from "public/assets/icons/mongodb.svg";
 // import nextjs from "public/assets/icons/nextjs.svg";
-import nodejs from "public/assets/icons/nodejs.svg";
+// import nodejs from "public/assets/icons/nodejs.svg";
 // import react from "public/assets/icons/react.png";
 // import typescript from "public/assets/icons/typescript.svg";
-import expressjs from "public/assets/icons/expressjs.png";
-import bootstrap from "public/assets/icons/bootstrap.svg";
-import s3 from "public/assets/icons/s3.png";
+// import expressjs from "public/assets/icons/expressjs.png";
+// import bootstrap from "public/assets/icons/bootstrap.svg";
+// import s3 from "public/assets/icons/s3.png";
+// import chartjs from "public/assets/icons/chartjs.svg";
+
+const logos = {
+  react: "/assets/icons/react.png",
+  bootstrap: "/assets/icons/bootstrap.svg",
+  chartjs: "/assets/icons/chartjs.svg",
+  expressjs: "/assets/icons/expressjs.png",
+  git: "/assets/icons/git.svg",
+  materialui: "/assets/icons/materialui.svg",
+  mongodb: "/assets/icons/mongodb.svg",
+  nextjs: "/assets/icons/nextjs.svg",
+  nodejs: "/assets/icons/nodejs.svg",
+  s3: "/assets/icons/s3.png",
+  socketio: "/assets/icons/socketio.svg",
+  typescript: "/assets/icons/typescript.svg",
+  vercel: "/assets/icons/vercel.svg",
+};
 
 export type ProjectType = {
   title: string;
   description: string[];
-  images?: {
+  images: {
     webm?: string;
     mp4?: string;
-    main: string;
+    main?: { link: string; height: number; width: number };
+    poster?: string;
   };
   links: { github?: string; live: string };
   stack?: { label: string; logo: string; invert?: boolean }[];
@@ -40,14 +60,18 @@ function Projects() {
           "This project also has **rate limiting** to avoid spam and uses **CSRF token** protection.",
         ],
         images: {
-          main: "/project/dogmash/dogmash.png",
+          main: {
+            link: "/project/dogmash/dogmash.png",
+            width: 1903,
+            height: 894,
+          },
         },
         stack: [
-          { label: "nodejs", logo: nodejs },
-          { label: "expressjs", logo: expressjs },
-          { label: "aws-s3", logo: s3 },
-          { label: "mongodb", logo: mongodb },
-          { label: "bootstrap", logo: bootstrap },
+          { label: "nodejs", logo: logos.nodejs },
+          { label: "expressjs", logo: logos.expressjs },
+          { label: "aws-s3", logo: logos.s3 },
+          { label: "mongodb", logo: logos.mongodb },
+          { label: "bootstrap", logo: logos.bootstrap },
         ],
         links: {
           live: "https://dogmash.herokuapp.com/",
@@ -55,21 +79,56 @@ function Projects() {
       },
       {
         title: "covid-19 India tracker",
-        description: ["asdfsadf", "sdfgsdgdfg"],
+        description: [
+          "covid-19 tracker for India made using **react**",
+          "This web app can be used to track current and historical data of India and its states and union territories. The web app shows a vector **map of India**, user may hover over any state and will be able to see the total confirmed, recovered, active and deceased for that state",
+          "There is also a state-wise table of covid data which can be sorted by any column",
+          "The app also features historical data using **charts** made using **[chartjs](https://www.chartjs.com)**, user may view data of any state and also choose the time frame and option between **daily** and **cumulative** data",
+          "The application is styled using **material-ui** and is fully responsive for all screen sizes and has a **dark mode** toggle. ",
+        ],
         images: {
           webm: "/project/covid-19/covid-3.webm",
           mp4: "/project/covid-19/rick.mp4",
-          main: "/project/covid-19/loading.png",
+          main: {
+            link: "/project/covid-19/covid.png",
+            width: 1225,
+            height: 571,
+          },
         },
         stack: [
-          { label: "nodejs", logo: nodejs },
-          { label: "expressjs", logo: expressjs },
-          { label: "aws-s3", logo: s3 },
+          { label: "chartjs", logo: logos.chartjs },
+          { label: "reactjs", logo: logos.react },
+          { label: "material-ui", logo: logos.materialui },
         ],
         links: {
           github:
             "https://github.com/Juggernaut9/covid-tracker-material-ui-react",
           live: "https://covid-tracker-beta.vercel.app/",
+        },
+      },
+      {
+        title: "Connect-4 online multiplayer",
+        description: [
+          "connect-4 board game that allows you to **play with anyone around the world** with no registration or downloads. You and your friend just need to open the link in the browser and you're ready to play 🙂",
+          "The frontend is built using **react** and styled using **material-ui** and backend built using **node.js**.",
+          "**socket.io** library is used for live transfer of data from client to server using websockets",
+          "The app supports multiple games running parallel, means many pair of people can play on the same website at the same time without any interference",
+          "If you wish to test this project, you must run the url on different browsers, or better check my **[video explaining how it works](https://www.linkedin.com/posts/bhavya-tomar-1967b6202_careerhack-github-hackathon-activity-6760854974944694272--QFx)** that I posted on **LinkedIn**",
+        ],
+        stack: [
+          { label: "nodejs", logo: logos.nodejs },
+          { label: "reactjs", logo: logos.react },
+          { label: "socket.io", logo: logos.socketio },
+          { label: "material-ui", logo: logos.materialui },
+        ],
+        links: {
+          github: "https://github.com/Juggernaut9/connect-4-online-multiplayer",
+          live: "https://konnect-4.vercel.app/",
+        },
+        images: {
+          poster: "/project/connect-4/poster.png",
+          mp4: "/project/connect-4/c4mp4.mp4",
+          webm: "/project/connect-4/c4webm.webm",
         },
       },
     ],
@@ -94,10 +153,23 @@ function Projects() {
     );
   };
   return (
-    <Container>
+    <>
       <Typography variant="h2">Projects I have worked on</Typography>
       {renderProjects()}
-    </Container>
+      <Container style={{ textAlign: "right" }}>
+        <Link href="/projects" passHref>
+          <Button
+            component="a"
+            color="secondary"
+            size="large"
+            variant="outlined"
+            endIcon={<ArrowForwardIosIcon />}
+          >
+            View All Projects
+          </Button>
+        </Link>
+      </Container>
+    </>
   );
 }
 
