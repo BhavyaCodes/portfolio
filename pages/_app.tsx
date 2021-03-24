@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, ReactNode } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { AppProps } from "next/app";
@@ -16,7 +16,14 @@ import {
   Zoom,
   IconButton,
   Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Divider,
 } from "@material-ui/core";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import MailIcon from "@material-ui/icons/Mail";
 // import Toolbar from "@material-ui/core/Toolbar";
 // import Typography from "@material-ui/core/Typography";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
@@ -122,6 +129,43 @@ export function MyApp({ Component, pageProps }: AppProps) {
     setDrawerOpen(true);
   };
 
+  const renderDrawer: () => ReactNode = () => (
+    <div
+      // className={clsx(classes.list, {
+      //   [classes.fullList]: anchor === "top" || anchor === "bottom",
+      // })}
+      role="presentation"
+      onClick={() => {
+        setDrawerOpen(false);
+      }}
+      onKeyDown={() => {
+        setDrawerOpen(false);
+      }}
+    >
+      <List>
+        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {["All mail", "Trash", "Spam"].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+    </div>
+  );
+
   return (
     <>
       <Head>
@@ -151,7 +195,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
             setDrawerOpen(false);
           }}
         >
-          asdfasdf
+          {renderDrawer()}
         </Drawer>
         <Component {...pageProps} />
         <ScrollTop>
