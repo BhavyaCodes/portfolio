@@ -77,7 +77,7 @@ function ScrollTop(props: Props) {
 export default function MyAppWithTheme(props: AppProps) {
   return (
     <DarkModeProvider>
-      <MyApp {...props} />;
+      <MyApp {...props} />
     </DarkModeProvider>
   );
 }
