@@ -1,10 +1,9 @@
-import Link from "next/link";
 import Layout from "components/Layout";
-import { Button } from "@material-ui/core";
 
 import Header from "components/Header";
 import Skills from "components/Skills";
 import Projects from "components/Projects";
+import Contact from "components/Contact";
 
 const IndexPage = () => {
   return (
@@ -12,15 +11,7 @@ const IndexPage = () => {
       <Header />
       <Skills />
       <Projects />
-      <h1>Hello Next.js 👋</h1>
-      <p>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </p>
-      <Button color="primary" variant="contained">
-        Button
-      </Button>
+      <Contact />
     </Layout>
   );
 };
