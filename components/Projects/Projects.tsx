@@ -60,8 +60,8 @@ function Projects() {
         images: {
           main: {
             link: "/project/dogmash/dogmash.png",
-            width: 1000,
-            height: 470,
+            width: 1903,
+            height: 894,
           },
         },
         stack: [
@@ -89,8 +89,8 @@ function Projects() {
           mp4: "/project/covid-19/rick.mp4",
           main: {
             link: "/project/covid-19/covid.png",
-            width: 1000,
-            height: 466,
+            width: 1225,
+            height: 571,
           },
         },
         stack: [

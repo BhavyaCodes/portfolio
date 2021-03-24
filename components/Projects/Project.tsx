@@ -140,9 +140,10 @@ function Project({
                       src={images.main.link}
                       width={images.main.width}
                       height={images.main.height}
-                      quality={100}
-                      layout="intrinsic"
+                      quality={75}
                       priority
+                      sizes="(min-width: 960px) 40vw, 90vw"
+                      layout="responsive"
                     />
                   </Box>
                 )}
