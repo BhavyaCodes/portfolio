@@ -17,6 +17,7 @@ import Zoom from "@material-ui/core/Zoom";
 
 import { DarkModeProvider, DarkModeContext } from "../context/themeContext";
 import DarkModeIcon from "../components/DarkModeIcon";
+import "Layout.css";
 interface Props {
   children: React.ReactElement;
 }
