@@ -160,7 +160,7 @@ function Skills() {
 
   const [toggle, setToggle] = useState(false);
 
-  const useTrailCallback = useCallback(useTrail, [iconsArray]);
+  const useTrailCallback = useCallback(useTrail, []);
   const trail = useTrailCallback(iconsArray.length, {
     config: { mass: 1, tension: 375, friction: 25 },
     trail: 400 / iconsArray.length,
