@@ -7,7 +7,7 @@ import programmer from "public/assets/programmer2.svg";
 import { DarkModeContext } from "context/themeContext";
 import lightHeader from "public/assets/light-header2.svg";
 import darkHeader from "public/assets/dark-header.svg";
-import HeaderText from "./HeaderText2";
+import HeaderText from "./HeaderText";
 
 function Header() {
   const darkMode = useContext(DarkModeContext);
