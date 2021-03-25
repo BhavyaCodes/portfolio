@@ -12,7 +12,7 @@ import { useIntersection } from "react-use";
 
 import { Box, Grid, Typography, Container, Toolbar } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { DarkModeContext } from "context/themeContext";
+import { useDarkMode } from "context/themeContext";
 
 import Icon from "./Icon";
 
@@ -45,7 +45,7 @@ type iconsArray = {
 };
 
 function Skills() {
-  const darkMode = useContext(DarkModeContext);
+  const darkMode = useDarkMode();
   const iconsArray: iconsArray[] = useMemo(() => {
     return [
       {

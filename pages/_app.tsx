@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, ReactNode } from "react";
+import { useEffect, useState, ReactNode } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
@@ -35,7 +35,7 @@ import ForumIcon from "@material-ui/icons/Forum";
 import BuildIcon from "@material-ui/icons/Build";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
-import { DarkModeProvider, DarkModeContext } from "../context/themeContext";
+import { DarkModeProvider, useDarkMode } from "../context/themeContext";
 import DarkModeIcon from "../components/DarkModeIcon";
 import "Layout.css";
 interface Props {
@@ -111,7 +111,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
     })
   );
   const classes = useStyles();
-  const darkMode = useContext(DarkModeContext);
+  const darkMode = useDarkMode();
   const paletteType = darkMode ? "dark" : "light";
   const theme = createMuiTheme({
     palette: {

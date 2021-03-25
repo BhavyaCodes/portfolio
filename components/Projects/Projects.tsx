@@ -4,7 +4,7 @@ import { Typography, Button, Container } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Project from "./Project";
 
-import { DarkModeContext } from "context/themeContext";
+import { useDarkMode } from "context/themeContext";
 
 const logos = {
   react: "/assets/icons/react.png",
@@ -37,7 +37,7 @@ export type ProjectType = {
 interface Projects extends ProjectType {}
 
 function Projects() {
-  const darkMode = useContext(DarkModeContext);
+  const darkMode = useDarkMode();
   const projects: ProjectType[] = useMemo(
     () => [
       {
