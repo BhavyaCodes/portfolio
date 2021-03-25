@@ -5,6 +5,7 @@ import {
   useContext,
   useMemo,
   useCallback,
+  memo,
 } from "react";
 import { useTrail, animated as a } from "react-spring";
 import { useIntersection } from "react-use";
@@ -242,4 +243,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+export default memo(Skills);
