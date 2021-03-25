@@ -1,21 +1,10 @@
-import { useContext, useMemo } from "react";
+import { useContext, useMemo, memo } from "react";
 import Link from "next/link";
 import { Typography, Button, Container } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Project from "./Project";
 
 import { DarkModeContext } from "context/themeContext";
-
-// import materialui from "public/assets/icons/materialui.svg";
-// import mongodb from "public/assets/icons/mongodb.svg";
-// import nextjs from "public/assets/icons/nextjs.svg";
-// import nodejs from "public/assets/icons/nodejs.svg";
-// import react from "public/assets/icons/react.png";
-// import typescript from "public/assets/icons/typescript.svg";
-// import expressjs from "public/assets/icons/expressjs.png";
-// import bootstrap from "public/assets/icons/bootstrap.svg";
-// import s3 from "public/assets/icons/s3.png";
-// import chartjs from "public/assets/icons/chartjs.svg";
 
 const logos = {
   react: "/assets/icons/react.png",
@@ -154,7 +143,9 @@ function Projects() {
   };
   return (
     <>
-      <Typography variant="h2">Projects I have worked on</Typography>
+      <Typography id="projects" variant="h2">
+        Projects I have worked on
+      </Typography>
       {renderProjects()}
       <Container style={{ textAlign: "right" }}>
         <Link href="/projects" passHref>
@@ -173,4 +164,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default memo(Projects);

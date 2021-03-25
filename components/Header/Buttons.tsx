@@ -79,6 +79,7 @@ function Buttons() {
           disableElevation
           className={classes.bigButton}
           startIcon={<ForumIcon />}
+          href="#contact"
         >
           Get in touch
         </Button>
@@ -87,6 +88,7 @@ function Buttons() {
           color="secondary"
           className={classes.bigButton}
           startIcon={<CodeIcon />}
+          href="#skills"
         >
           See my work
         </Button>

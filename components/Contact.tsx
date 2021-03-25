@@ -52,7 +52,7 @@ function Contact() {
   );
   const classes = useStyles();
   return (
-    <Container>
+    <Container id="contact">
       <Grid container>
         <Grid item md={6} sm={12} className={classes.left}>
           <Typography variant="h3" align="center">

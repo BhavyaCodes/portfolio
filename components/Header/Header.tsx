@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, memo } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { Toolbar, Grid, Container, IconButton, Link } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -7,7 +7,7 @@ import programmer from "public/assets/programmer2.svg";
 import { DarkModeContext } from "context/themeContext";
 import lightHeader from "public/assets/light-header2.svg";
 import darkHeader from "public/assets/dark-header.svg";
-import HeaderText from "./HeaderText2";
+import HeaderText from "./HeaderText";
 
 function Header() {
   const darkMode = useContext(DarkModeContext);
@@ -45,7 +45,7 @@ function Header() {
 
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="home">
       <Toolbar id="back-to-top-anchor" />
       <Container className={classes.container}>
         <Grid container>
@@ -68,4 +68,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default memo(Header);

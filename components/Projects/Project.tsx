@@ -1,4 +1,4 @@
-import { useMemo, useContext } from "react";
+import { useMemo, useContext, memo } from "react";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
@@ -182,4 +182,4 @@ function Project({
   return renderProject();
 }
 
-export default Project;
+export default memo(Project, () => true);

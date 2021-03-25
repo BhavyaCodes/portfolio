@@ -1,4 +1,4 @@
-import Layout from "components/Layout";
+import { memo } from "react";
 
 import Header from "components/Header";
 import Skills from "components/Skills";
@@ -7,13 +7,13 @@ import Contact from "components/Contact";
 
 const IndexPage = () => {
   return (
-    <Layout title="Bhavya's portfolio">
+    <>
       <Header />
       <Skills />
       <Projects />
       <Contact />
-    </Layout>
+    </>
   );
 };
 
-export default IndexPage;
+export default memo(IndexPage);
