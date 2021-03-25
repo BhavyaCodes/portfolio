@@ -17,39 +17,40 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import SendIcon from "@material-ui/icons/Send";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    left: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+    leftContainer: {
+      flexGrow: 1,
+    },
+    iconsGrid: {
+      flexGrow: 1,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-around",
+      paddingTop: theme.spacing(5),
+      paddingBottom: theme.spacing(5),
+    },
+    socialItem: {
+      display: "flex",
+      alignItems: "center",
+    },
+    illustrationContainer: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    illustration: {
+      width: "80%",
+    },
+  })
+);
+
 function Contact() {
-  const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-      left: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      },
-      leftContainer: {
-        flexGrow: 1,
-      },
-      iconsGrid: {
-        flexGrow: 1,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
-        paddingTop: theme.spacing(5),
-        paddingBottom: theme.spacing(5),
-      },
-      socialItem: {
-        display: "flex",
-        alignItems: "center",
-      },
-      illustrationContainer: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      },
-      illustration: {
-        width: "80%",
-      },
-    })
-  );
   const classes = useStyles();
   return (
     <Container id="contact">

@@ -36,6 +36,30 @@ type iconsArray = {
   spin?: boolean;
 };
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    gridItem: {
+      marginBottom: theme.spacing(3),
+    },
+    title: {
+      marginTop: theme.spacing(3),
+    },
+    gridContainer: {
+      marginTop: theme.spacing(4),
+    },
+    illustrationContainer: {
+      display: "flex",
+      alignContent: "center",
+      [theme.breakpoints.down("md")]: {
+        justifyContent: "center",
+      },
+    },
+    illustration: {
+      width: "80%",
+    },
+  })
+);
+
 function Skills() {
   const darkMode = useDarkMode();
   const iconsArray: iconsArray[] = useMemo(() => {
@@ -118,29 +142,7 @@ function Skills() {
       },
     ];
   }, [darkMode]);
-  const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-      gridItem: {
-        marginBottom: theme.spacing(3),
-      },
-      title: {
-        marginTop: theme.spacing(3),
-      },
-      gridContainer: {
-        marginTop: theme.spacing(4),
-      },
-      illustrationContainer: {
-        display: "flex",
-        alignContent: "center",
-        [theme.breakpoints.down("md")]: {
-          justifyContent: "center",
-        },
-      },
-      illustration: {
-        width: "80%",
-      },
-    })
-  );
+
   const classes = useStyles();
 
   const intersectionRef = useRef(null);

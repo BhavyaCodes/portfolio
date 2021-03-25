@@ -3,30 +3,30 @@ import { Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Buttons from "./Buttons";
 
-function HeaderText() {
-  const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-      root: {
-        display: "flex",
-        alignContent: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        [theme.breakpoints.down("md")]: {
-          marginTop: theme.spacing(6),
-        },
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      display: "flex",
+      alignContent: "center",
+      justifyContent: "center",
+      flexDirection: "column",
+      [theme.breakpoints.down("md")]: {
+        marginTop: theme.spacing(6),
       },
-      title: {
-        paddingRight: "20%",
-      },
-      hi: {
-        color: "red",
-      },
-      paragraph: {
-        paddingRight: "20%",
-      },
-    })
-  );
+    },
+    title: {
+      paddingRight: "20%",
+    },
+    hi: {
+      color: "red",
+    },
+    paragraph: {
+      paddingRight: "20%",
+    },
+  })
+);
 
+function HeaderText() {
   const classes = useStyles();
   return (
     <Box className={classes.root}>

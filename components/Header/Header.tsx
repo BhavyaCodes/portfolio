@@ -42,7 +42,6 @@ function Header() {
       },
     })
   );
-
   const classes = useStyles();
   return (
     <div className={classes.root} id="home">

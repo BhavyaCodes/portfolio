@@ -45,7 +45,6 @@ function Chip({ label, logo, invert }: AppProps) {
       },
     })
   );
-
   const classes = useStyles();
 
   const [props, set] = useSpring<{ zoom: number }>(() => ({
