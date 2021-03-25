@@ -1,3 +1,4 @@
+import { memo } from "react";
 import {
   Container,
   Grid,
@@ -22,7 +23,6 @@ function Contact() {
       left: {
         display: "flex",
         flexDirection: "column",
-        // justifyContent: "center",
         alignItems: "center",
       },
       leftContainer: {
@@ -174,4 +174,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default memo(Contact);

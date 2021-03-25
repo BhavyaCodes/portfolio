@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, memo } from "react";
 import {
   DarkModeContext,
   DispatchDarkModeContext,
@@ -28,4 +28,4 @@ const DarkModeIcon = () => {
   );
 };
 
-export default DarkModeIcon;
+export default memo(DarkModeIcon);
