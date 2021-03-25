@@ -1,4 +1,4 @@
-import { memo, useEffect } from "react";
+import { memo } from "react";
 import { useDarkMode, useToggleDarkMode } from "../context/themeContext";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useTheme } from "@material-ui/core";
@@ -13,10 +13,6 @@ const DarkModeIcon = () => {
       setDarkMode();
     }
   };
-
-  useEffect(() => {
-    console.log("darkmodeicon");
-  }, [darkMode, setDarkMode]);
 
   return (
     <DarkModeSwitch

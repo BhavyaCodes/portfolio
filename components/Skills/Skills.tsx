@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo, useCallback, memo } from "react";
+import { useState, useRef, useEffect, useMemo, memo } from "react";
 import { useTrail, animated as a } from "react-spring";
 import { useIntersection } from "react-use";
 
@@ -152,18 +152,12 @@ function Skills() {
 
   const [toggle, setToggle] = useState(false);
 
-  const useTrailCallback = useCallback(
-    () =>
-      useTrail(iconsArray.length, {
-        config: { mass: 1, tension: 375, friction: 25 },
-        trail: 400 / iconsArray.length,
-        transform: toggle ? "scale(1)" : "scale(0)",
-        from: { transform: "scale(0)" },
-      }),
-    []
-  );
-
-  const trail = useTrailCallback();
+  const trail = useTrail(iconsArray.length, {
+    config: { mass: 1, tension: 375, friction: 25 },
+    trail: 400 / iconsArray.length,
+    transform: toggle ? "scale(1)" : "scale(0)",
+    from: { transform: "scale(0)" },
+  });
 
   useEffect(() => {
     if (intersection?.isIntersecting) {
@@ -240,4 +234,4 @@ function Skills() {
   );
 }
 
-export default memo(Skills);
+export default memo(Skills, () => true);
