@@ -1,8 +1,9 @@
+import { memo } from "react";
 import { Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Buttons from "./Buttons";
 
-function HeaderText2() {
+function HeaderText() {
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       root: {
@@ -44,4 +45,4 @@ function HeaderText2() {
   );
 }
 
-export default HeaderText2;
+export default memo(HeaderText);

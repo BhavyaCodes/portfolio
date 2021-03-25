@@ -16,7 +16,7 @@ export const DarkModeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useLocalStorage("darkMode", true);
   return (
     <DarkModeContext.Provider value={theme}>
-      <DispatchDarkModeContext.Provider value={useCallback(setTheme, [])}>
+      <DispatchDarkModeContext.Provider value={useCallback(setTheme, [theme])}>
         {children}
       </DispatchDarkModeContext.Provider>
     </DarkModeContext.Provider>

@@ -1,4 +1,4 @@
-import { useContext, memo } from "react";
+import { useContext, memo, useEffect } from "react";
 import {
   DarkModeContext,
   DispatchDarkModeContext,
@@ -16,6 +16,10 @@ const DarkModeIcon = () => {
       setDarkMode((prevMode) => !prevMode);
     }
   };
+
+  useEffect(() => {
+    console.log("darkmodeicon");
+  }, [darkMode, setDarkMode]);
 
   return (
     <DarkModeSwitch
