@@ -33,6 +33,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import CodeIcon from "@material-ui/icons/Code";
 import ForumIcon from "@material-ui/icons/Forum";
 import BuildIcon from "@material-ui/icons/Build";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 import { DarkModeProvider, DarkModeContext } from "../context/themeContext";
 import DarkModeIcon from "../components/DarkModeIcon";
@@ -102,6 +103,11 @@ export function MyApp({ Component, pageProps }: AppProps) {
       navbarRightButtons: {
         marginRight: theme.spacing(4),
       },
+      chevronIcon: {
+        marginLeft: theme.spacing(2),
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(1),
+      },
     })
   );
   const classes = useStyles();
@@ -147,6 +153,15 @@ export function MyApp({ Component, pageProps }: AppProps) {
         setDrawerOpen(false);
       }}
     >
+      <IconButton
+        className={classes.chevronIcon}
+        onClick={() => {
+          setDrawerOpen(false);
+        }}
+      >
+        <ChevronRightIcon />
+      </IconButton>
+      <Divider />
       <List>
         <Link href="/#home" passHref>
           <ListItem button component="a" href="/#home">
@@ -181,7 +196,6 @@ export function MyApp({ Component, pageProps }: AppProps) {
           </ListItem>
         </Link>
       </List>
-      <Divider />
     </div>
   );
 
