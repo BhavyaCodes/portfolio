@@ -21,6 +21,9 @@ import {
   ListItemIcon,
   ListItemText,
   Divider,
+  Hidden,
+  Box,
+  Button,
 } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
@@ -95,6 +98,9 @@ export function MyApp({ Component, pageProps }: AppProps) {
       },
       drawer: {
         width: "240px",
+      },
+      navbarRightButtons: {
+        marginRight: theme.spacing(4),
       },
     })
   );
@@ -195,22 +201,60 @@ export function MyApp({ Component, pageProps }: AppProps) {
           <Toolbar>
             <Typography variant="h6">Scroll to see button</Typography>
             <div className={classes.navbarRight}>
+              <Hidden mdDown>
+                <Box mr={2}>
+                  <Link href="/#skills" passHref>
+                    <Button
+                      className={classes.navbarRightButtons}
+                      component="a"
+                      href="/#skills"
+                      color="inherit"
+                    >
+                      Tools and skills
+                    </Button>
+                  </Link>
+                  <Link href="/#projects" passHref>
+                    <Button
+                      className={classes.navbarRightButtons}
+                      component="a"
+                      href="/#projects"
+                      color="inherit"
+                    >
+                      projects
+                    </Button>
+                  </Link>
+                  <Link href="/#contact" passHref>
+                    <Button
+                      className={classes.navbarRightButtons}
+                      component="a"
+                      href="/#contact"
+                      color="inherit"
+                    >
+                      Contact me
+                    </Button>
+                  </Link>
+                </Box>
+              </Hidden>
               <DarkModeIcon />
-              <IconButton color="inherit" onClick={handleMenuButton}>
-                <MenuIcon />
-              </IconButton>
+              <Hidden mdUp>
+                <IconButton color="inherit" onClick={handleMenuButton}>
+                  <MenuIcon />
+                </IconButton>
+              </Hidden>
             </div>
           </Toolbar>
         </AppBar>
-        <Drawer
-          open={drawerOpen}
-          anchor="right"
-          onClose={() => {
-            setDrawerOpen(false);
-          }}
-        >
-          {renderDrawer()}
-        </Drawer>
+        <Hidden mdUp>
+          <Drawer
+            open={drawerOpen}
+            anchor="right"
+            onClose={() => {
+              setDrawerOpen(false);
+            }}
+          >
+            {renderDrawer()}
+          </Drawer>
+        </Hidden>
         <Component {...pageProps} />
         <ScrollTop>
           <Fab color="secondary" size="medium" aria-label="scroll back to top">
