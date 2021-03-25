@@ -74,4 +74,9 @@ function Chip({ label, logo, invert }: AppProps) {
   );
 }
 
-export default memo(Chip);
+export default memo(Chip, (prevProps, nextProps) => {
+  if (prevProps.invert !== nextProps.invert) {
+    return false;
+  }
+  return true;
+});
