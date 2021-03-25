@@ -1,16 +1,16 @@
-import { useContext, memo } from "react";
+import { memo } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { Toolbar, Grid, Container, IconButton, Link } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import programmer from "public/assets/programmer2.svg";
-import { DarkModeContext } from "context/themeContext";
+import { useDarkMode } from "context/themeContext";
 import lightHeader from "public/assets/light-header2.svg";
 import darkHeader from "public/assets/dark-header.svg";
 import HeaderText from "./HeaderText";
 
 function Header() {
-  const darkMode = useContext(DarkModeContext);
+  const darkMode = useDarkMode();
 
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({

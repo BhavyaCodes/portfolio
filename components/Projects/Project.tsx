@@ -1,4 +1,4 @@
-import { useMemo, useContext, memo } from "react";
+import { useMemo, memo } from "react";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
@@ -8,7 +8,7 @@ import TechChips from "components/Projects/TechChips";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 
-import { DarkModeContext } from "context/themeContext";
+import { useDarkMode } from "context/themeContext";
 
 import { ProjectType } from "./Projects";
 import Wave from "./Wave";
@@ -25,7 +25,7 @@ function Project({
   links,
 }: AppProps) {
   const odd = index % 2 === 1 ? true : false;
-  const darkMode = useContext(DarkModeContext);
+  const darkMode = useDarkMode();
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       root: {

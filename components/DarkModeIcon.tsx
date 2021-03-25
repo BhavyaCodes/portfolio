@@ -1,19 +1,16 @@
-import { useContext } from "react";
-import {
-  DarkModeContext,
-  DispatchDarkModeContext,
-} from "../context/themeContext";
+import { memo } from "react";
+import { useDarkMode, useToggleDarkMode } from "../context/themeContext";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useTheme } from "@material-ui/core";
 
 const DarkModeIcon = () => {
-  const darkMode = useContext(DarkModeContext);
-  const setDarkMode = useContext(DispatchDarkModeContext);
+  const darkMode = useDarkMode();
+  const setDarkMode = useToggleDarkMode();
   const theme = useTheme();
 
   const toggleDarkMode = () => {
     if (setDarkMode) {
-      setDarkMode((prevMode) => !prevMode);
+      setDarkMode();
     }
   };
 
@@ -28,4 +25,4 @@ const DarkModeIcon = () => {
   );
 };
 
-export default DarkModeIcon;
+export default memo(DarkModeIcon);

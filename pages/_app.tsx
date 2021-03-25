@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, ReactNode } from "react";
+import { useEffect, useState, ReactNode } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
@@ -35,7 +35,7 @@ import ForumIcon from "@material-ui/icons/Forum";
 import BuildIcon from "@material-ui/icons/Build";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
-import { DarkModeProvider, DarkModeContext } from "../context/themeContext";
+import { DarkModeProvider, useDarkMode } from "../context/themeContext";
 import DarkModeIcon from "../components/DarkModeIcon";
 import "Layout.css";
 interface Props {
@@ -78,13 +78,48 @@ function ScrollTop(props: Props) {
   );
 }
 
-export default function MyAppWithTheme(props: AppProps) {
+function MyAppWithTheme(props: AppProps) {
+  const darkMode = useDarkMode();
+  const paletteType = darkMode ? "dark" : "light";
+  const theme = createMuiTheme({
+    palette: {
+      // primary: {
+      //   main: "#556cd6",
+      // },
+      // secondary: {
+      //   main: "#19857b",
+      // },
+      // error: {
+      //   main: red.A400,
+      // },
+      // background: {
+      //   default: "#fff",
+      // },
+      type: paletteType,
+    },
+  });
+  return (
+    <ThemeProvider theme={theme}>
+      <MyApp {...props} />
+    </ThemeProvider>
+  );
+}
+
+export default function MyAppWithDarkModeAndTheme(props: AppProps) {
   return (
     <DarkModeProvider>
-      <MyApp {...props} />
+      <MyAppWithTheme {...props} />
     </DarkModeProvider>
   );
 }
+
+// function MyAppWithDarkMode(props: AppProps) {
+//   return (
+//     <DarkModeProvider>
+//       <MyApp {...props} />
+//     </DarkModeProvider>
+//   );
+// }
 
 export function MyApp({ Component, pageProps }: AppProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -111,25 +146,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
     })
   );
   const classes = useStyles();
-  const darkMode = useContext(DarkModeContext);
-  const paletteType = darkMode ? "dark" : "light";
-  const theme = createMuiTheme({
-    palette: {
-      // primary: {
-      //   main: "#556cd6",
-      // },
-      // secondary: {
-      //   main: "#19857b",
-      // },
-      // error: {
-      //   main: red.A400,
-      // },
-      // background: {
-      //   default: "#fff",
-      // },
-      type: paletteType,
-    },
-  });
+
   useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
@@ -209,73 +226,71 @@ export function MyApp({ Component, pageProps }: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <AppBar>
-          <Toolbar>
-            <Typography variant="h6">Scroll to see button</Typography>
-            <div className={classes.navbarRight}>
-              <Hidden mdDown>
-                <Box mr={2}>
-                  <Link href="/#skills" passHref>
-                    <Button
-                      className={classes.navbarRightButtons}
-                      component="a"
-                      href="/#skills"
-                      color="inherit"
-                    >
-                      Tools and skills
-                    </Button>
-                  </Link>
-                  <Link href="/#projects" passHref>
-                    <Button
-                      className={classes.navbarRightButtons}
-                      component="a"
-                      href="/#projects"
-                      color="inherit"
-                    >
-                      projects
-                    </Button>
-                  </Link>
-                  <Link href="/#contact" passHref>
-                    <Button
-                      className={classes.navbarRightButtons}
-                      component="a"
-                      href="/#contact"
-                      color="inherit"
-                    >
-                      Contact me
-                    </Button>
-                  </Link>
-                </Box>
-              </Hidden>
-              <DarkModeIcon />
-              <Hidden mdUp>
-                <IconButton color="inherit" onClick={handleMenuButton}>
-                  <MenuIcon />
-                </IconButton>
-              </Hidden>
-            </div>
-          </Toolbar>
-        </AppBar>
-        <Hidden mdUp>
-          <Drawer
-            open={drawerOpen}
-            anchor="right"
-            onClose={() => {
-              setDrawerOpen(false);
-            }}
-          >
-            {renderDrawer()}
-          </Drawer>
-        </Hidden>
-        <Component {...pageProps} />
-        <ScrollTop>
-          <Fab color="secondary" size="medium" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
-          </Fab>
-        </ScrollTop>
-      </ThemeProvider>
+      <CssBaseline />
+      <AppBar>
+        <Toolbar>
+          <Typography variant="h6">Scroll to see button</Typography>
+          <div className={classes.navbarRight}>
+            <Hidden mdDown>
+              <Box mr={2}>
+                <Link href="/#skills" passHref>
+                  <Button
+                    className={classes.navbarRightButtons}
+                    component="a"
+                    href="/#skills"
+                    color="inherit"
+                  >
+                    Tools and skills
+                  </Button>
+                </Link>
+                <Link href="/#projects" passHref>
+                  <Button
+                    className={classes.navbarRightButtons}
+                    component="a"
+                    href="/#projects"
+                    color="inherit"
+                  >
+                    projects
+                  </Button>
+                </Link>
+                <Link href="/#contact" passHref>
+                  <Button
+                    className={classes.navbarRightButtons}
+                    component="a"
+                    href="/#contact"
+                    color="inherit"
+                  >
+                    Contact me
+                  </Button>
+                </Link>
+              </Box>
+            </Hidden>
+            <DarkModeIcon />
+            <Hidden mdUp>
+              <IconButton color="inherit" onClick={handleMenuButton}>
+                <MenuIcon />
+              </IconButton>
+            </Hidden>
+          </div>
+        </Toolbar>
+      </AppBar>
+      <Hidden mdUp>
+        <Drawer
+          open={drawerOpen}
+          anchor="right"
+          onClose={() => {
+            setDrawerOpen(false);
+          }}
+        >
+          {renderDrawer()}
+        </Drawer>
+      </Hidden>
+      <Component {...pageProps} />
+      <ScrollTop>
+        <Fab color="secondary" size="medium" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
     </>
   );
 }
