@@ -1,4 +1,4 @@
-import { useContext, useMemo, memo } from "react";
+import { useMemo, memo } from "react";
 import Link from "next/link";
 import { Typography, Button, Container } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";

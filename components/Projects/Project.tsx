@@ -1,4 +1,4 @@
-import { useMemo, useContext, memo } from "react";
+import { useMemo, memo } from "react";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
