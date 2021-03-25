@@ -154,7 +154,9 @@ function Projects() {
   };
   return (
     <>
-      <Typography variant="h2">Projects I have worked on</Typography>
+      <Typography id="projects" variant="h2">
+        Projects I have worked on
+      </Typography>
       {renderProjects()}
       <Container style={{ textAlign: "right" }}>
         <Link href="/projects" passHref>
