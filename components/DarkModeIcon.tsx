@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { useDarkMode, useToggleDarkMode } from "../context/themeContext";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useTheme } from "@material-ui/core";
@@ -25,4 +24,4 @@ const DarkModeIcon = () => {
   );
 };
 
-export default memo(DarkModeIcon);
+export default DarkModeIcon;
