@@ -1,4 +1,3 @@
-import { memo } from "react";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
@@ -98,4 +97,4 @@ function Buttons() {
   );
 }
 
-export default memo(Buttons);
+export default Buttons;
