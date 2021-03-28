@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Grid } from "@material-ui/core";
 import Chip from "./Chip";
 
@@ -21,4 +22,4 @@ function TechChips({ stack }: appProps) {
   );
 }
 
-export default TechChips;
+export default memo(TechChips, () => true);
