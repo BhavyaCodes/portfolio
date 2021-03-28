@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { Toolbar, Grid, Container, IconButton, Link } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -67,4 +66,4 @@ function Header() {
   );
 }
 
-export default memo(Header);
+export default Header;
