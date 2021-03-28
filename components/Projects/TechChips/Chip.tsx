@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { useSpring, animated as a } from "react-spring";
 
 import { Box, Typography } from "@material-ui/core";
@@ -73,9 +72,4 @@ function Chip({ label, logo, invert }: AppProps) {
   );
 }
 
-export default memo(Chip, (prevProps, nextProps) => {
-  if (prevProps.invert !== nextProps.invert) {
-    return false;
-  }
-  return true;
-});
+export default Chip;
