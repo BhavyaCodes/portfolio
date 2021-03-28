@@ -32,7 +32,7 @@ export type ProjectType = {
     poster?: string;
   };
   links: { github?: string; live: string };
-  stack?: { label: string; logo: string; invert?: boolean }[];
+  stack: { label: string; logo: string; invert?: boolean }[];
 };
 interface Projects extends ProjectType {}
 
