@@ -1,4 +1,4 @@
-import { useRef, useCallback } from "react";
+import { useRef } from "react";
 import { useSpring, animated as a } from "react-spring";
 
 import { Box, Typography } from "@material-ui/core";
@@ -16,8 +16,7 @@ function Icon({
   spin?: boolean;
 }) {
   const logoRef = useRef<HTMLImageElement | null>(null);
-  const useSpringCallback = useCallback(useSpring, []);
-  const [props, set] = useSpringCallback<{ xys: number[] }>(() => ({
+  const [props, set] = useSpring<{ xys: number[] }>(() => ({
     xys: [0, 0, 1],
     config: { mass: 1, tension: 500, friction: 15 },
   }));
