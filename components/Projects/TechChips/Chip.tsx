@@ -1,17 +1,18 @@
-import { memo } from "react";
 import { useSpring, animated as a } from "react-spring";
 
 import { Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
-type AppProps = {
-  label: string;
-  logo: string;
-  invert?: boolean;
-};
+import { StackType } from "../Projects";
 
-function Chip({ label, logo, invert }: AppProps) {
-  const useStyles = makeStyles((_theme: Theme) =>
+// type AppProps = {
+//   label: string;
+//   logo: string;
+//   invert?: boolean;
+// };
+
+function Chip({ label, logo, invert }: StackType) {
+  const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       root: {
         width: "100%",
@@ -35,7 +36,9 @@ function Chip({ label, logo, invert }: AppProps) {
       },
       image: {
         width: "100%",
-        filter: `invert(${invert ? "100%" : "0%"})`,
+        filter: `invert(${
+          invert && theme.palette.type === "dark" ? "100%" : "0%"
+        })`,
       },
       label: {
         position: "relative",
@@ -45,7 +48,6 @@ function Chip({ label, logo, invert }: AppProps) {
       },
     })
   );
-
   const classes = useStyles();
 
   const [props, set] = useSpring<{ zoom: number }>(() => ({
@@ -74,9 +76,4 @@ function Chip({ label, logo, invert }: AppProps) {
   );
 }
 
-export default memo(Chip, (prevProps, nextProps) => {
-  if (prevProps.invert !== nextProps.invert) {
-    return false;
-  }
-  return true;
-});
+export default Chip;

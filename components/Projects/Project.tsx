@@ -1,4 +1,4 @@
-import { useMemo, memo } from "react";
+import { memo } from "react";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
@@ -124,11 +124,7 @@ function Project({
                   )}
                 </Box>
               </Box>
-              <TechChips
-                stack={useMemo(() => {
-                  return stack;
-                }, [darkMode])}
-              />
+              <TechChips stack={stack} />
             </Grid>
           </Box>
           <Box clone order={{ xs: 1, md: index % 2 === 0 ? 1 : 2 }}>

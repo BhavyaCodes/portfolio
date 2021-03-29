@@ -1,4 +1,3 @@
-import { memo } from "react";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
@@ -7,25 +6,25 @@ import CodeIcon from "@material-ui/icons/Code";
 import { Box, IconButton, Link, Button } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
-function Buttons() {
-  const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-      bigButton: {
-        marginRight: theme.spacing(2),
-        [theme.breakpoints.down("sm")]: {
-          width: "48%",
-          marginRight: theme.spacing(0),
-        },
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    bigButton: {
+      marginRight: theme.spacing(2),
+      [theme.breakpoints.down("sm")]: {
+        width: "48%",
+        marginRight: theme.spacing(0),
       },
-      bigButtonsContainer: {
-        [theme.breakpoints.down("sm")]: {
-          display: "flex",
-          justifyContent: "space-between",
-        },
+    },
+    bigButtonsContainer: {
+      [theme.breakpoints.down("sm")]: {
+        display: "flex",
+        justifyContent: "space-between",
       },
-    })
-  );
+    },
+  })
+);
 
+function Buttons() {
   const classes = useStyles();
   return (
     <>
@@ -98,4 +97,4 @@ function Buttons() {
   );
 }
 
-export default memo(Buttons);
+export default Buttons;

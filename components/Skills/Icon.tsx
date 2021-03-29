@@ -1,4 +1,4 @@
-import { useRef, memo, useCallback } from "react";
+import { useRef } from "react";
 import { useSpring, animated as a } from "react-spring";
 
 import { Box, Typography } from "@material-ui/core";
@@ -16,12 +16,11 @@ function Icon({
   spin?: boolean;
 }) {
   const logoRef = useRef<HTMLImageElement | null>(null);
-  const useSpringCallback = useCallback(useSpring, []);
-  const [props, set] = useSpringCallback<{ xys: number[] }>(() => ({
+  const [props, set] = useSpring<{ xys: number[] }>(() => ({
     xys: [0, 0, 1],
     config: { mass: 1, tension: 500, friction: 15 },
   }));
-  const useStyles = makeStyles((_theme: Theme) =>
+  const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       root: {
         height: "100%",
@@ -32,7 +31,9 @@ function Icon({
       logo: {
         width: "100%",
         flexGrow: 1,
-        filter: `invert(${invert ? "100%" : "0%"})`,
+        filter: `invert(${
+          invert && theme.palette.type === "dark" ? "100%" : "0%"
+        })`,
         animation: `${spin ? "$App-logo-spin infinite 20s linear" : ""}`,
       },
       logoContainer: {
@@ -82,9 +83,4 @@ function Icon({
   );
 }
 
-export default memo(Icon, (prevProps, nextProps) => {
-  if (prevProps.invert !== nextProps.invert) {
-    return false;
-  }
-  return true;
-});
+export default Icon;
