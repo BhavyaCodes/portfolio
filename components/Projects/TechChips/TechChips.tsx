@@ -2,12 +2,10 @@ import { memo } from "react";
 import { Grid } from "@material-ui/core";
 import Chip from "./Chip";
 
+import { StackType } from "../Projects";
+
 type appProps = {
-  stack: {
-    label: string;
-    logo: string;
-    invert?: boolean;
-  }[];
+  stack: StackType[];
 };
 
 function TechChips({ stack }: appProps) {
