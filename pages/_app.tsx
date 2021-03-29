@@ -97,7 +97,7 @@ function MyAppWithTheme(props: AppProps) {
       // },
       type: paletteType,
       background: {
-        default: paletteType === "dark" ? "#040210" : "#fafafa",
+        default: paletteType === "dark" ? "#161625" : "#fafafa",
       },
     },
   });
