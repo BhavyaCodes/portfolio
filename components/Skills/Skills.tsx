@@ -1,10 +1,9 @@
-import { useState, useRef, useEffect, useMemo, memo } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTrail, animated as a } from "react-spring";
 import { useIntersection } from "react-use";
 
 import { Box, Grid, Typography, Container, Toolbar } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { useDarkMode } from "context/themeContext";
 
 import Icon from "./Icon";
 
@@ -61,87 +60,84 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function Skills() {
-  const darkMode = useDarkMode();
-  const iconsArray: iconsArray[] = useMemo(() => {
-    return [
-      {
-        title: "TypeScript",
-        logo: typescript,
-      },
-      {
-        title: "node.js",
-        logo: nodejs,
-      },
-      {
-        title: "react.js",
-        logo: react,
-        spin: true,
-      },
-      {
-        title: "next.js",
-        logo: nextjs,
-        invert: darkMode,
-      },
-      {
-        title: "mongoDB",
-        logo: mongodb,
-      },
-      {
-        title: "git",
-        logo: git,
-      },
-      {
-        title: "GitHub",
-        logo: github,
-        invert: darkMode,
-      },
-      {
-        title: "JavaScript",
-        logo: javascript,
-      },
-      {
-        title: "aws S3",
-        logo: s3,
-      },
-      {
-        title: "Material-UI",
-        logo: materialui,
-      },
-      {
-        title: "Postgres",
-        logo: postgresql,
-      },
-      {
-        title: "Redux",
-        logo: redux,
-      },
-      {
-        title: "Sass",
-        logo: sass,
-      },
-      {
-        title: "express.js",
-        logo: expressjs,
-      },
-      {
-        title: "Bootstrap",
-        logo: bootstrap,
-      },
-      {
-        title: "bash shell",
-        logo: bash,
-      },
-      {
-        title: "socket.io",
-        logo: socketio,
-      },
-      {
-        title: "vercel",
-        logo: vercel,
-        invert: darkMode,
-      },
-    ];
-  }, [darkMode]);
+  const iconsArray: iconsArray[] = [
+    {
+      title: "TypeScript",
+      logo: typescript,
+    },
+    {
+      title: "node.js",
+      logo: nodejs,
+    },
+    {
+      title: "react.js",
+      logo: react,
+      spin: true,
+    },
+    {
+      title: "next.js",
+      logo: nextjs,
+      invert: true,
+    },
+    {
+      title: "mongoDB",
+      logo: mongodb,
+    },
+    {
+      title: "git",
+      logo: git,
+    },
+    {
+      title: "GitHub",
+      logo: github,
+      invert: true,
+    },
+    {
+      title: "JavaScript",
+      logo: javascript,
+    },
+    {
+      title: "aws S3",
+      logo: s3,
+    },
+    {
+      title: "Material-UI",
+      logo: materialui,
+    },
+    {
+      title: "Postgres",
+      logo: postgresql,
+    },
+    {
+      title: "Redux",
+      logo: redux,
+    },
+    {
+      title: "Sass",
+      logo: sass,
+    },
+    {
+      title: "express.js",
+      logo: expressjs,
+    },
+    {
+      title: "Bootstrap",
+      logo: bootstrap,
+    },
+    {
+      title: "bash shell",
+      logo: bash,
+    },
+    {
+      title: "socket.io",
+      logo: socketio,
+    },
+    {
+      title: "vercel",
+      logo: vercel,
+      invert: true,
+    },
+  ];
 
   const classes = useStyles();
 
@@ -236,4 +232,4 @@ function Skills() {
   );
 }
 
-export default memo(Skills, () => true);
+export default Skills;
