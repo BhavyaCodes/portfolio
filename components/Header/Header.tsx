@@ -1,5 +1,12 @@
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { Toolbar, Grid, Container, IconButton, Link } from "@material-ui/core";
+import {
+  Toolbar,
+  Grid,
+  Container,
+  IconButton,
+  Link,
+  Hidden,
+} from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import programmer from "public/assets/programmer2.svg";
@@ -16,6 +23,7 @@ function Header() {
       root: {
         minHeight: "100vh",
         backgroundImage: `url(${darkMode ? darkHeader : lightHeader})`,
+        backgroundPosition: "right",
         backgroundSize: "cover",
         display: "flex",
         flexDirection: "column",
@@ -50,9 +58,11 @@ function Header() {
           <Grid item md={6} xs={12} className={classes.gridItem}>
             <HeaderText />
           </Grid>
-          <Grid item md={6} xs={12} className={classes.gridItem}>
-            <img className={classes.headerImg} src={programmer} />
-          </Grid>
+          <Hidden smDown>
+            <Grid item md={6} xs={12} className={classes.gridItem}>
+              <img className={classes.headerImg} src={programmer} />
+            </Grid>
+          </Hidden>
         </Grid>
       </Container>
       <div className={classes.downArrowContainer}>
