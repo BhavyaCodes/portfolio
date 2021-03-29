@@ -4,8 +4,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import programmer from "public/assets/programmer2.svg";
 import { useDarkMode } from "context/themeContext";
-import lightHeader from "public/assets/light-header2.svg";
-import darkHeader from "public/assets/dark-header.svg";
+import lightHeader from "public/assets/backgrounds/blob-scene-light.svg";
+import darkHeader from "public/assets/backgrounds/blob-scene-dark.svg";
 import HeaderText from "./HeaderText";
 
 function Header() {
