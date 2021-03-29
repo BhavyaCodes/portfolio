@@ -235,7 +235,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <CssBaseline />
-      <AppBar color="primary">
+      <AppBar>
         <Toolbar>
           <Typography variant="h6">Scroll to see button</Typography>
           <div className={classes.navbarRight}>
