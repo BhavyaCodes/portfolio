@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@material-ui/core/styles";
-
+import { lime, deepPurple, red } from "@material-ui/core/colors";
 import { createMuiTheme } from "@material-ui/core/styles";
 import {
   AppBar,
@@ -83,12 +83,8 @@ function MyAppWithTheme(props: AppProps) {
   const paletteType = darkMode ? "dark" : "light";
   const theme = createMuiTheme({
     palette: {
-      // primary: {
-      //   main: "#556cd6",
-      // },
-      // secondary: {
-      //   main: "#19857b",
-      // },
+      primary: deepPurple,
+      secondary: paletteType === "dark" ? lime : red,
       // error: {
       //   main: red.A400,
       // },
@@ -98,6 +94,15 @@ function MyAppWithTheme(props: AppProps) {
       type: paletteType,
       background: {
         default: paletteType === "dark" ? "#161625" : "#fafafa",
+        paper: paletteType === "dark" ? "#161625" : "#fff",
+      },
+    },
+    overrides: {
+      MuiAppBar: {
+        colorPrimary: {
+          backgroundColor: paletteType === "dark" ? "#091c34" : "#51e845",
+          color: paletteType === "light" ? "rgba(0, 0, 0, 0.87)" : "#fafafa",
+        },
       },
     },
   });
@@ -230,7 +235,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <CssBaseline />
-      <AppBar>
+      <AppBar color="primary">
         <Toolbar>
           <Typography variant="h6">Scroll to see button</Typography>
           <div className={classes.navbarRight}>
