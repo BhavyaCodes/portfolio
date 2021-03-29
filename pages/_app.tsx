@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@material-ui/core/styles";
-import { lime, deepPurple, red } from "@material-ui/core/colors";
+import { lime, red } from "@material-ui/core/colors";
 import { createMuiTheme } from "@material-ui/core/styles";
 import {
   AppBar,
@@ -83,7 +83,7 @@ function MyAppWithTheme(props: AppProps) {
   const paletteType = darkMode ? "dark" : "light";
   const theme = createMuiTheme({
     palette: {
-      primary: deepPurple,
+      // primary: deepPurple,
       secondary: paletteType === "dark" ? lime : red,
       // error: {
       //   main: red.A400,
