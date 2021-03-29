@@ -9,7 +9,6 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-import programmer from "public/assets/programmer2.svg";
 import { useDarkMode } from "context/themeContext";
 import lightHeader from "public/assets/backgrounds/blob-scene-light.svg";
 import darkHeader from "public/assets/backgrounds/blob-scene-dark.svg";
@@ -60,7 +59,10 @@ function Header() {
           </Grid>
           <Hidden smDown>
             <Grid item md={6} xs={12} className={classes.gridItem}>
-              <img className={classes.headerImg} src={programmer} />
+              <img
+                className={classes.headerImg}
+                src="/assets/programmer2.svg"
+              />
             </Grid>
           </Hidden>
         </Grid>
