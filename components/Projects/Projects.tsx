@@ -1,6 +1,6 @@
 import { memo, useEffect } from "react";
 import Link from "next/link";
-import { Typography, Button, Container, Toolbar } from "@material-ui/core";
+import { Button, Container } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Project from "./Project";
 
@@ -140,14 +140,9 @@ function Projects() {
       }
     );
   };
+
   return (
     <>
-      <Toolbar id="projects" />
-      <Container>
-        <Typography variant="h1" align="center">
-          Projects I have worked on
-        </Typography>
-      </Container>
       {renderProjects()}
       <Container style={{ textAlign: "right" }}>
         <Link href="/projects" passHref>
