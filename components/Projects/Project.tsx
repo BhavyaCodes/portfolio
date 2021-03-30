@@ -98,7 +98,7 @@ function Project({
                     <Button
                       className={classes.chip}
                       variant="contained"
-                      color="primary"
+                      color="secondary"
                       href={links.github}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -112,7 +112,7 @@ function Project({
                     <Button
                       className={classes.chip}
                       variant="contained"
-                      color="primary"
+                      color="secondary"
                       href={links.live}
                       target="_blank"
                       rel="noopener noreferrer"

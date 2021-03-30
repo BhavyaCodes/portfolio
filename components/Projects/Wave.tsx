@@ -12,7 +12,7 @@ function Wave({ color, children }: AppProps) {
     <>
       <div
         style={{
-          marginTop: useMediaQuery(theme.breakpoints.up("md")) ? "-100px" : "",
+          marginTop: useMediaQuery(theme.breakpoints.up("md")) ? "-100px" : "0",
         }}
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -28,7 +28,7 @@ function Wave({ color, children }: AppProps) {
         style={{
           marginBottom: useMediaQuery(theme.breakpoints.up("md"))
             ? "-100px"
-            : "",
+            : "0",
         }}
       >
         <svg
