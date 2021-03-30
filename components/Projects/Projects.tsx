@@ -1,6 +1,6 @@
 import { memo, useEffect } from "react";
 import Link from "next/link";
-import { Typography, Button, Container } from "@material-ui/core";
+import { Button, Container } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Project from "./Project";
 
@@ -140,11 +140,9 @@ function Projects() {
       }
     );
   };
+
   return (
     <>
-      <Typography id="projects" variant="h2">
-        Projects I have worked on
-      </Typography>
       {renderProjects()}
       <Container style={{ textAlign: "right" }}>
         <Link href="/projects" passHref>

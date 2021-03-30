@@ -7,6 +7,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import TechChips from "components/Projects/TechChips";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import OpenInNewIcon from "@material-ui/icons/OpenInNew";
+import { lime } from "@material-ui/core/colors";
 
 import { useDarkMode } from "context/themeContext";
 
@@ -30,7 +31,8 @@ function Project({
     createStyles({
       root: {
         "& strong": {
-          color: darkMode ? "#77f372" : "#0d9d74",
+          // color: darkMode ? "#77f372" : "#0d9d74",
+          color: darkMode ? lime.A200 : "#0d9d74",
         },
         "& p": {
           marginBottom: theme.spacing(2),
@@ -73,8 +75,19 @@ function Project({
   const classes = useStyles();
 
   const renderDescription = () => {
+    const useStyles = makeStyles((_theme: Theme) =>
+      createStyles({
+        text: {
+          "& a": {
+            color: "inherit",
+          },
+        },
+      })
+    );
+    const classes = useStyles();
+
     return description.map((para, index) => (
-      <Typography key={index} gutterBottom>
+      <Typography key={index} className={classes.text} gutterBottom>
         <ReactMarkdown renderers={{ paragraph: "span" }} linkTarget="_blank">
           {para}
         </ReactMarkdown>
@@ -85,7 +98,7 @@ function Project({
   const renderProject = () => (
     <div className={classes.root}>
       <Container className={classes.container}>
-        <Typography variant="h2" align="center">
+        <Typography variant="h2" align="center" gutterBottom>
           {title}
         </Typography>
         <Grid container>
@@ -98,7 +111,7 @@ function Project({
                     <Button
                       className={classes.chip}
                       variant="contained"
-                      color="primary"
+                      color="secondary"
                       href={links.github}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -112,7 +125,7 @@ function Project({
                     <Button
                       className={classes.chip}
                       variant="contained"
-                      color="primary"
+                      color="secondary"
                       href={links.live}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -131,15 +144,17 @@ function Project({
             <Grid item md={6} xs={12}>
               <Box className={classes.imageContainer}>
                 {images.main && (
-                  <Image
-                    src={images.main.link}
-                    width={images.main.width}
-                    height={images.main.height}
-                    quality={75}
-                    priority
-                    sizes="(max-width: 960px) 90vw, 40vw"
-                    layout="responsive"
-                  />
+                  <Box mb={2}>
+                    <Image
+                      src={images.main.link}
+                      width={images.main.width}
+                      height={images.main.height}
+                      quality={75}
+                      priority
+                      sizes="(max-width: 960px) 90vw, 40vw"
+                      layout="responsive"
+                    />
+                  </Box>
                 )}
                 <Box style={{ textAlign: "center" }}>
                   {images.webm && (
