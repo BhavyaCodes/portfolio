@@ -7,6 +7,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import TechChips from "components/Projects/TechChips";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import OpenInNewIcon from "@material-ui/icons/OpenInNew";
+import { lime } from "@material-ui/core/colors";
 
 import { useDarkMode } from "context/themeContext";
 
@@ -30,7 +31,8 @@ function Project({
     createStyles({
       root: {
         "& strong": {
-          color: darkMode ? "#77f372" : "#0d9d74",
+          // color: darkMode ? "#77f372" : "#0d9d74",
+          color: darkMode ? lime.A200 : "#0d9d74",
         },
         "& p": {
           marginBottom: theme.spacing(2),
