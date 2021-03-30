@@ -110,8 +110,8 @@ const projects = [
     images: {
       main: {
         link: "/project/url-short/main.png",
-        width: 963,
-        height: 750,
+        width: 964,
+        height: 751,
       },
     },
     links: {
