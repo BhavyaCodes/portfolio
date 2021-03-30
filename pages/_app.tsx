@@ -293,6 +293,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
           {renderDrawer()}
         </Drawer>
       </Hidden>
+      <div id="back-to-top-anchor" />
       <Component {...pageProps} />
       <ScrollTop>
         <Fab color="secondary" size="medium" aria-label="scroll back to top">
