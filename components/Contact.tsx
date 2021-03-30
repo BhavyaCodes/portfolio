@@ -9,6 +9,7 @@ import {
   TextField,
   Button,
   Hidden,
+  useTheme,
 } from "@material-ui/core";
 import MailIcon from "@material-ui/icons/Mail";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -20,7 +21,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: "#091c34",
+      backgroundColor: theme.palette.type === "dark" ? "#091c34" : "#3ce14c",
       paddingBottom: theme.spacing(5),
     },
     wave: {
@@ -66,9 +67,17 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Contact() {
   const classes = useStyles();
+  const theme = useTheme();
   return (
     <div className={classes.root}>
-      <img className={classes.wave} src="/assets/footer-wave.svg" />
+      <img
+        className={classes.wave}
+        src={
+          theme.palette.type === "dark"
+            ? "/assets/footer-wave-dark.svg"
+            : "/assets/footer-wave-light.svg"
+        }
+      />
       <Container id="contact">
         <Grid container>
           <Grid item md={6} sm={12} className={classes.left}>
