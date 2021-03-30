@@ -167,9 +167,10 @@ function Projects() {
   return (
     <>
       {renderProjects()}
-      <Container style={{ textAlign: "right" }}>
+      <Container style={{ textAlign: "center" }}>
         <Link href="/projects" passHref>
           <Button
+            style={{ marginTop: "5rem" }}
             component="a"
             color="secondary"
             size="large"
