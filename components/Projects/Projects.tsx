@@ -144,7 +144,7 @@ function Projects() {
     <>
       <Toolbar id="projects" />
       <Container>
-        <Typography variant="h2" align="center">
+        <Typography variant="h1" align="center">
           Projects I have worked on
         </Typography>
       </Container>
