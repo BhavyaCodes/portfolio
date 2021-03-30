@@ -16,6 +16,11 @@ function Title() {
           variant={useMediaQuery(theme.breakpoints.up("sm")) ? "h1" : "h2"}
           component="h2"
           align="center"
+          style={{
+            fontWeight: useMediaQuery(theme.breakpoints.up("sm"))
+              ? theme.typography.fontWeightLight
+              : theme.typography.fontWeightRegular,
+          }}
         >
           Projects I have worked on
         </Typography>
