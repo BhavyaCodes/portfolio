@@ -122,6 +122,29 @@ function Projects() {
         webm: "/project/connect-4/c4webm.webm",
       },
     },
+    {
+      title: "URL shortener",
+      description: ["url shortener made with ts blah blah blah"],
+      images: {
+        main: {
+          link: "/project/url-short/main.png",
+          width: 963,
+          height: 750,
+        },
+      },
+      links: {
+        github: "https://github.com",
+        live: "https://short-url-three.vercel.app/",
+      },
+      stack: [
+        { label: "Typescript", logo: logos.typescript },
+        { label: "react", logo: logos.react },
+        { label: "express", logo: logos.expressjs },
+        { label: "material-ui", logo: logos.materialui },
+        { label: "mongoDB", logo: logos.mongodb },
+        { label: "nodejs", logo: logos.nodejs },
+      ],
+    },
   ];
   const renderProjects = () => {
     return projects.map(
