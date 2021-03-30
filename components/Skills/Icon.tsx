@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { useSpring, animated as a } from "react-spring";
 
 import { Box, Typography } from "@material-ui/core";
@@ -83,4 +83,9 @@ function Icon({
   );
 }
 
-export default Icon;
+export default memo(Icon, (prevProps, nextProps) => {
+  if (prevProps.invert !== nextProps.invert) {
+    return false;
+  }
+  return true;
+});
