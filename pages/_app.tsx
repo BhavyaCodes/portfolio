@@ -204,8 +204,8 @@ export function MyApp({ Component, pageProps }: AppProps) {
             <ListItemText primary="My Toolbelt" />
           </ListItem>
         </Link>
-        <Link href="/#projects" passHref>
-          <ListItem button component="a" href="/#projects">
+        <Link href="/projects" passHref>
+          <ListItem button component="a" href="/projects">
             <ListItemIcon>
               <CodeIcon />
             </ListItemIcon>
@@ -251,11 +251,11 @@ export function MyApp({ Component, pageProps }: AppProps) {
                     Tools and skills
                   </Button>
                 </Link>
-                <Link href="/#projects" passHref>
+                <Link href="/projects" passHref>
                   <Button
                     className={classes.navbarRightButtons}
                     component="a"
-                    href="/#projects"
+                    href="/projects"
                     color="inherit"
                   >
                     projects

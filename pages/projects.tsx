@@ -170,7 +170,14 @@
 import React from "react";
 
 function projects() {
-  return <div>Projects page</div>;
+  return (
+    <div>
+      <h1>Projects page</h1>
+      <h1>Projects page</h1>
+      <h1>Projects page</h1>
+      <h1>Projects page</h1>
+    </div>
+  );
 }
 
 export default projects;
