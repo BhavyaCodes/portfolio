@@ -85,7 +85,7 @@ function Project({
   const renderProject = () => (
     <div className={classes.root}>
       <Container className={classes.container}>
-        <Typography variant="h2" align="center">
+        <Typography variant="h2" align="center" gutterBottom>
           {title}
         </Typography>
         <Grid container>
