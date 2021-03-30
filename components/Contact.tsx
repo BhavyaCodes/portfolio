@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme: Theme) =>
     wave: {
       width: "100%",
       height: theme.spacing(50),
+      [theme.breakpoints.down("md")]: {
+        height: theme.spacing(25),
+      },
     },
     left: {
       display: "flex",
