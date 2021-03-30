@@ -75,8 +75,19 @@ function Project({
   const classes = useStyles();
 
   const renderDescription = () => {
+    const useStyles = makeStyles((_theme: Theme) =>
+      createStyles({
+        text: {
+          "& a": {
+            color: "inherit",
+          },
+        },
+      })
+    );
+    const classes = useStyles();
+
     return description.map((para, index) => (
-      <Typography key={index} gutterBottom>
+      <Typography key={index} className={classes.text} gutterBottom>
         <ReactMarkdown renderers={{ paragraph: "span" }} linkTarget="_blank">
           {para}
         </ReactMarkdown>
