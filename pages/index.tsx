@@ -5,6 +5,7 @@ import Skills from "components/Skills";
 import Projects from "components/Projects";
 import ProjectsTitle from "components/Projects/ProjectsTitle";
 import Contact from "components/Contact";
+import AllProjectsButton from "components/Projects/AllProjectsButton";
 
 const logos = {
   react: "/assets/icons/react.png",
@@ -133,8 +134,9 @@ const IndexPage = () => {
     <>
       <Header />
       <Skills />
-      <ProjectsTitle />
+      <ProjectsTitle text={"Projects I have worked on"} />
       <Projects projects={projects} />
+      <AllProjectsButton />
       <Contact />
     </>
   );

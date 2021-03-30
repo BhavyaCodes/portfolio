@@ -1,7 +1,4 @@
 import { memo, useEffect } from "react";
-import Link from "next/link";
-import { Button, Container } from "@material-ui/core";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Project from "./Project";
 
 export type StackType = { label: string; logo: string; invert?: boolean };
@@ -43,25 +40,7 @@ function Projects({ projects }: { projects: ProjectType[] }) {
     );
   };
 
-  return (
-    <>
-      {renderProjects()}
-      <Container style={{ textAlign: "center" }}>
-        <Link href="/projects" passHref>
-          <Button
-            style={{ marginTop: "5rem" }}
-            component="a"
-            color="secondary"
-            size="large"
-            variant="outlined"
-            endIcon={<ArrowForwardIosIcon />}
-          >
-            View All Projects
-          </Button>
-        </Link>
-      </Container>
-    </>
-  );
+  return <>{renderProjects()}</>;
 }
 
 export default memo(Projects);
