@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       backgroundColor: "#091c34",
+      paddingBottom: theme.spacing(5),
     },
     wave: {
       width: "100%",
