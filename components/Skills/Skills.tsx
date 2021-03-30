@@ -140,12 +140,16 @@ function Skills() {
   ];
 
   const classes = useStyles();
-
   const intersectionRef = useRef(null);
-  const intersection = useIntersection(intersectionRef, {
+  const intersectionEnter = useIntersection(intersectionRef, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.5,
+    threshold: 0.3,
+  });
+  const intersectionExit = useIntersection(intersectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
   });
 
   const [toggle, setToggle] = useState(false);
@@ -155,13 +159,20 @@ function Skills() {
     trail: 400 / iconsArray.length,
     transform: toggle ? "scale(1)" : "scale(0)",
     from: { transform: "scale(0)" },
+    reset: !toggle,
   });
 
   useEffect(() => {
-    if (intersection?.isIntersecting) {
+    if (intersectionEnter?.isIntersecting) {
       setToggle(true);
     }
-  }, [intersection]);
+  }, [intersectionEnter]);
+
+  useEffect(() => {
+    if (!intersectionExit?.isIntersecting) {
+      setToggle(false);
+    }
+  }, [intersectionExit]);
 
   const renderIcons = () => {
     return trail.map(({ transform }, index) => (
@@ -215,7 +226,9 @@ function Skills() {
               >
                 My Tech Stack
               </Typography>
-              <div>
+              <div
+              // ref={intersectionExitRef}
+              >
                 <Grid
                   container
                   className={classes.gridContainer}
