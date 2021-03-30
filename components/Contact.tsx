@@ -58,6 +58,9 @@ const useStyles = makeStyles((theme: Theme) =>
     illustration: {
       width: "80%",
     },
+    sendButton: {
+      marginTop: theme.spacing(2),
+    },
   })
 );
 
@@ -166,25 +169,33 @@ function Contact() {
             <TextField
               label="Name"
               fullWidth
-              margin="normal"
+              margin="dense"
               variant="outlined"
+              color="secondary"
             />
             <TextField
               label="Email"
               type="email"
               fullWidth
-              margin="normal"
+              margin="dense"
               variant="outlined"
+              color="secondary"
             />
             <TextField
               label="Message"
               fullWidth
-              margin="normal"
+              margin="dense"
               multiline
-              rows={4}
+              rows={5}
               variant="outlined"
+              color="secondary"
             />
-            <Button variant="outlined" endIcon={<SendIcon />}>
+            <Button
+              variant="outlined"
+              className={classes.sendButton}
+              color="secondary"
+              endIcon={<SendIcon />}
+            >
               send
             </Button>
           </Grid>
