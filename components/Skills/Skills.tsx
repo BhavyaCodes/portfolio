@@ -9,24 +9,24 @@ import Icon from "./Icon";
 
 import githubDots from "public/assets/github-dots.svg";
 
-import git from "public/assets/icons/git.svg";
-import github from "public/assets/icons/github.svg";
-import javascript from "public/assets/icons/javascript.svg";
-import materialui from "public/assets/icons/materialui.svg";
-import mongodb from "public/assets/icons/mongodb.svg";
-import nextjs from "public/assets/icons/nextjs.svg";
-import nodejs from "public/assets/icons/nodejs.svg";
-import postgresql from "public/assets/icons/postgresql.svg";
-import react from "public/assets/icons/react.png";
-import redux from "public/assets/icons/redux.svg";
-import sass from "public/assets/icons/sass.svg";
-import typescript from "public/assets/icons/typescript.svg";
-import expressjs from "public/assets/icons/expressjs.png";
-import bootstrap from "public/assets/icons/bootstrap.svg";
-import bash from "public/assets/icons/bash.svg";
-import s3 from "public/assets/icons/s3.svg";
-import socketio from "public/assets/icons/socketio.svg";
-import vercel from "public/assets/icons/vercel.svg";
+const git = "/assets/icons/git.svg";
+const github = "/assets/icons/github.svg";
+const javascript = "/assets/icons/javascript.svg";
+const materialui = "/assets/icons/materialui.svg";
+const mongodb = "/assets/icons/mongodb.svg";
+const nextjs = "/assets/icons/nextjs.svg";
+const nodejs = "/assets/icons/nodejs.svg";
+const postgresql = "/assets/icons/postgresql.svg";
+const react = "/assets/icons/react.png";
+const redux = "/assets/icons/redux.svg";
+const sass = "/assets/icons/sass.svg";
+const typescript = "/assets/icons/typescript.svg";
+const expressjs = "/assets/icons/expressjs.png";
+const bootstrap = "/assets/icons/bootstrap.svg";
+const bash = "/assets/icons/bash.svg";
+const s3 = "/assets/icons/s3.svg";
+const socketio = "/assets/icons/socketio.svg";
+const vercel = "/assets/icons/vercel.svg";
 
 type iconsArray = {
   title: string;
