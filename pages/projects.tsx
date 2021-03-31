@@ -1,6 +1,7 @@
 import { Toolbar } from "@material-ui/core";
 import Projects from "components/Projects";
 import ProjectsTitle from "components/Projects/ProjectsTitle";
+import BackHomeButton from "components/Projects/BackHomeButton";
 
 const logos = {
   react: "/assets/icons/react.png",
@@ -130,6 +131,7 @@ function projectsPage() {
       <Toolbar />
       <ProjectsTitle text="All projects I have worked on" />
       <Projects projects={projects} />
+      <BackHomeButton />
     </>
   );
 }
