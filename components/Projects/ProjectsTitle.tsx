@@ -6,7 +6,7 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 
-function Title() {
+function Title({ text }: { text: string }) {
   const theme = useTheme();
   return (
     <>
@@ -22,7 +22,7 @@ function Title() {
               : theme.typography.fontWeightRegular,
           }}
         >
-          Projects I have worked on
+          {text}
         </Typography>
       </Container>
     </>

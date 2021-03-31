@@ -5,6 +5,7 @@ import ForumIcon from "@material-ui/icons/Forum";
 import CodeIcon from "@material-ui/icons/Code";
 import { Box, IconButton, Link, Button } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import NextLink from "next/link";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -83,15 +84,18 @@ function Buttons() {
         >
           Get in touch
         </Button>
-        <Button
-          variant="outlined"
-          color="secondary"
-          className={classes.bigButton}
-          startIcon={<CodeIcon />}
-          href="#skills"
-        >
-          See my work
-        </Button>
+        <NextLink href="/projects">
+          <Button
+            component="a"
+            variant="outlined"
+            color="secondary"
+            className={classes.bigButton}
+            startIcon={<CodeIcon />}
+            href="/projects"
+          >
+            See my work
+          </Button>
+        </NextLink>
       </Box>
     </>
   );
