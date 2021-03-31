@@ -47,14 +47,13 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: theme.spacing(4),
     },
     illustrationContainer: {
-      display: "flex",
-      alignContent: "center",
-      [theme.breakpoints.down("md")]: {
-        justifyContent: "center",
-      },
+      margin: "auto",
     },
     illustration: {
       width: "80%",
+      [theme.breakpoints.down("md")]: {
+        width: "100%",
+      },
     },
   })
 );
