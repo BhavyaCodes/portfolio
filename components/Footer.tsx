@@ -47,9 +47,18 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: theme.spacing(5),
       paddingBottom: theme.spacing(5),
     },
+    icon: {
+      marginRight: theme.spacing(2),
+    },
     socialItem: {
       display: "flex",
       alignItems: "center",
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(1),
+      "&:hover": {
+        textDecoration: "none",
+        color: theme.palette.secondary.light,
+      },
     },
     illustrationContainer: {
       display: "flex",
@@ -86,74 +95,58 @@ function Footer() {
             </Typography>
             <Grid container className={classes.leftContainer}>
               <Grid item md={6} sm={12} className={classes.iconsGrid}>
-                <Box className={classes.socialItem}>
-                  <Link
-                    href="https://github.com/Juggernaut9"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    color="inherit"
-                  >
-                    <IconButton
-                      aria-label="Github profile"
-                      aria-haspopup="true"
-                      color="inherit"
-                    >
-                      <GitHubIcon fontSize="large" />
-                    </IconButton>
-                  </Link>
+                <Link
+                  className={classes.socialItem}
+                  href="https://github.com/Juggernaut9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="inherit"
+                >
+                  <GitHubIcon className={classes.icon} fontSize="large" />
+
                   <Typography>Github</Typography>
-                </Box>
-                <Box className={classes.socialItem}>
-                  <Link
-                    href="https://www.linkedin.com/in/bhavya-tomar-1967b6202"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    color="inherit"
-                  >
-                    <IconButton
-                      aria-label="LinkedIn profile"
-                      aria-haspopup="true"
-                      color="inherit"
-                    >
-                      <LinkedInIcon fontSize="large" />
-                    </IconButton>
-                  </Link>
+                </Link>
+
+                <Link
+                  className={classes.socialItem}
+                  href="https://www.linkedin.com/in/bhavya-tomar-1967b6202"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="inherit"
+                >
+                  <LinkedInIcon className={classes.icon} fontSize="large" />
+
                   <Typography>LinkedIn</Typography>
-                </Box>
-                <Box className={classes.socialItem}>
-                  <Link
-                    href="https://twitter.com/bhavyacodes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    color="inherit"
-                  >
-                    <IconButton
-                      aria-label="Twitter link"
-                      aria-haspopup="true"
-                      color="inherit"
-                    >
-                      <TwitterIcon fontSize="large" />
-                    </IconButton>
-                  </Link>
+                </Link>
+
+                <Link
+                  className={classes.socialItem}
+                  href="https://twitter.com/bhavyacodes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="inherit"
+                >
+                  <TwitterIcon className={classes.icon} fontSize="large" />
+
                   <Typography>Twitter</Typography>
-                </Box>
-                <Box className={classes.socialItem}>
-                  <Link
-                    href="https://twitter.com/bhavyacodes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    color="inherit"
-                  >
-                    <IconButton
+                </Link>
+
+                <Link
+                  className={classes.socialItem}
+                  href="https://twitter.com/bhavyacodes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="inherit"
+                >
+                  {/* <IconButton
                       aria-label="My Email"
                       aria-haspopup="true"
                       color="inherit"
-                    >
-                      <MailIcon fontSize="large" />
-                    </IconButton>
-                  </Link>
+                    > */}
+                  <MailIcon fontSize="large" className={classes.icon} />
+                  {/* </IconButton> */}
                   <Typography>xbhavatomar@gmail.com</Typography>
-                </Box>
+                </Link>
               </Grid>
 
               <Grid
