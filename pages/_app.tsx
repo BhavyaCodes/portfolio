@@ -181,8 +181,8 @@ export function MyApp({ Component, pageProps }: AppProps) {
       </IconButton>
       <Divider />
       <List>
-        <Link href="/#home" passHref>
-          <ListItem button component="a" href="/#home">
+        <Link href="/#" passHref>
+          <ListItem button component="a" href="/#">
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
@@ -230,18 +230,28 @@ export function MyApp({ Component, pageProps }: AppProps) {
       <CssBaseline />
       <AppBar>
         <Toolbar>
-          <Link href="/" passHref>
+          <Link href="/#" passHref>
             <Typography
               color="inherit"
               className={classes.logo}
               component="a"
-              href="/"
+              href="/#"
               variant="h6"
             >{`< Bhavya />`}</Typography>
           </Link>
           <div className={classes.navbarRight}>
             <Hidden mdDown>
               <Box mr={2}>
+                <Link href="/#" passHref>
+                  <Button
+                    className={classes.navbarRightButtons}
+                    component="a"
+                    href="/#"
+                    color="inherit"
+                  >
+                    home
+                  </Button>
+                </Link>
                 <Link href="/#skills" passHref>
                   <Button
                     className={classes.navbarRightButtons}
