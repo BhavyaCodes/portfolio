@@ -4,7 +4,7 @@ import Header from "components/Header";
 import Skills from "components/Skills";
 import Projects from "components/Projects";
 import ProjectsTitle from "components/Projects/ProjectsTitle";
-import Contact from "components/Contact";
+import Footer from "components/Footer";
 import AllProjectsButton from "components/Projects/AllProjectsButton";
 
 const logos = {
@@ -138,7 +138,7 @@ const IndexPage = () => {
       <ProjectsTitle text={"Projects I have worked on"} />
       <Projects projects={projects} />
       <AllProjectsButton />
-      <Contact />
+      <Footer />
     </>
   );
 };

@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-function Contact() {
+function Footer() {
   const classes = useStyles();
   const theme = useTheme();
   return (
@@ -214,4 +214,4 @@ function Contact() {
   );
 }
 
-export default memo(Contact);
+export default memo(Footer);
