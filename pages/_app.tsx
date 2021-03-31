@@ -121,14 +121,6 @@ export default function MyAppWithDarkModeAndTheme(props: AppProps) {
   );
 }
 
-// function MyAppWithDarkMode(props: AppProps) {
-//   return (
-//     <DarkModeProvider>
-//       <MyApp {...props} />
-//     </DarkModeProvider>
-//   );
-// }
-
 export function MyApp({ Component, pageProps }: AppProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const useStyles = makeStyles((theme: Theme) =>
@@ -274,7 +266,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
               </Box>
             </Hidden>
             <DarkModeIcon />
-            <Hidden mdUp>
+            <Hidden lgUp>
               <IconButton color="inherit" onClick={handleMenuButton}>
                 <MenuIcon />
               </IconButton>
@@ -282,7 +274,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </Toolbar>
       </AppBar>
-      <Hidden mdUp>
+      <Hidden lgUp>
         <Drawer
           open={drawerOpen}
           anchor="right"
