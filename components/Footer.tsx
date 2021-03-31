@@ -131,18 +131,12 @@ function Footer() {
 
                 <Link
                   className={classes.socialItem}
-                  href="https://twitter.com/bhavyacodes"
+                  href="mailto:xbhavyatomar@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   color="inherit"
                 >
-                  {/* <IconButton
-                      aria-label="My Email"
-                      aria-haspopup="true"
-                      color="inherit"
-                    > */}
                   <MailIcon fontSize="large" className={classes.icon} />
-                  {/* </IconButton> */}
                   <Typography>xbhavatomar@gmail.com</Typography>
                 </Link>
               </Grid>
