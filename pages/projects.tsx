@@ -17,6 +17,7 @@ const logos = {
   socketio: "/assets/icons/socketio.svg",
   typescript: "/assets/icons/typescript.svg",
   vercel: "/assets/icons/vercel.svg",
+  ejs: "/assets/icons/ejs.svg",
 };
 
 const projects = [
@@ -41,7 +42,7 @@ const projects = [
       { label: "aws-s3", logo: logos.s3 },
       { label: "mongodb", logo: logos.mongodb },
       { label: "bootstrap", logo: logos.bootstrap },
-      { label: "nextjs", logo: logos.nextjs, invert: true },
+      { label: "EJS", logo: logos.ejs, invert: true },
     ],
     links: {
       live: "https://dogmash.herokuapp.com/",
