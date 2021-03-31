@@ -24,7 +24,7 @@ import typescript from "public/assets/icons/typescript.svg";
 import expressjs from "public/assets/icons/expressjs.png";
 import bootstrap from "public/assets/icons/bootstrap.svg";
 import bash from "public/assets/icons/bash.svg";
-import s3 from "public/assets/icons/s3.png";
+import s3 from "public/assets/icons/s3.svg";
 import socketio from "public/assets/icons/socketio.svg";
 import vercel from "public/assets/icons/vercel.svg";
 

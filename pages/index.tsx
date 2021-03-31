@@ -17,7 +17,7 @@ const logos = {
   mongodb: "/assets/icons/mongodb.svg",
   nextjs: "/assets/icons/nextjs.svg",
   nodejs: "/assets/icons/nodejs.svg",
-  s3: "/assets/icons/s3.png",
+  s3: "/assets/icons/s3.svg",
   socketio: "/assets/icons/socketio.svg",
   typescript: "/assets/icons/typescript.svg",
   vercel: "/assets/icons/vercel.svg",
