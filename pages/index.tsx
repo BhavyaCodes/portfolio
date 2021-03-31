@@ -135,7 +135,7 @@ const IndexPage = () => {
     <>
       <Header />
       <Skills />
-      <ProjectsTitle text={"Projects I have worked on"} />
+      <ProjectsTitle text={"Featured Projects"} />
       <Projects projects={projects} />
       <AllProjectsButton />
       <Footer />
