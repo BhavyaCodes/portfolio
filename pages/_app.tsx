@@ -125,6 +125,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
+      logo: { textDecoration: "none" },
       navbarRight: {
         marginLeft: "auto",
         marginRight: theme.spacing(0),
@@ -229,7 +230,15 @@ export function MyApp({ Component, pageProps }: AppProps) {
       <CssBaseline />
       <AppBar>
         <Toolbar>
-          <Typography variant="h6">Scroll to see button</Typography>
+          <Link href="/" passHref>
+            <Typography
+              color="inherit"
+              className={classes.logo}
+              component="a"
+              href="/"
+              variant="h6"
+            >{`< Bhavya />`}</Typography>
+          </Link>
           <div className={classes.navbarRight}>
             <Hidden mdDown>
               <Box mr={2}>
