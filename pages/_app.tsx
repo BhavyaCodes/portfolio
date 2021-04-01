@@ -1,4 +1,6 @@
 import { useEffect, useState, ReactNode } from "react";
+import * as gtag from "../lib/gtag";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
@@ -122,6 +124,16 @@ export default function MyAppWithDarkModeAndTheme(props: AppProps) {
 }
 
 export function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
