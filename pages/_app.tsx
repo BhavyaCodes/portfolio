@@ -274,6 +274,16 @@ export function MyApp({ Component, pageProps }: AppProps) {
                     Tools and skills
                   </Button>
                 </Link>
+                <Link href="/#projects" passHref>
+                  <Button
+                    className={classes.navbarRightButtons}
+                    component="a"
+                    href="/#projects"
+                    color="inherit"
+                  >
+                    featured projects
+                  </Button>
+                </Link>
                 <Link href="/projects" passHref>
                   <Button
                     className={classes.navbarRightButtons}
@@ -281,7 +291,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
                     href="/projects"
                     color="inherit"
                   >
-                    projects
+                    all projects
                   </Button>
                 </Link>
                 <Link href="/#contact" passHref>
