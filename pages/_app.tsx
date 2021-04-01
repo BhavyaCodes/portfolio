@@ -209,12 +209,20 @@ export function MyApp({ Component, pageProps }: AppProps) {
             <ListItemText primary="My Toolbelt" />
           </ListItem>
         </Link>
+        <Link href="/#projects" passHref>
+          <ListItem button component="a" href="/#projects">
+            <ListItemIcon>
+              <CodeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Featured Projects" />
+          </ListItem>
+        </Link>
         <Link href="/projects" passHref>
           <ListItem button component="a" href="/projects">
             <ListItemIcon>
               <CodeIcon />
             </ListItemIcon>
-            <ListItemText primary="Projects" />
+            <ListItemText primary="All Projects" />
           </ListItem>
         </Link>
         <Link href="/#contact" passHref>
