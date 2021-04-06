@@ -3,6 +3,8 @@ import Projects from "components/Projects";
 import ProjectsTitle from "components/Projects/ProjectsTitle";
 import BackHomeButton from "components/Projects/BackHomeButton";
 
+import { ProjectType } from "components/Projects/Projects";
+
 const logos = {
   react: "/assets/icons/react.png",
   bootstrap: "/assets/icons/bootstrap.svg",
@@ -20,7 +22,7 @@ const logos = {
   ejs: "/assets/icons/ejs.svg",
 };
 
-const projects = [
+const projects: ProjectType[] = [
   {
     title: "Dogmash",
     description: [

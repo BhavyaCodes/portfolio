@@ -118,7 +118,7 @@ const projects: ProjectType[] = [
       { label: "react", logo: logos.react },
       { label: "chartjs", logo: logos.chartjs },
       { label: "material-ui", logo: logos.materialui },
-      { label: "vercel", logo: logos.vercel },
+      { label: "vercel", logo: logos.vercel, invert: true },
     ],
     images: {
       main: {
@@ -126,6 +126,11 @@ const projects: ProjectType[] = [
         width: 1173,
         height: 847,
       },
+    },
+    special: {
+      text: "Hackathon winner",
+      link:
+        "https://www.linkedin.com/posts/mintbean_mintbeanhackathon-mintbean-hackathon-activity-6757030650957619200-xUa8",
     },
   },
 ];

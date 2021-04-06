@@ -8,6 +8,7 @@ import TechChips from "components/Projects/TechChips";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import { lime } from "@material-ui/core/colors";
+import StarsIcon from "@material-ui/icons/Stars";
 
 import { useDarkMode } from "context/themeContext";
 
@@ -24,6 +25,7 @@ function Project({
   images,
   stack,
   links,
+  special,
 }: AppProps) {
   const odd = index % 2 === 1 ? true : false;
   const darkMode = useDarkMode();
@@ -70,6 +72,15 @@ function Project({
         marginBottom: theme.spacing(2),
         marginRight: theme.spacing(1),
       },
+      btnSpecial: {
+        background: "linear-gradient(to right, #40e0d0 , #ff8c00, #ff0080 )",
+        borderRadius: "50px",
+        paddingLeft: theme.spacing(2),
+        paddingRight: theme.spacing(2),
+        color: "#fff",
+        // display: "inline-block",
+        marginBottom: theme.spacing(2),
+      },
     })
   );
   const classes = useStyles();
@@ -114,7 +125,20 @@ function Project({
           <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
             <Grid item md={6} xs={12} className={classes.textSide}>
               <Box className={classes.body}>
-                <Box>{renderDescription()}</Box>
+                <Box>
+                  {special && (
+                    <Button
+                      className={classes.btnSpecial}
+                      startIcon={<StarsIcon />}
+                      href={special.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {special.text}
+                    </Button>
+                  )}
+                  {renderDescription()}
+                </Box>
                 <Box>
                   {links.github && (
                     <Button
