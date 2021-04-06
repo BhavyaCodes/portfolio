@@ -1,4 +1,4 @@
-import { memo, useEffect } from "react";
+import { memo } from "react";
 import Project from "./Project";
 
 export type StackType = { label: string; logo: string; invert?: boolean };
@@ -14,17 +14,18 @@ export type ProjectType = {
   };
   links: { github?: string; live: string };
   stack: StackType[];
+  special?: { text: string; link: string };
 };
-interface Projects extends ProjectType {}
+// interface Projects extends ProjectType {}
 
 function Projects({ projects }: { projects: ProjectType[] }) {
-  useEffect(() => {
-    console.log("Projects.tsx");
-  });
+  // useEffect(() => {
+  //   console.log("Projects.tsx");
+  // });
 
   const renderProjects = () => {
     return projects.map(
-      ({ title, description, images, stack, links }, index) => {
+      ({ title, description, images, stack, links, special }, index) => {
         return (
           <Project
             key={index}
@@ -34,6 +35,7 @@ function Projects({ projects }: { projects: ProjectType[] }) {
             images={images}
             stack={stack}
             links={links}
+            special={special}
           />
         );
       }
