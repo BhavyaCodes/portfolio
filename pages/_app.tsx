@@ -209,12 +209,20 @@ export function MyApp({ Component, pageProps }: AppProps) {
             <ListItemText primary="My Toolbelt" />
           </ListItem>
         </Link>
+        <Link href="/#projects" passHref>
+          <ListItem button component="a" href="/#projects">
+            <ListItemIcon>
+              <CodeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Featured Projects" />
+          </ListItem>
+        </Link>
         <Link href="/projects" passHref>
           <ListItem button component="a" href="/projects">
             <ListItemIcon>
               <CodeIcon />
             </ListItemIcon>
-            <ListItemText primary="Projects" />
+            <ListItemText primary="All Projects" />
           </ListItem>
         </Link>
         <Link href="/#contact" passHref>
@@ -274,6 +282,16 @@ export function MyApp({ Component, pageProps }: AppProps) {
                     Tools and skills
                   </Button>
                 </Link>
+                <Link href="/#projects" passHref>
+                  <Button
+                    className={classes.navbarRightButtons}
+                    component="a"
+                    href="/#projects"
+                    color="inherit"
+                  >
+                    featured projects
+                  </Button>
+                </Link>
                 <Link href="/projects" passHref>
                   <Button
                     className={classes.navbarRightButtons}
@@ -281,7 +299,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
                     href="/projects"
                     color="inherit"
                   >
-                    projects
+                    all projects
                   </Button>
                 </Link>
                 <Link href="/#contact" passHref>

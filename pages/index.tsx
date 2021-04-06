@@ -24,7 +24,9 @@ const logos = {
   ejs: "/assets/icons/ejs.svg",
 };
 
-const projects = [
+import { ProjectType } from "components/Projects/Projects";
+
+const projects: ProjectType[] = [
   {
     title: "Dogmash",
     description: [
@@ -106,27 +108,30 @@ const projects = [
     },
   },
   {
-    title: "URL shortener",
-    description: ["url shortener made with ts blah blah blah"],
-    images: {
-      main: {
-        link: "/project/url-short/main.png",
-        width: 964,
-        height: 751,
-      },
-    },
+    title: "Get-It-Done",
+    description: ["asfas fas fjo"],
     links: {
-      github: "https://github.com",
-      live: "https://short-url-three.vercel.app/",
+      github: "https://github.com/Juggernaut9/get-it-done",
+      live: "https://get-it-done-git-master-juggernaut9.vercel.app",
     },
     stack: [
-      { label: "Typescript", logo: logos.typescript },
       { label: "react", logo: logos.react },
-      { label: "express", logo: logos.expressjs },
+      { label: "chartjs", logo: logos.chartjs },
       { label: "material-ui", logo: logos.materialui },
-      { label: "mongoDB", logo: logos.mongodb },
-      { label: "nodejs", logo: logos.nodejs },
+      { label: "vercel", logo: logos.vercel, invert: true },
     ],
+    images: {
+      main: {
+        link: "/project/get-it-done/main.png",
+        width: 1173,
+        height: 847,
+      },
+    },
+    special: {
+      text: "Hackathon winner",
+      link:
+        "https://www.linkedin.com/posts/mintbean_mintbeanhackathon-mintbean-hackathon-activity-6757030650957619200-xUa8",
+    },
   },
 ];
 
