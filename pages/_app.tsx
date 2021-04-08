@@ -295,7 +295,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
           <div className={classes.navbarRight}>
             <Hidden mdDown>
               <Box mr={2}>
-                <Link href="/#" passHref>
+                {/* <Link href="/#" passHref>
                   <Button
                     className={classes.navbarRightButtons}
                     component="a"
@@ -304,8 +304,12 @@ export function MyApp({ Component, pageProps }: AppProps) {
                   >
                     home
                   </Button>
-                </Link>
+                </Link> */}
+                {NavBarButton("Home", "home")}
                 {NavBarButton("Tools and skills", "skills")}
+                {NavBarButton("Featured Projects", "projects")}
+                {/* {NavBarButton("Tools and skills", "skills")} */}
+
                 {/* <Button
                   className={classes.navbarRightButtons}
                   onClick={() => {
@@ -330,7 +334,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
                 >
                   Tools and skills
                 </Button> */}
-                <Link href="/#projects" passHref>
+                {/* <Link href="/#projects" passHref>
                   <Button
                     className={classes.navbarRightButtons}
                     component="a"
@@ -339,7 +343,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
                   >
                     featured projects
                   </Button>
-                </Link>
+                </Link> */}
                 <Link href="/projects" passHref>
                   <Button
                     className={classes.navbarRightButtons}
@@ -350,7 +354,8 @@ export function MyApp({ Component, pageProps }: AppProps) {
                     all projects
                   </Button>
                 </Link>
-                <Link href="/#contact" passHref>
+                {NavBarButton("Contact me", "contact")}
+                {/* <Link href="/#contact" passHref>
                   <Button
                     className={classes.navbarRightButtons}
                     component="a"
@@ -359,7 +364,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
                   >
                     Contact me
                   </Button>
-                </Link>
+                </Link> */}
               </Box>
             </Hidden>
             <DarkModeIcon />
