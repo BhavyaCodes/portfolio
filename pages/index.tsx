@@ -110,7 +110,15 @@ const projects: ProjectType[] = [
   },
   {
     title: "Get-It-Done",
-    description: ["asfas fas fjo"],
+    description: [
+      "Goal tracker app made with my friend for a **hackthon that we won.**",
+      "The challenge for the hackathon was to make a **CRUDy** web application for goal management",
+      "The application is made using **react** and styled using **material-ui**",
+      "Features of the app are **create, update and delete** goals. Add **labels** to goal, Start a **timer to track** the time spent for goal, **timer keeps running even when the window is closed!**",
+      "**Filter** the goals by hashtag and/or text, **sort** goals by time spent per goal,",
+      "view a **Bar graph** that displays the amount of time spent per goal",
+      "Check this video made by my hackathon partner **Priya Aswani** **[explaining how it works](https://www.linkedin.com/posts/activity-6755554068011319296-VlpE)**",
+    ],
     links: {
       github: "https://github.com/Juggernaut9/get-it-done",
       live: "https://get-it-done-git-master-juggernaut9.vercel.app",

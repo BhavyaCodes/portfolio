@@ -142,7 +142,7 @@ function projectsPage() {
       }}
     >
       <Toolbar />
-      <ProjectsTitle text="All projects I have worked on" />
+      <ProjectsTitle text="Projects I Have Worked On" />
       <Projects projects={projects} />
       <BackHomeButton />
     </motion.div>
