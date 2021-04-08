@@ -73,9 +73,7 @@ function Header() {
           className={classes.downArrow}
           onClick={() => {
             scroller.scrollTo("skills", {
-              duration: 500,
-              delay: 300,
-              smooth: true,
+              smooth: "easeInOutQuad",
             });
           }}
         >

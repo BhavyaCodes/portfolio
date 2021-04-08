@@ -266,16 +266,13 @@ export function MyApp({ Component, pageProps }: AppProps) {
         onClick={() => {
           if (router.pathname === "/") {
             scroller.scrollTo(name, {
-              duration: 500,
-              delay: 300,
-              smooth: true,
+              smooth: "easeInOutQuad",
             });
           } else {
             router.push("/").then(() => {
               scroller.scrollTo(name, {
-                duration: 500,
                 delay: 300,
-                smooth: true,
+                smooth: "easeInOutQuad",
               });
             });
           }
@@ -305,16 +302,13 @@ export function MyApp({ Component, pageProps }: AppProps) {
             onClick={() => {
               if (router.pathname === "/") {
                 scroller.scrollTo("home", {
-                  duration: 500,
-                  delay: 300,
-                  smooth: true,
+                  smooth: "easeInOutQuad",
                 });
               } else {
                 router.push("/").then(() => {
                   scroller.scrollTo("home", {
-                    duration: 500,
                     delay: 300,
-                    smooth: true,
+                    smooth: "easeInOutQuad",
                   });
                 });
               }
