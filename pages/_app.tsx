@@ -179,7 +179,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
       root: {
         overflow: "hidden",
       },
-      logo: { textDecoration: "none" },
+      logo: { textDecoration: "none", cursor: "pointer" },
       navbarRight: {
         marginLeft: "auto",
         marginRight: theme.spacing(0),
@@ -300,15 +300,32 @@ export function MyApp({ Component, pageProps }: AppProps) {
       <CssBaseline />
       <AppBar>
         <Toolbar>
-          <Link href="/#" passHref>
-            <Typography
-              color="inherit"
-              className={classes.logo}
-              component="a"
-              href="/#"
-              variant="h6"
-            >{`< Bhavya />`}</Typography>
-          </Link>
+          {/* <Link href="/" passHref> */}
+          <Typography
+            onClick={() => {
+              if (router.pathname === "/") {
+                scroller.scrollTo("home", {
+                  duration: 500,
+                  delay: 300,
+                  smooth: true,
+                });
+              } else {
+                router.push("/").then(() => {
+                  scroller.scrollTo("home", {
+                    duration: 500,
+                    delay: 300,
+                    smooth: true,
+                  });
+                });
+              }
+            }}
+            // color="inherit"
+            className={classes.logo}
+            // component="a"
+            // href="/#"
+            variant="h6"
+          >{`< Bhavya />`}</Typography>
+          {/* </Link> */}
           <div className={classes.navbarRight}>
             <Hidden mdDown>
               <Box mr={2}>
