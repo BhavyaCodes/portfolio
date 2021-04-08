@@ -133,9 +133,9 @@ function projectsPage() {
   return (
     <motion.div
       key="projects"
-      initial={{ opacity: 0, x: -1000 }}
+      initial={{ opacity: 0, x: +1000 }}
       animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 1, x: -1000 }}
+      exit={{ opacity: 1, x: +1000 }}
       transition={{
         x: { type: "spring", stiffness: 300, damping: 30 },
         opacity: { duration: 0.2 },
