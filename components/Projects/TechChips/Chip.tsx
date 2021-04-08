@@ -39,12 +39,18 @@ function Chip({ label, logo, invert }: StackType) {
         filter: `invert(${
           invert && theme.palette.type === "dark" ? "100%" : "0%"
         })`,
+        [theme.breakpoints.up("sm")]: {
+          width: "80%",
+        },
       },
       label: {
         position: "relative",
         opacity: 0,
         whiteSpace: "nowrap",
         zIndex: 10,
+        [theme.breakpoints.up("sm")]: {
+          marginTop: theme.spacing(1),
+        },
       },
     })
   );

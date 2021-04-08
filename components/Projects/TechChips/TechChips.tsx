@@ -12,7 +12,7 @@ function TechChips({ stack }: appProps) {
   return (
     <Grid container spacing={2} style={{ maxWidth: "100%" }}>
       {stack.map((obj) => (
-        <Grid key={obj.label} item xs={2} md={1}>
+        <Grid key={obj.label} item xs={2} md={2}>
           <Chip label={obj.label} logo={obj.logo} invert={obj.invert} />
         </Grid>
       ))}
