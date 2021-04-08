@@ -151,7 +151,6 @@ const IndexPage = () => {
         <Projects projects={projects} />
         <AllProjectsButton />
         <Footer />
-        //{" "}
       </>
     </motion.div>
   );
