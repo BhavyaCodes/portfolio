@@ -138,6 +138,9 @@ export function MyApp({ Component, pageProps }: AppProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
+      root: {
+        overflow: "hidden",
+      },
       logo: { textDecoration: "none" },
       navbarRight: {
         marginLeft: "auto",
@@ -337,7 +340,9 @@ export function MyApp({ Component, pageProps }: AppProps) {
       </Hidden>
       <div id="back-to-top-anchor" />
       <AnimatePresence initial={false}>
-        <Component {...pageProps} />
+        <div className={classes.root}>
+          <Component {...pageProps} />
+        </div>
       </AnimatePresence>
       <ScrollTop>
         <Fab color="secondary" size="medium" aria-label="scroll back to top">
