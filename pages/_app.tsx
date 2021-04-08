@@ -141,16 +141,13 @@ const SideBarButton = ({
       onClick={() => {
         if (router.pathname === "/") {
           scroller.scrollTo(name, {
-            duration: 500,
-            delay: 300,
-            smooth: true,
+            smooth: "easeInOutQuad",
           });
         } else {
           router.push("/").then(() => {
             scroller.scrollTo(name, {
-              duration: 500,
               delay: 300,
-              smooth: true,
+              smooth: "easeInOutQuad",
             });
           });
         }
