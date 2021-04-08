@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Toolbar } from "@material-ui/core";
 import Projects from "components/Projects";
 import ProjectsTitle from "components/Projects/ProjectsTitle";
@@ -130,12 +131,17 @@ const projects: ProjectType[] = [
 
 function projectsPage() {
   return (
-    <>
+    <motion.div
+      key="projects"
+      initial={{ opacity: 0, x: -1000 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+    >
       <Toolbar />
       <ProjectsTitle text="All projects I have worked on" />
       <Projects projects={projects} />
       <BackHomeButton />
-    </>
+    </motion.div>
   );
 }
 
