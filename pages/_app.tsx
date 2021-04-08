@@ -235,36 +235,12 @@ export function MyApp({ Component, pageProps }: AppProps) {
       </IconButton>
       <Divider />
       <List>
-        {/* <Link href="/#" passHref>
-          <ListItem button component="a" href="/#">
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <ListItemText primary="Home" />
-          </ListItem>
-        </Link> */}
         <SideBarButton text="Home" name="home">
           <HomeIcon />
         </SideBarButton>
-        {/* <Link href="/#skills" passHref>
-          <ListItem button component="a" href="/#skills">
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText primary="My Toolbelt" />
-          </ListItem>
-        </Link> */}
         <SideBarButton text="My Toolbelt" name="skills">
           <BuildIcon />
         </SideBarButton>
-        {/* <Link href="/#projects" passHref>
-          <ListItem button component="a" href="/#projects">
-            <ListItemIcon>
-              <CodeIcon />
-            </ListItemIcon>
-            <ListItemText primary="Featured Projects" />
-          </ListItem>
-        </Link> */}
         <SideBarButton text="Featured Projects" name="projects">
           <CodeIcon />
         </SideBarButton>
@@ -276,14 +252,6 @@ export function MyApp({ Component, pageProps }: AppProps) {
             <ListItemText primary="All Projects" />
           </ListItem>
         </Link>
-        {/* <Link href="/#contact" passHref>
-          <ListItem button component="a" href="/#contact">
-            <ListItemIcon>
-              <ForumIcon />
-            </ListItemIcon>
-            <ListItemText primary="Contact" />
-          </ListItem>
-        </Link> */}
         <SideBarButton text="Contact" name="contact">
           <ForumIcon />
         </SideBarButton>
@@ -344,55 +312,9 @@ export function MyApp({ Component, pageProps }: AppProps) {
           <div className={classes.navbarRight}>
             <Hidden mdDown>
               <Box mr={2}>
-                {/* <Link href="/#" passHref>
-                  <Button
-                    className={classes.navbarRightButtons}
-                    component="a"
-                    href="/#"
-                    color="inherit"
-                  >
-                    home
-                  </Button>
-                </Link> */}
                 {NavBarButton("Home", "home")}
                 {NavBarButton("Tools and skills", "skills")}
                 {NavBarButton("Featured Projects", "projects")}
-                {/* {NavBarButton("Tools and skills", "skills")} */}
-
-                {/* <Button
-                  className={classes.navbarRightButtons}
-                  onClick={() => {
-                    if (router.pathname === "/") {
-                      scroller.scrollTo("skills", {
-                        duration: 500,
-                        delay: 300,
-                        smooth: true,
-                      });
-                      console.log("home");
-                    } else {
-                      router.push("/").then(() => {
-                        scroller.scrollTo("skills", {
-                          duration: 500,
-                          delay: 300,
-                          smooth: true,
-                        });
-                      });
-                    }
-                  }}
-                  color="inherit"
-                >
-                  Tools and skills
-                </Button> */}
-                {/* <Link href="/#projects" passHref>
-                  <Button
-                    className={classes.navbarRightButtons}
-                    component="a"
-                    href="/#projects"
-                    color="inherit"
-                  >
-                    featured projects
-                  </Button>
-                </Link> */}
                 <Link href="/projects" passHref>
                   <Button
                     className={classes.navbarRightButtons}
@@ -404,16 +326,6 @@ export function MyApp({ Component, pageProps }: AppProps) {
                   </Button>
                 </Link>
                 {NavBarButton("Contact me", "contact")}
-                {/* <Link href="/#contact" passHref>
-                  <Button
-                    className={classes.navbarRightButtons}
-                    component="a"
-                    href="/#contact"
-                    color="inherit"
-                  >
-                    Contact me
-                  </Button>
-                </Link> */}
               </Box>
             </Hidden>
             <DarkModeIcon />
