@@ -1,5 +1,6 @@
 import { useEffect, useState, ReactNode } from "react";
 import { AnimatePresence } from "framer-motion";
+import { scroller } from "react-scroll";
 import * as gtag from "../lib/gtag";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
@@ -124,6 +125,43 @@ export default function MyAppWithDarkModeAndTheme(props: AppProps) {
   );
 }
 
+const SideBarButton = ({
+  text,
+  name,
+  children,
+}: {
+  text: string;
+  name: string;
+  children: ReactNode;
+}) => {
+  const router = useRouter();
+  return (
+    <ListItem
+      button
+      onClick={() => {
+        if (router.pathname === "/") {
+          scroller.scrollTo(name, {
+            duration: 500,
+            delay: 300,
+            smooth: true,
+          });
+        } else {
+          router.push("/").then(() => {
+            scroller.scrollTo(name, {
+              duration: 500,
+              delay: 300,
+              smooth: true,
+            });
+          });
+        }
+      }}
+    >
+      <ListItemIcon>{children}</ListItemIcon>
+      <ListItemText primary={text} />
+    </ListItem>
+  );
+};
+
 export function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   useEffect(() => {
@@ -138,7 +176,10 @@ export function MyApp({ Component, pageProps }: AppProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-      logo: { textDecoration: "none" },
+      root: {
+        overflow: "hidden",
+      },
+      logo: { textDecoration: "none", cursor: "pointer" },
       navbarRight: {
         marginLeft: "auto",
         marginRight: theme.spacing(0),
@@ -194,30 +235,15 @@ export function MyApp({ Component, pageProps }: AppProps) {
       </IconButton>
       <Divider />
       <List>
-        <Link href="/#" passHref>
-          <ListItem button component="a" href="/#">
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <ListItemText primary="Home" />
-          </ListItem>
-        </Link>
-        <Link href="/#skills" passHref>
-          <ListItem button component="a" href="/#skills">
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText primary="My Toolbelt" />
-          </ListItem>
-        </Link>
-        <Link href="/#projects" passHref>
-          <ListItem button component="a" href="/#projects">
-            <ListItemIcon>
-              <CodeIcon />
-            </ListItemIcon>
-            <ListItemText primary="Featured Projects" />
-          </ListItem>
-        </Link>
+        <SideBarButton text="Home" name="home">
+          <HomeIcon />
+        </SideBarButton>
+        <SideBarButton text="My Toolbelt" name="skills">
+          <BuildIcon />
+        </SideBarButton>
+        <SideBarButton text="Featured Projects" name="projects">
+          <CodeIcon />
+        </SideBarButton>
         <Link href="/projects" passHref>
           <ListItem button component="a" href="/projects">
             <ListItemIcon>
@@ -226,17 +252,37 @@ export function MyApp({ Component, pageProps }: AppProps) {
             <ListItemText primary="All Projects" />
           </ListItem>
         </Link>
-        <Link href="/#contact" passHref>
-          <ListItem button component="a" href="/#contact">
-            <ListItemIcon>
-              <ForumIcon />
-            </ListItemIcon>
-            <ListItemText primary="Contact" />
-          </ListItem>
-        </Link>
+        <SideBarButton text="Contact" name="contact">
+          <ForumIcon />
+        </SideBarButton>
       </List>
     </div>
   );
+
+  const NavBarButton = (text: string, name: string) => {
+    return (
+      <Button
+        className={classes.navbarRightButtons}
+        onClick={() => {
+          if (router.pathname === "/") {
+            scroller.scrollTo(name, {
+              smooth: "easeInOutQuad",
+            });
+          } else {
+            router.push("/").then(() => {
+              scroller.scrollTo(name, {
+                delay: 300,
+                smooth: "easeInOutQuad",
+              });
+            });
+          }
+        }}
+        color="inherit"
+      >
+        {text}
+      </Button>
+    );
+  };
 
   return (
     <>
@@ -251,48 +297,35 @@ export function MyApp({ Component, pageProps }: AppProps) {
       <CssBaseline />
       <AppBar>
         <Toolbar>
-          <Link href="/#" passHref>
-            <Typography
-              color="inherit"
-              className={classes.logo}
-              component="a"
-              href="/#"
-              variant="h6"
-            >{`< Bhavya />`}</Typography>
-          </Link>
+          {/* <Link href="/" passHref> */}
+          <Typography
+            onClick={() => {
+              if (router.pathname === "/") {
+                scroller.scrollTo("home", {
+                  smooth: "easeInOutQuad",
+                });
+              } else {
+                router.push("/").then(() => {
+                  scroller.scrollTo("home", {
+                    delay: 300,
+                    smooth: "easeInOutQuad",
+                  });
+                });
+              }
+            }}
+            // color="inherit"
+            className={classes.logo}
+            // component="a"
+            // href="/#"
+            variant="h6"
+          >{`< Bhavya />`}</Typography>
+          {/* </Link> */}
           <div className={classes.navbarRight}>
             <Hidden mdDown>
               <Box mr={2}>
-                <Link href="/#" passHref>
-                  <Button
-                    className={classes.navbarRightButtons}
-                    component="a"
-                    href="/#"
-                    color="inherit"
-                  >
-                    home
-                  </Button>
-                </Link>
-                <Link href="/#skills" passHref>
-                  <Button
-                    className={classes.navbarRightButtons}
-                    component="a"
-                    href="/#skills"
-                    color="inherit"
-                  >
-                    Tools and skills
-                  </Button>
-                </Link>
-                <Link href="/#projects" passHref>
-                  <Button
-                    className={classes.navbarRightButtons}
-                    component="a"
-                    href="/#projects"
-                    color="inherit"
-                  >
-                    featured projects
-                  </Button>
-                </Link>
+                {NavBarButton("Home", "home")}
+                {NavBarButton("Tools and skills", "skills")}
+                {NavBarButton("Featured Projects", "projects")}
                 <Link href="/projects" passHref>
                   <Button
                     className={classes.navbarRightButtons}
@@ -303,16 +336,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
                     all projects
                   </Button>
                 </Link>
-                <Link href="/#contact" passHref>
-                  <Button
-                    className={classes.navbarRightButtons}
-                    component="a"
-                    href="/#contact"
-                    color="inherit"
-                  >
-                    Contact me
-                  </Button>
-                </Link>
+                {NavBarButton("Contact me", "contact")}
               </Box>
             </Hidden>
             <DarkModeIcon />
@@ -337,7 +361,9 @@ export function MyApp({ Component, pageProps }: AppProps) {
       </Hidden>
       <div id="back-to-top-anchor" />
       <AnimatePresence initial={false}>
-        <Component {...pageProps} />
+        <div className={classes.root}>
+          <Component {...pageProps} />
+        </div>
       </AnimatePresence>
       <ScrollTop>
         <Fab color="secondary" size="medium" aria-label="scroll back to top">

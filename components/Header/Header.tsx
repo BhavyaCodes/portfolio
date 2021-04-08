@@ -1,10 +1,10 @@
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { scroller } from "react-scroll";
 import {
   Toolbar,
   Grid,
   Container,
   IconButton,
-  Link,
   Hidden,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -68,11 +68,17 @@ function Header() {
         </Grid>
       </Container>
       <div className={classes.downArrowContainer}>
-        <Link href="#skills">
-          <IconButton aria-label="scroll down" className={classes.downArrow}>
-            <ExpandMoreIcon fontSize="large" />
-          </IconButton>
-        </Link>
+        <IconButton
+          aria-label="scroll down"
+          className={classes.downArrow}
+          onClick={() => {
+            scroller.scrollTo("skills", {
+              smooth: "easeInOutQuad",
+            });
+          }}
+        >
+          <ExpandMoreIcon fontSize="large" />
+        </IconButton>
       </div>
     </div>
   );
