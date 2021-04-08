@@ -4,6 +4,7 @@ import { useIntersection } from "react-use";
 
 import { Box, Grid, Typography, Container, Toolbar } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { Element } from "react-scroll";
 
 import Icon from "./Icon";
 
@@ -206,6 +207,7 @@ function Skills() {
 
   return (
     <>
+      <Element name="skills" />
       <Toolbar id="skills" />
       <Container>
         <Grid container>

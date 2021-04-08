@@ -1,5 +1,6 @@
 import { useEffect, useState, ReactNode } from "react";
 import { AnimatePresence } from "framer-motion";
+import { scroller } from "react-scroll";
 import * as gtag from "../lib/gtag";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
@@ -241,6 +242,34 @@ export function MyApp({ Component, pageProps }: AppProps) {
     </div>
   );
 
+  const NavBarButton = (text: string, name: string) => {
+    return (
+      <Button
+        className={classes.navbarRightButtons}
+        onClick={() => {
+          if (router.pathname === "/") {
+            scroller.scrollTo(name, {
+              duration: 500,
+              delay: 300,
+              smooth: true,
+            });
+          } else {
+            router.push("/").then(() => {
+              scroller.scrollTo(name, {
+                duration: 500,
+                delay: 300,
+                smooth: true,
+              });
+            });
+          }
+        }}
+        color="inherit"
+      >
+        {text}
+      </Button>
+    );
+  };
+
   return (
     <>
       <Head>
@@ -276,16 +305,31 @@ export function MyApp({ Component, pageProps }: AppProps) {
                     home
                   </Button>
                 </Link>
-                <Link href="/#skills" passHref>
-                  <Button
-                    className={classes.navbarRightButtons}
-                    component="a"
-                    href="/#skills"
-                    color="inherit"
-                  >
-                    Tools and skills
-                  </Button>
-                </Link>
+                {NavBarButton("Tools and skills", "skills")}
+                {/* <Button
+                  className={classes.navbarRightButtons}
+                  onClick={() => {
+                    if (router.pathname === "/") {
+                      scroller.scrollTo("skills", {
+                        duration: 500,
+                        delay: 300,
+                        smooth: true,
+                      });
+                      console.log("home");
+                    } else {
+                      router.push("/").then(() => {
+                        scroller.scrollTo("skills", {
+                          duration: 500,
+                          delay: 300,
+                          smooth: true,
+                        });
+                      });
+                    }
+                  }}
+                  color="inherit"
+                >
+                  Tools and skills
+                </Button> */}
                 <Link href="/#projects" passHref>
                   <Button
                     className={classes.navbarRightButtons}
