@@ -1,5 +1,5 @@
 import { useEffect, useState, ReactNode } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import * as gtag from "../lib/gtag";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
@@ -336,7 +336,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
         </Drawer>
       </Hidden>
       <div id="back-to-top-anchor" />
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         <Component {...pageProps} />
       </AnimatePresence>
       <ScrollTop>
