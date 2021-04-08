@@ -125,6 +125,43 @@ export default function MyAppWithDarkModeAndTheme(props: AppProps) {
   );
 }
 
+const SideBarButton = ({
+  text,
+  name,
+  children,
+}: {
+  text: string;
+  name: string;
+  children: ReactNode;
+}) => {
+  const router = useRouter();
+  return (
+    <ListItem
+      button
+      onClick={() => {
+        if (router.pathname === "/") {
+          scroller.scrollTo(name, {
+            duration: 500,
+            delay: 300,
+            smooth: true,
+          });
+        } else {
+          router.push("/").then(() => {
+            scroller.scrollTo(name, {
+              duration: 500,
+              delay: 300,
+              smooth: true,
+            });
+          });
+        }
+      }}
+    >
+      <ListItemIcon>{children}</ListItemIcon>
+      <ListItemText primary={text} />
+    </ListItem>
+  );
+};
+
 export function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   useEffect(() => {
@@ -198,30 +235,39 @@ export function MyApp({ Component, pageProps }: AppProps) {
       </IconButton>
       <Divider />
       <List>
-        <Link href="/#" passHref>
+        {/* <Link href="/#" passHref>
           <ListItem button component="a" href="/#">
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
-        </Link>
-        <Link href="/#skills" passHref>
+        </Link> */}
+        <SideBarButton text="Home" name="home">
+          <HomeIcon />
+        </SideBarButton>
+        {/* <Link href="/#skills" passHref>
           <ListItem button component="a" href="/#skills">
             <ListItemIcon>
               <BuildIcon />
             </ListItemIcon>
             <ListItemText primary="My Toolbelt" />
           </ListItem>
-        </Link>
-        <Link href="/#projects" passHref>
+        </Link> */}
+        <SideBarButton text="My Toolbelt" name="skills">
+          <BuildIcon />
+        </SideBarButton>
+        {/* <Link href="/#projects" passHref>
           <ListItem button component="a" href="/#projects">
             <ListItemIcon>
               <CodeIcon />
             </ListItemIcon>
             <ListItemText primary="Featured Projects" />
           </ListItem>
-        </Link>
+        </Link> */}
+        <SideBarButton text="Featured Projects" name="projects">
+          <CodeIcon />
+        </SideBarButton>
         <Link href="/projects" passHref>
           <ListItem button component="a" href="/projects">
             <ListItemIcon>
@@ -230,14 +276,17 @@ export function MyApp({ Component, pageProps }: AppProps) {
             <ListItemText primary="All Projects" />
           </ListItem>
         </Link>
-        <Link href="/#contact" passHref>
+        {/* <Link href="/#contact" passHref>
           <ListItem button component="a" href="/#contact">
             <ListItemIcon>
               <ForumIcon />
             </ListItemIcon>
             <ListItemText primary="Contact" />
           </ListItem>
-        </Link>
+        </Link> */}
+        <SideBarButton text="Contact" name="contact">
+          <ForumIcon />
+        </SideBarButton>
       </List>
     </div>
   );
