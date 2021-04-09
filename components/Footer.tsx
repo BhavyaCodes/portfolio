@@ -155,71 +155,73 @@ function Footer() {
             <Typography variant="h3" align="center">
               Connect with me
             </Typography>
-            <Grid container className={classes.leftContainer}>
-              <Grid item md={6} sm={12} className={classes.iconsGrid}>
-                <Link
-                  className={classes.socialItem}
-                  href="https://github.com/Juggernaut9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color="inherit"
+            <article itemScope itemType="http://schema.org/Author">
+              <Grid container className={classes.leftContainer}>
+                <Grid item md={6} sm={12} className={classes.iconsGrid}>
+                  <Link
+                    className={classes.socialItem}
+                    href="https://github.com/Juggernaut9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="inherit"
+                  >
+                    <GitHubIcon className={classes.icon} fontSize="large" />
+
+                    <Typography>Github</Typography>
+                  </Link>
+
+                  <Link
+                    className={classes.socialItem}
+                    href="https://www.linkedin.com/in/bhavya-tomar-1967b6202"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="inherit"
+                  >
+                    <LinkedInIcon className={classes.icon} fontSize="large" />
+
+                    <Typography>LinkedIn</Typography>
+                  </Link>
+
+                  <Link
+                    className={classes.socialItem}
+                    href="https://twitter.com/bhavyacodes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="inherit"
+                  >
+                    <TwitterIcon className={classes.icon} fontSize="large" />
+
+                    <Typography>Twitter</Typography>
+                  </Link>
+
+                  <Link
+                    className={classes.socialItem}
+                    href="mailto:xbhavyatomar@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="inherit"
+                  >
+                    <MailIcon fontSize="large" className={classes.icon} />
+                    <Typography>xbhavatomar@gmail.com</Typography>
+                  </Link>
+                </Grid>
+
+                <Grid
+                  item
+                  md={6}
+                  sm={12}
+                  className={classes.illustrationContainer}
                 >
-                  <GitHubIcon className={classes.icon} fontSize="large" />
-
-                  <Typography>Github</Typography>
-                </Link>
-
-                <Link
-                  className={classes.socialItem}
-                  href="https://www.linkedin.com/in/bhavya-tomar-1967b6202"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color="inherit"
-                >
-                  <LinkedInIcon className={classes.icon} fontSize="large" />
-
-                  <Typography>LinkedIn</Typography>
-                </Link>
-
-                <Link
-                  className={classes.socialItem}
-                  href="https://twitter.com/bhavyacodes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color="inherit"
-                >
-                  <TwitterIcon className={classes.icon} fontSize="large" />
-
-                  <Typography>Twitter</Typography>
-                </Link>
-
-                <Link
-                  className={classes.socialItem}
-                  href="mailto:xbhavyatomar@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color="inherit"
-                >
-                  <MailIcon fontSize="large" className={classes.icon} />
-                  <Typography>xbhavatomar@gmail.com</Typography>
-                </Link>
+                  <Hidden smDown>
+                    <img
+                      src="/assets/message.svg"
+                      className={classes.illustration}
+                      alt="message illustration"
+                    />
+                  </Hidden>
+                </Grid>
               </Grid>
-
-              <Grid
-                item
-                md={6}
-                sm={12}
-                className={classes.illustrationContainer}
-              >
-                <Hidden smDown>
-                  <img
-                    src="/assets/message.svg"
-                    className={classes.illustration}
-                    alt="message illustration"
-                  />
-                </Hidden>
-              </Grid>
-            </Grid>
+            </article>
           </Grid>
           <Grid item md={6} sm={12}>
             <Typography variant="h3" align="center">
