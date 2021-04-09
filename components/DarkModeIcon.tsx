@@ -20,6 +20,7 @@ const DarkModeIcon = () => {
       onChange={toggleDarkMode}
       size={30}
       sunColor="yellow"
+      moonColor="black"
     />
   );
 };
