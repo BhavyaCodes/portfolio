@@ -32,6 +32,13 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          <title>Bhavya Tomar</title>
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width"
+          />
+          <meta name="description" content="My personal website" />
         </Head>
         <body>
           <Main />
