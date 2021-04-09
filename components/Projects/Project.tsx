@@ -188,6 +188,8 @@ function Project({
                       priority
                       sizes="(max-width: 960px) 90vw, 40vw"
                       layout="responsive"
+                      alt="project image"
+                      aria-label={`image of project titled - ${title}`}
                     />
                   </Box>
                 )}
