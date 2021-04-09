@@ -147,6 +147,7 @@ function Footer() {
             ? "/assets/footer-wave-dark.svg"
             : "/assets/footer-wave-light.svg"
         }
+        alt="wave for styling and separating sections"
       />
       <Container id="contact">
         <Grid container>
@@ -214,6 +215,7 @@ function Footer() {
                   <img
                     src="/assets/message.svg"
                     className={classes.illustration}
+                    alt="message illustration"
                   />
                 </Hidden>
               </Grid>
@@ -232,6 +234,7 @@ function Footer() {
                 color="secondary"
                 inputRef={nameRef}
                 required
+                id="form-name"
               />
               <TextField
                 label="Email"
@@ -243,6 +246,7 @@ function Footer() {
                 inputRef={emailRef}
                 required
                 placeholder="So I can get back to you"
+                id="form-email"
               />
               <TextField
                 label="Message"
@@ -254,6 +258,7 @@ function Footer() {
                 color="secondary"
                 inputRef={messageRef}
                 required
+                id="form-message"
               />
               <Button
                 variant="outlined"

@@ -29,10 +29,15 @@ function HeaderText() {
   const classes = useStyles();
   return (
     <Box className={classes.root}>
-      <Typography className={classes.title} variant="h2" gutterBottom>
+      <Typography
+        className={classes.title}
+        variant="h2"
+        component="h1"
+        gutterBottom
+      >
         <span className={classes.hi}>Hi, </span>I'm Bhavya
       </Typography>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" component="h2" gutterBottom>
         A fullstack developer
       </Typography>
       <Typography className={classes.paragraph}>

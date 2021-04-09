@@ -338,7 +338,11 @@ export function MyApp({ Component, pageProps }: AppProps) {
             </Hidden>
             <DarkModeIcon />
             <Hidden lgUp>
-              <IconButton color="inherit" onClick={handleMenuButton}>
+              <IconButton
+                color="inherit"
+                aria-label="navigation menu"
+                onClick={handleMenuButton}
+              >
                 <MenuIcon />
               </IconButton>
             </Hidden>
