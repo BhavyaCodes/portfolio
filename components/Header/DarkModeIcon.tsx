@@ -1,4 +1,4 @@
-import { useDarkMode, useToggleDarkMode } from "../context/themeContext";
+import { useDarkMode, useToggleDarkMode } from "context/themeContext";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useTheme } from "@material-ui/core";
 
@@ -20,6 +20,7 @@ const DarkModeIcon = () => {
       onChange={toggleDarkMode}
       size={30}
       sunColor="yellow"
+      moonColor="black"
     />
   );
 };

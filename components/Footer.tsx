@@ -29,7 +29,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: theme.palette.type === "dark" ? "#091c34" : "#3ce14c",
+      backgroundColor: theme.palette.type === "dark" ? "#091c34" : "#ccff90",
       paddingBottom: theme.spacing(5),
     },
     wave: {

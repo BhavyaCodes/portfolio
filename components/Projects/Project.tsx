@@ -29,17 +29,19 @@ function Project({
 }: AppProps) {
   const odd = index % 2 === 1 ? true : false;
   const darkMode = useDarkMode();
+  const colorLight = "#dfffdc";
+  const colorDark = "#070422";
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       root: {
         "& strong": {
           // color: darkMode ? "#77f372" : "#0d9d74",
-          color: darkMode ? lime.A200 : "#0d9d74",
+          color: darkMode ? lime.A200 : "#311b92", //theme.palette.secondary.main,
         },
         "& p": {
           marginBottom: theme.spacing(2),
         },
-        backgroundColor: odd ? (darkMode ? "#070422" : "#ddf6ff") : "inherit",
+        backgroundColor: odd ? (darkMode ? colorDark : colorLight) : "inherit",
         display: "block",
       },
       wave: {
@@ -220,7 +222,7 @@ function Project({
   );
   if (odd) {
     return (
-      <Wave color={darkMode ? "#070422" : "#ddf6ff"}>{renderProject()}</Wave>
+      <Wave color={darkMode ? colorDark : colorLight}>{renderProject()}</Wave>
     );
   }
   return renderProject();
