@@ -58,13 +58,13 @@ export default class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer2.svg`}
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer-meta.png`}
           />
 
           {/* <!-- Twitter --> */}
           <meta
             property="twitter:card"
-            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer2.svg`}
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer-meta.png`}
           />
           <meta
             property="twitter:url"
@@ -77,7 +77,7 @@ export default class MyDocument extends Document {
           />
           <meta
             property="twitter:image"
-            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer2.svg`}
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer-meta.png`}
           />
         </Head>
         <body>
