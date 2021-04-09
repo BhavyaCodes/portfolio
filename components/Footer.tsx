@@ -114,6 +114,9 @@ function Footer() {
     fetch("https://formspree.io/f/moqyqplj", {
       method: "POST",
       body: formData,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
     })
       .then((res) => {
         if (!res.ok) {
