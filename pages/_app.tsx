@@ -40,7 +40,7 @@ import BuildIcon from "@material-ui/icons/Build";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 import { DarkModeProvider, useDarkMode } from "../context/themeContext";
-import DarkModeIcon from "../components/DarkModeIcon";
+import DarkModeIcon from "../components/Header/DarkModeIcon";
 import "Layout.css";
 interface Props {
   children: React.ReactElement;
