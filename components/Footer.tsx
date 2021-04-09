@@ -1,4 +1,11 @@
-import { memo } from "react";
+import {
+  FormEvent,
+  memo,
+  useRef,
+  useState,
+  SyntheticEvent,
+  MouseEvent,
+} from "react";
 import {
   Container,
   Grid,
@@ -8,12 +15,15 @@ import {
   Button,
   Hidden,
   useTheme,
+  Snackbar,
+  IconButton,
 } from "@material-ui/core";
 import MailIcon from "@material-ui/icons/Mail";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import SendIcon from "@material-ui/icons/Send";
+import CloseIcon from "@material-ui/icons/Close";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -73,8 +83,59 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function Footer() {
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("Message Sent");
   const classes = useStyles();
   const theme = useTheme();
+  const nameRef = useRef<HTMLInputElement>(null!);
+  const emailRef = useRef<HTMLInputElement>(null!);
+  const messageRef = useRef<HTMLInputElement>(null!);
+
+  // const handleClick = () => {
+  //   setOpen(true);
+  // };
+
+  const handleClose = (
+    _event: SyntheticEvent | MouseEvent,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
+
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("name", nameRef.current.value);
+    formData.append("email", emailRef.current.value);
+    formData.append("message", messageRef.current.value);
+    fetch("https://formspree.io/f/moqyqplj", {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Status Code Error ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setOpen(true);
+      })
+      .catch((error) => {
+        console.log(error);
+        setMessage("Error sending message");
+        setOpen(true);
+      });
+  };
+
   return (
     <div className={classes.root}>
       <img
@@ -160,38 +221,66 @@ function Footer() {
             <Typography variant="h3" align="center">
               Say Hi
             </Typography>
-            <TextField
-              label="Name"
-              fullWidth
-              margin="dense"
-              variant="outlined"
-              color="secondary"
+            <form onSubmit={handleFormSubmit}>
+              <TextField
+                label="Name"
+                fullWidth
+                margin="dense"
+                variant="outlined"
+                color="secondary"
+                inputRef={nameRef}
+              />
+              <TextField
+                label="Email"
+                type="email"
+                fullWidth
+                margin="dense"
+                variant="outlined"
+                color="secondary"
+                inputRef={emailRef}
+              />
+              <TextField
+                label="Message"
+                fullWidth
+                margin="dense"
+                multiline
+                rows={5}
+                variant="outlined"
+                color="secondary"
+                inputRef={messageRef}
+              />
+              <Button
+                variant="outlined"
+                className={classes.sendButton}
+                color="secondary"
+                endIcon={<SendIcon />}
+                type="submit"
+              >
+                send
+              </Button>
+            </form>
+            <Snackbar
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              open={open}
+              autoHideDuration={6000}
+              onClose={handleClose}
+              message={message}
+              action={
+                <>
+                  <IconButton
+                    size="small"
+                    aria-label="close"
+                    color="inherit"
+                    onClick={handleClose}
+                  >
+                    <CloseIcon fontSize="small" />
+                  </IconButton>
+                </>
+              }
             />
-            <TextField
-              label="Email"
-              type="email"
-              fullWidth
-              margin="dense"
-              variant="outlined"
-              color="secondary"
-            />
-            <TextField
-              label="Message"
-              fullWidth
-              margin="dense"
-              multiline
-              rows={5}
-              variant="outlined"
-              color="secondary"
-            />
-            <Button
-              variant="outlined"
-              className={classes.sendButton}
-              color="secondary"
-              endIcon={<SendIcon />}
-            >
-              send
-            </Button>
           </Grid>
         </Grid>
       </Container>
