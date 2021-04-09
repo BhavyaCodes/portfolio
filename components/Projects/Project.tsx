@@ -29,14 +29,14 @@ function Project({
 }: AppProps) {
   const odd = index % 2 === 1 ? true : false;
   const darkMode = useDarkMode();
-  const colorLight = "#b9f6ca";
+  const colorLight = "#dfffdc";
   const colorDark = "#070422";
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
       root: {
         "& strong": {
           // color: darkMode ? "#77f372" : "#0d9d74",
-          color: darkMode ? lime.A200 : "#0d9d74",
+          color: darkMode ? lime.A200 : "#311b92", //theme.palette.secondary.main,
         },
         "& p": {
           marginBottom: theme.spacing(2),
