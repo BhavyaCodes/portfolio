@@ -147,6 +147,7 @@ function Footer() {
             ? "/assets/footer-wave-dark.svg"
             : "/assets/footer-wave-light.svg"
         }
+        alt="wave for styling and separating sections"
       />
       <Container id="contact">
         <Grid container>
