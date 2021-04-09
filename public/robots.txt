@@ -1,0 +1,6 @@
+Sitemap: https://portfolio-git-main-juggernaut9.vercel.app/api/posts-sitemap
+
+User-agent: *
+Allow: /*
+
+Disallow: /api/*
