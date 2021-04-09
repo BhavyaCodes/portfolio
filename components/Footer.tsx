@@ -111,7 +111,8 @@ function Footer() {
     formData.append("name", nameRef.current.value);
     formData.append("email", emailRef.current.value);
     formData.append("message", messageRef.current.value);
-    fetch("https://formspree.io/f/moqyqplj", {
+    const url: RequestInfo = process.env.NEXT_PUBLIC_FORMSPREE_URL!;
+    fetch(url, {
       method: "POST",
       body: formData,
       headers: {
@@ -127,6 +128,9 @@ function Footer() {
       .then((data) => {
         console.log(data);
         setOpen(true);
+        nameRef.current.value = "";
+        emailRef.current.value = "";
+        messageRef.current.value = "";
       })
       .catch((error) => {
         console.log(error);
