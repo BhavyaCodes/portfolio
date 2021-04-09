@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { FormEvent, memo, useRef } from "react";
 import {
   Container,
   Grid,
@@ -75,6 +75,37 @@ const useStyles = makeStyles((theme: Theme) =>
 function Footer() {
   const classes = useStyles();
   const theme = useTheme();
+  const nameRef = useRef<HTMLInputElement>(null!);
+  const emailRef = useRef<HTMLInputElement>(null!);
+  const messageRef = useRef<HTMLInputElement>(null!);
+
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // console.log(nameRef.current.value);
+    // console.log(emailRef.current.value);
+    // console.log(messageRef.current.value);
+    const formData = new FormData();
+    formData.append("name", nameRef.current.value);
+    formData.append("email", emailRef.current.value);
+    formData.append("message", messageRef.current.value);
+    fetch("https://formspree.io/f/moqyqplj", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Status Code Error ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className={classes.root}>
       <img
@@ -160,38 +191,44 @@ function Footer() {
             <Typography variant="h3" align="center">
               Say Hi
             </Typography>
-            <TextField
-              label="Name"
-              fullWidth
-              margin="dense"
-              variant="outlined"
-              color="secondary"
-            />
-            <TextField
-              label="Email"
-              type="email"
-              fullWidth
-              margin="dense"
-              variant="outlined"
-              color="secondary"
-            />
-            <TextField
-              label="Message"
-              fullWidth
-              margin="dense"
-              multiline
-              rows={5}
-              variant="outlined"
-              color="secondary"
-            />
-            <Button
-              variant="outlined"
-              className={classes.sendButton}
-              color="secondary"
-              endIcon={<SendIcon />}
-            >
-              send
-            </Button>
+            <form onSubmit={handleFormSubmit}>
+              <TextField
+                label="Name"
+                fullWidth
+                margin="dense"
+                variant="outlined"
+                color="secondary"
+                inputRef={nameRef}
+              />
+              <TextField
+                label="Email"
+                type="email"
+                fullWidth
+                margin="dense"
+                variant="outlined"
+                color="secondary"
+                inputRef={emailRef}
+              />
+              <TextField
+                label="Message"
+                fullWidth
+                margin="dense"
+                multiline
+                rows={5}
+                variant="outlined"
+                color="secondary"
+                inputRef={messageRef}
+              />
+              <Button
+                variant="outlined"
+                className={classes.sendButton}
+                color="secondary"
+                endIcon={<SendIcon />}
+                type="submit"
+              >
+                send
+              </Button>
+            </form>
           </Grid>
         </Grid>
       </Container>
