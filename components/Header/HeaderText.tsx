@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme: Theme) =>
 function HeaderText() {
   const classes = useStyles();
   return (
-    <article itemScope itemType="http://schema.org/Author">
-      <Box className={classes.root}>
+    <Box className={classes.root}>
+      <article itemScope itemType="http://schema.org/Author">
         <Typography
           className={classes.title}
           variant="h2"
@@ -47,8 +47,8 @@ function HeaderText() {
           applications
         </Typography>
         <Buttons />
-      </Box>
-    </article>
+      </article>
+    </Box>
   );
 }
 
