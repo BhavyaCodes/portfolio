@@ -91,11 +91,14 @@ function Footer() {
   const emailRef = useRef<HTMLInputElement>(null!);
   const messageRef = useRef<HTMLInputElement>(null!);
 
-  const handleClick = () => {
-    setOpen(true);
-  };
+  // const handleClick = () => {
+  //   setOpen(true);
+  // };
 
-  const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
+  const handleClose = (
+    _event: SyntheticEvent | MouseEvent,
+    reason?: string
+  ) => {
     if (reason === "clickaway") {
       return;
     }
