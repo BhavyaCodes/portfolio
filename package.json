@@ -20,8 +20,7 @@
     "react-scroll": "^1.8.2",
     "react-spring": "^8.0.27",
     "react-toggle-dark-mode": "^1.0.3",
-    "react-use": "^17.2.1",
-    "sitemap": "^6.4.0"
+    "react-use": "^17.2.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
