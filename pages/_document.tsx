@@ -9,7 +9,6 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* PWA primary color */}
-          <title>Bhavya Tomar</title>
           <meta name="theme-color" content="#161625" />
           <link
             rel="stylesheet"
@@ -33,13 +32,8 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-          <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width"
-          />
+
           {/* <!-- Primary Meta Tags --> */}
-          <title>Bhavya Tomar</title>
           <meta name="title" content="Bhavya Tomar" />
           <meta
             name="description"

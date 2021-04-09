@@ -1,4 +1,5 @@
 import { useEffect, useState, ReactNode } from "react";
+import Head from "next/head";
 import { AnimatePresence } from "framer-motion";
 import { scroller } from "react-scroll";
 import * as gtag from "../lib/gtag";
@@ -282,6 +283,14 @@ export function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+        <title>Bhavya Tomar</title>
+      </Head>
       <CssBaseline />
       <AppBar>
         <Toolbar>
