@@ -228,6 +228,7 @@ function Footer() {
                 variant="outlined"
                 color="secondary"
                 inputRef={nameRef}
+                required
               />
               <TextField
                 label="Email"
@@ -237,6 +238,8 @@ function Footer() {
                 variant="outlined"
                 color="secondary"
                 inputRef={emailRef}
+                required
+                placeholder="So I can get back to you"
               />
               <TextField
                 label="Message"
@@ -247,6 +250,7 @@ function Footer() {
                 variant="outlined"
                 color="secondary"
                 inputRef={messageRef}
+                required
               />
               <Button
                 variant="outlined"
