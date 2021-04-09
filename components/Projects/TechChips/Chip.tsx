@@ -72,7 +72,7 @@ function Chip({ label, logo, invert }: StackType) {
           style={{ transform: props.zoom.interpolate(trans) }}
           className={classes.imageContainer}
         >
-          <img className={classes.image} src={logo} />
+          <img className={classes.image} src={logo} alt={label} />
         </a.div>
         <Typography align="center" className={classes.label}>
           {label}
