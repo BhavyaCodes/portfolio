@@ -115,7 +115,6 @@ function Footer() {
       method: "POST",
       body: formData,
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
         Accept: "application/json",
       },
     })
