@@ -214,6 +214,7 @@ function Footer() {
                   <img
                     src="/assets/message.svg"
                     className={classes.illustration}
+                    alt="message illustration"
                   />
                 </Hidden>
               </Grid>
