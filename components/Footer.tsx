@@ -125,8 +125,7 @@ function Footer() {
         }
         return res.json();
       })
-      .then((data) => {
-        console.log(data);
+      .then((_data) => {
         setOpen(true);
         nameRef.current.value = "";
         emailRef.current.value = "";
