@@ -104,7 +104,7 @@ function MyAppWithTheme(props: AppProps) {
     overrides: {
       MuiAppBar: {
         colorPrimary: {
-          backgroundColor: paletteType === "dark" ? "#091c34" : "#b2ff59",
+          backgroundColor: paletteType === "dark" ? "#091c34" : "#ccff90",
           color: paletteType === "light" ? "rgba(0, 0, 0, 0.87)" : "#fafafa",
         },
       },
