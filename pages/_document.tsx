@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* PWA primary color */}
-          <meta name="theme-color" content="#4deb46" />
+          <meta name="theme-color" content="#161625" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -31,6 +31,48 @@ export default class MyDocument extends Document {
             });
           `,
             }}
+          />
+
+          {/* <!-- Primary Meta Tags --> */}
+          <meta name="title" content="Bhavya Tomar" />
+          <meta
+            name="description"
+            content="My personal website and portfolio"
+          />
+
+          {/* <!-- Open Graph / Facebook --> */}
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:url"
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}
+          />
+          <meta property="og:title" content="Bhavya Tomar" />
+          <meta
+            property="og:description"
+            content="My personal website and portfolio"
+          />
+          <meta
+            property="og:image"
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer-meta.png`}
+          />
+
+          {/* <!-- Twitter --> */}
+          <meta
+            property="twitter:card"
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer-meta.png`}
+          />
+          <meta
+            property="twitter:url"
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}
+          />
+          <meta property="twitter:title" content="Bhavya Tomar" />
+          <meta
+            property="twitter:description"
+            content="My personal website and portfolio"
+          />
+          <meta
+            property="twitter:image"
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer-meta.png`}
           />
         </Head>
         <body>
