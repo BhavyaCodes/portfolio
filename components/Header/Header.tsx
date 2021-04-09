@@ -62,6 +62,7 @@ function Header() {
               <img
                 className={classes.headerImg}
                 src="/assets/programmer2.svg"
+                alt="programmer illustration"
               />
             </Grid>
           </Hidden>
