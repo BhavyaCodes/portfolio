@@ -47,7 +47,10 @@ export default class MyDocument extends Document {
 
           {/* <!-- Open Graph / Facebook --> */}
           <meta property="og:type" content="website" />
-          <meta property="og:url" content={process.env.VERCEL_URL} />
+          <meta
+            property="og:url"
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}
+          />
           <meta property="og:title" content="Bhavya Tomar" />
           <meta
             property="og:description"
@@ -55,15 +58,18 @@ export default class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content={`${process.env.VERCEL_URL}/assets/programmer2.svg`}
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer2.svg`}
           />
 
           {/* <!-- Twitter --> */}
           <meta
             property="twitter:card"
-            content={`${process.env.VERCEL_URL}/assets/programmer2.svg`}
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer2.svg`}
           />
-          <meta property="twitter:url" content={process.env.VERCEL_URL} />
+          <meta
+            property="twitter:url"
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}
+          />
           <meta property="twitter:title" content="Bhavya Tomar" />
           <meta
             property="twitter:description"
@@ -71,7 +77,7 @@ export default class MyDocument extends Document {
           />
           <meta
             property="twitter:image"
-            content={`${process.env.VERCEL_URL}/assets/programmer2.svg`}
+            content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/assets/programmer2.svg`}
           />
         </Head>
         <body>
