@@ -152,7 +152,10 @@ function Project({
                 </Box>
                 <Box>
                   {links.github && (
-                    <div itemType="https://schema.org/SoftwareSourceCode">
+                    <div
+                      itemType="https://schema.org/SoftwareSourceCode"
+                      itemScope
+                    >
                       <Button
                         itemScope
                         itemProp="codeRepository"
