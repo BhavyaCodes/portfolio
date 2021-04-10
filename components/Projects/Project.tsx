@@ -209,7 +209,9 @@ function Project({
                 <Box style={{ textAlign: "center" }}>
                   {images.webm && (
                     <video
-                      itemProp="video"
+                      itemProp="subjectOf"
+                      itemScope
+                      itemType="https://schema.org/VideoObject"
                       autoPlay
                       loop
                       playsInline
