@@ -2,7 +2,15 @@ import { memo } from "react";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
-import { Grid, Box, Typography, Button, Container } from "@material-ui/core";
+import {
+  Grid,
+  Box,
+  Typography,
+  Button,
+  Container,
+  useTheme,
+  useMediaQuery,
+} from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import TechChips from "components/Projects/TechChips";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -27,6 +35,7 @@ function Project({
   links,
   special,
 }: AppProps) {
+  const theme = useTheme();
   const odd = index % 2 === 1 ? true : false;
   const darkMode = useDarkMode();
   const colorLight = "#dfffdc";
@@ -147,6 +156,11 @@ function Project({
                       href={special.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      size={
+                        useMediaQuery(theme.breakpoints.down("sm"))
+                          ? "small"
+                          : "medium"
+                      }
                     >
                       {special.text}
                     </Button>
