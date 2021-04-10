@@ -41,7 +41,6 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 import { DarkModeProvider, useDarkMode } from "../context/themeContext";
 import DarkModeIcon from "../components/Header/DarkModeIcon";
-import "Layout.css";
 interface Props {
   children: React.ReactElement;
 }
