@@ -36,6 +36,7 @@ function Chip({ label, logo, invert }: StackType) {
       },
       image: {
         width: "100%",
+        height: "auto",
         filter: `invert(${
           invert && theme.palette.type === "dark" ? "100%" : "0%"
         })`,
@@ -72,7 +73,13 @@ function Chip({ label, logo, invert }: StackType) {
           style={{ transform: props.zoom.interpolate(trans) }}
           className={classes.imageContainer}
         >
-          <img className={classes.image} src={logo} alt={label} />
+          <img
+            className={classes.image}
+            width={100}
+            height={100}
+            src={logo}
+            alt={label}
+          />
         </a.div>
         <Typography align="center" className={classes.label}>
           {label}
