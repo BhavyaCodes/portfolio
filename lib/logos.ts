@@ -1,15 +1,17 @@
-type LogosType = {
-  [key: string]: {
-    label: string;
-    logo: string;
-    invert?: boolean;
-  };
-};
+// type LogosType = {
+//   [key: string]: {
+//     label: string;
+//     logo: string;
+//     invert?: boolean;
+//     spin?: boolean;
+//   };
+// };
 
-const logos: LogosType = {
+const logos = {
   react: {
     label: "React",
     logo: "/assets/icons/react.png",
+    spin: true,
   },
   bootstrap: {
     label: "Bootstrap",
@@ -20,12 +22,17 @@ const logos: LogosType = {
     logo: "/assets/icons/chartjs.svg",
   },
   expressjs: {
-    label: "Expressjs",
+    label: "Express.js",
     logo: "/assets/icons/expressjs.png",
   },
   git: {
     label: "git",
     logo: "/assets/icons/git.svg",
+  },
+  github: {
+    label: "GitHub",
+    logo: "/assets/icons/github.svg",
+    invert: true,
   },
   materialui: {
     label: "Material-UI",
@@ -65,6 +72,26 @@ const logos: LogosType = {
   nodejs: {
     label: "Node.js",
     logo: "/assets/icons/nodejs.svg",
+  },
+  javascript: {
+    label: "JavaScript",
+    logo: "/assets/icons/javascript.svg",
+  },
+  postgresql: {
+    label: "PostgreSQL",
+    logo: "/assets/icons/postgresql.svg",
+  },
+  redux: {
+    label: "Redux",
+    logo: "/assets/icons/redux.svg",
+  },
+  sass: {
+    label: "Sass",
+    logo: "/assets/icons/sass.svg",
+  },
+  bash: {
+    label: "Bash",
+    logo: "/assets/icons/bash.svg",
   },
 };
 

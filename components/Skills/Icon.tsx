@@ -5,12 +5,12 @@ import { Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 function Icon({
-  title,
+  label,
   logo,
   invert,
   spin,
 }: {
-  title: string;
+  label: string;
   logo: any;
   invert?: boolean;
   spin?: boolean;
@@ -70,7 +70,7 @@ function Icon({
   return (
     <Box className={classes.root}>
       <Typography align="center" variant="caption" gutterBottom>
-        {title}
+        {label}
       </Typography>
       <a.div
         onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
@@ -84,7 +84,7 @@ function Icon({
           ref={logoRef}
           className={classes.logo}
           src={logo}
-          alt={title}
+          alt={label}
         />
       </a.div>
     </Box>

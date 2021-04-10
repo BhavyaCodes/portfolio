@@ -8,28 +8,29 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Icon from "./Icon";
 
 import githubDots from "public/assets/github-dots.svg";
+import logos from "lib/logos";
 
-const git = "/assets/icons/git.svg";
-const github = "/assets/icons/github.svg";
-const javascript = "/assets/icons/javascript.svg";
-const materialui = "/assets/icons/materialui.svg";
-const mongodb = "/assets/icons/mongodb.svg";
-const nextjs = "/assets/icons/nextjs.svg";
-const nodejs = "/assets/icons/nodejs.svg";
-const postgresql = "/assets/icons/postgresql.svg";
-const react = "/assets/icons/react.png";
-const redux = "/assets/icons/redux.svg";
-const sass = "/assets/icons/sass.svg";
-const typescript = "/assets/icons/typescript.svg";
-const expressjs = "/assets/icons/expressjs.png";
-const bootstrap = "/assets/icons/bootstrap.svg";
-const bash = "/assets/icons/bash.svg";
-const s3 = "/assets/icons/s3.svg";
-const socketio = "/assets/icons/socketio.svg";
-const vercel = "/assets/icons/vercel.svg";
+// const git = "/assets/icons/git.svg";
+// const github = "/assets/icons/github.svg";
+// const javascript = "/assets/icons/javascript.svg";
+// const materialui = "/assets/icons/materialui.svg";
+// const mongodb = "/assets/icons/mongodb.svg";
+// const nextjs = "/assets/icons/nextjs.svg";
+// const nodejs = "/assets/icons/nodejs.svg";
+// const postgresql = "/assets/icons/postgresql.svg";
+// const react = "/assets/icons/react.png";
+// const redux = "/assets/icons/redux.svg";
+// const sass = "/assets/icons/sass.svg";
+// const typescript = "/assets/icons/typescript.svg";
+// const expressjs = "/assets/icons/expressjs.png";
+// const bootstrap = "/assets/icons/bootstrap.svg";
+// const bash = "/assets/icons/bash.svg";
+// const s3 = "/assets/icons/s3.svg";
+// const socketio = "/assets/icons/socketio.svg";
+// const vercel = "/assets/icons/vercel.svg";
 
 type iconsArray = {
-  title: string;
+  label: string;
   logo: any;
   invert?: boolean;
   spin?: boolean;
@@ -62,82 +63,101 @@ const useStyles = makeStyles((theme: Theme) =>
 function Skills() {
   const iconsArray: iconsArray[] = useMemo(
     () => [
-      {
-        title: "TypeScript",
-        logo: typescript,
-      },
-      {
-        title: "node.js",
-        logo: nodejs,
-      },
-      {
-        title: "react.js",
-        logo: react,
-        spin: true,
-      },
-      {
-        title: "next.js",
-        logo: nextjs,
-        invert: true,
-      },
-      {
-        title: "mongoDB",
-        logo: mongodb,
-      },
-      {
-        title: "git",
-        logo: git,
-      },
-      {
-        title: "GitHub",
-        logo: github,
-        invert: true,
-      },
-      {
-        title: "JavaScript",
-        logo: javascript,
-      },
-      {
-        title: "aws S3",
-        logo: s3,
-      },
-      {
-        title: "Material-UI",
-        logo: materialui,
-      },
-      {
-        title: "Postgres",
-        logo: postgresql,
-      },
-      {
-        title: "Redux",
-        logo: redux,
-      },
-      {
-        title: "Sass",
-        logo: sass,
-      },
-      {
-        title: "express.js",
-        logo: expressjs,
-      },
-      {
-        title: "Bootstrap",
-        logo: bootstrap,
-      },
-      {
-        title: "bash shell",
-        logo: bash,
-      },
-      {
-        title: "socket.io",
-        logo: socketio,
-      },
-      {
-        title: "vercel",
-        logo: vercel,
-        invert: true,
-      },
+      // {
+      //   title: "TypeScript",
+      //   logo: typescript,
+      // },
+      logos.typescript,
+      // {
+      //   title: "node.js",
+      //   logo: nodejs,
+      // },
+      logos.nodejs,
+      // {
+      //   title: "react.js",
+      //   logo: react,
+      //   spin: true,
+      // },
+      logos.react,
+      // {
+      //   title: "next.js",
+      //   logo: nextjs,
+      //   invert: true,
+      // },
+      logos.nextjs,
+      // {
+      //   title: "mongoDB",
+      //   logo: mongodb,
+      // },
+      logos.mongodb,
+      // {
+      //   title: "git",
+      //   logo: git,
+      // },
+      logos.git,
+      // {
+      //   title: "GitHub",
+      //   logo: github,
+      //   invert: true,
+      // },
+      logos.github,
+
+      // {
+      //   title: "JavaScript",
+      //   logo: javascript,
+      // },
+      logos.javascript,
+      // {
+      //   title: "aws S3",
+      //   logo: s3,
+      // },
+      logos.s3,
+      // {
+      //   title: "Material-UI",
+      //   logo: materialui,
+      // },
+      logos.materialui,
+      // {
+      //   title: "Postgres",
+      //   logo: postgresql,
+      // },
+      logos.postgresql,
+      // {
+      //   title: "Redux",
+      //   logo: redux,
+      // },
+      logos.redux,
+      // {
+      //   title: "Sass",
+      //   logo: sass,
+      // },
+      logos.sass,
+      // {
+      //   title: "express.js",
+      //   logo: expressjs,
+      // },
+      logos.expressjs,
+      // {
+      //   title: "Bootstrap",
+      //   logo: bootstrap,
+      // },
+      logos.bootstrap,
+      // {
+      //   title: "bash shell",
+      //   logo: bash,
+      // },
+      logos.bash,
+      // {
+      //   title: "socket.io",
+      //   logo: socketio,
+      // },
+      logos.socketio,
+      // {
+      //   title: "vercel",
+      //   logo: vercel,
+      //   invert: true,
+      // },
+      logos.vercel,
     ],
     []
   );
@@ -180,7 +200,7 @@ function Skills() {
   const renderIcons = () => {
     return trail.map(({ transform }, index) => (
       <Grid
-        key={iconsArray[index].title}
+        key={iconsArray[index].label}
         item
         className={classes.gridItem}
         md={2}
@@ -194,7 +214,7 @@ function Skills() {
         >
           <a.div>
             <Icon
-              title={iconsArray[index].title}
+              label={iconsArray[index].label}
               logo={iconsArray[index].logo}
               spin={iconsArray[index].spin}
               invert={iconsArray[index].invert}
