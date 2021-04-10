@@ -139,6 +139,22 @@ const projects: ProjectType[] = [
       },
     },
   },
+  {
+    title: "Lit Jokes",
+    description: ["blah", "ok"],
+    links: {
+      live: "https://jokes-hooks.vercel.app/",
+      github: "https://github.com/Juggernaut9/Jokes-v2",
+    },
+    stack: [logos.react, logos.materialui],
+    images: {
+      main: {
+        link: "/project/jokes/main.png",
+        width: 1273,
+        height: 873,
+      },
+    },
+  },
 ];
 
 function projectsPage() {
