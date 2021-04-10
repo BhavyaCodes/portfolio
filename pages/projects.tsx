@@ -104,7 +104,11 @@ const projects: ProjectType[] = [
   },
   {
     title: "The Meal Hub",
-    description: ["asdfasdf ", "sdfsd fs"],
+    description: [
+      "A simple recipe application made for a **live workshop** I conducted on my friend's **[discord server](https://discord.gg/vtbc5EktTm)**",
+      "Goal of the workshop was to make a small recipe app using **[TheMealDB api](https://www.themealdb.com/)** and learn about react hooks, **useState, useEffect, useRef** and **react-router-dom** for routing",
+      "Note - styling was not done during the workshop, as the focus was more on react concepts",
+    ],
     links: {
       live: "https://recipe-material-ui-juggernaut9.vercel.app/",
       github: "https://github.com/Juggernaut9/recipe-material-ui",
