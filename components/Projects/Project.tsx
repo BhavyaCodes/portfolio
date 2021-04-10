@@ -69,6 +69,9 @@ function Project({
         position: "relative",
         padding: theme.spacing(1),
       },
+      figure: {
+        margin: 0,
+      },
       chip: {
         borderRadius: "100px",
         marginBottom: theme.spacing(2),
@@ -190,7 +193,7 @@ function Project({
             <Grid item md={6} xs={12}>
               <Box className={classes.imageContainer}>
                 {images.main && (
-                  <Box mb={2} component="figure">
+                  <Box mb={2} component="figure" className={classes.figure}>
                     <Image
                       itemProp="image"
                       src={images.main.link}
