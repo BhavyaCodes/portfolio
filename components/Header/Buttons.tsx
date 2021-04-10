@@ -36,6 +36,7 @@ function Buttons() {
           target="_blank"
           rel="noopener noreferrer"
           color="inherit"
+          itemProp="sameAs"
         >
           <IconButton
             aria-label="Github profile"
@@ -50,6 +51,7 @@ function Buttons() {
           target="_blank"
           rel="noopener noreferrer"
           color="inherit"
+          itemProp="sameAs"
         >
           <IconButton
             aria-label="Github repository link"
@@ -64,6 +66,7 @@ function Buttons() {
           target="_blank"
           rel="noopener noreferrer"
           color="inherit"
+          itemProp="sameAs"
         >
           <IconButton
             aria-label="Github repository link"

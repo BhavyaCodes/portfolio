@@ -52,22 +52,24 @@ function Header() {
   return (
     <div className={classes.root} id="home">
       <Toolbar />
-      <Container className={classes.container}>
-        <Grid container>
-          <Grid item md={6} xs={12} className={classes.gridItem}>
-            <HeaderText />
-          </Grid>
-          <Hidden smDown>
+      <div itemScope itemType="https://schema.org/Person">
+        <Container className={classes.container}>
+          <Grid container>
             <Grid item md={6} xs={12} className={classes.gridItem}>
-              <img
-                className={classes.headerImg}
-                src="/assets/programmer2.svg"
-                alt="programmer illustration"
-              />
+              <HeaderText />
             </Grid>
-          </Hidden>
-        </Grid>
-      </Container>
+            <Hidden smDown>
+              <Grid item md={6} xs={12} className={classes.gridItem}>
+                <img
+                  className={classes.headerImg}
+                  src="/assets/programmer2.svg"
+                  alt="programmer illustration"
+                />
+              </Grid>
+            </Hidden>
+          </Grid>
+        </Container>
+      </div>
       <div className={classes.downArrowContainer}>
         <IconButton
           aria-label="scroll down"
