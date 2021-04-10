@@ -125,7 +125,11 @@ const projects: ProjectType[] = [
         "https://github.com/Juggernaut9/pokemon/pulls?q=is%3Apr+is%3Aclosed",
     },
     title: "Pokemon",
-    description: ["pokemon"],
+    description: [
+      "I started this projects for beginners in **open source** to help them make their first **pull request** on Github for **Hacktoberfest**",
+      "I learned a lot about **merge conflits,** **github issues,** and **maitaining open source project** while also helping lots of people make their contribution count for Hacktoberfest",
+      "The project received about **55 pull requests in total!!**",
+    ],
     links: {
       live: "https://pokemon-hacktoberfest.vercel.app/",
       github: "https://github.com/Juggernaut9/pokemon",
