@@ -207,7 +207,7 @@ function Skills() {
   return (
     <>
       <Toolbar id="skills" />
-      <Container>
+      <Container component="section">
         <Grid container>
           <Box clone order={{ xs: 2, md: 1 }}>
             <Grid xs={12} md={6} item className={classes.illustrationContainer}>
