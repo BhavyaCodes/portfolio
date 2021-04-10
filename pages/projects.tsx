@@ -81,7 +81,13 @@ const projects: ProjectType[] = [
   },
   {
     title: "URL shortener",
-    description: ["url shortener made with ts blah blah blah"],
+    description: [
+      "My very first **fullstack Typescript** web application.",
+      "As the title suggests, the app can be used to shorten urls that can be shared with anyone on the internet",
+      "A **QR code** is also generated when submitting a URL that can be scanned to redirect to the original URL",
+      "The frontend is built using **React** with **Material-UI** for styling.",
+      "The backend is build with **Node.js** with **Express.js** framework along with **MongoDB** database to store the URLs",
+    ],
     images: {
       main: {
         link: "/project/url-short/main.png",
@@ -90,7 +96,7 @@ const projects: ProjectType[] = [
       },
     },
     links: {
-      github: "https://github.com",
+      github: "https://github.com/Juggernaut9/url-shortener-ts-backend",
       live: "https://short-url-three.vercel.app/",
     },
     stack: [
@@ -101,6 +107,35 @@ const projects: ProjectType[] = [
       logos.mongodb,
       logos.nodejs,
     ],
+  },
+  {
+    title: "Get-It-Done",
+    description: [
+      "Goal tracker app made with my friend for a **hackthon that we won.**",
+      "The challenge for the hackathon was to make a **CRUDy** web application for goal management",
+      "The application is made using **react** and styled using **material-ui**",
+      "Features of the app are **create, update and delete** goals. Add **labels** to goal, Start a **timer to track** the time spent for goal, **timer keeps running even when the window is closed!**",
+      "**Filter** the goals by hashtag and/or text, **sort** goals by time spent per goal,",
+      "view a **Bar graph** that displays the amount of time spent per goal",
+      "Check this video made by my hackathon partner **Priya Aswani** **[explaining how it works](https://www.linkedin.com/posts/activity-6755554068011319296-VlpE)**",
+    ],
+    links: {
+      github: "https://github.com/Juggernaut9/get-it-done",
+      live: "https://get-it-done-git-master-juggernaut9.vercel.app",
+    },
+    stack: [logos.react, logos.chartjs, logos.materialui, logos.vercel],
+    images: {
+      main: {
+        link: "/project/get-it-done/main.png",
+        width: 1173,
+        height: 847,
+      },
+    },
+    special: {
+      text: "Hackathon winner",
+      link:
+        "https://www.linkedin.com/posts/mintbean_mintbeanhackathon-mintbean-hackathon-activity-6757030650957619200-xUa8",
+    },
   },
   {
     title: "The Meal Hub",
@@ -149,7 +184,13 @@ const projects: ProjectType[] = [
   },
   {
     title: "Lit Jokes",
-    description: ["blah", "ok"],
+    description: [
+      "Jokes app build using **React** and styled using **Material-UI.**",
+      "The app uses **[Sv443's JokeAPI](https://v2.jokeapi.dev/)** to fetch jokes.",
+      "features of the app are **filtering** jokes by category, **searching** jokes, **Blacklisting** controversial/inappropriate jokes.",
+      "Users can also **favorite a joke**, after which they may view it on the **[favorites page](https://jokes-hooks.vercel.app/favorites)** by navigating to it thought the navbar.",
+      "There are also two ways to **share jokes**, either copy the link that will take you to the webpage for that joke, or copy the joke directly to computer's **clipboard.**",
+    ],
     links: {
       live: "https://jokes-hooks.vercel.app/",
       github: "https://github.com/Juggernaut9/Jokes-v2",
