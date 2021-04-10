@@ -138,6 +138,29 @@ const projects: ProjectType[] = [
     },
   },
   {
+    title: "This website",
+    description: ["asdfasdf"],
+    links: {
+      live: "https://bhavya.dev",
+      github: "https://github.com/Juggernaut9/portfolio",
+    },
+    stack: [
+      logos.typescript,
+      logos.nextjs,
+      logos.react,
+      logos.materialui,
+      logos.reactSpring,
+      logos.framerMotion,
+    ],
+    images: {
+      main: {
+        link: "/project/portfolio/main.png",
+        width: 859,
+        height: 509,
+      },
+    },
+  },
+  {
     title: "The Meal Hub",
     description: [
       "A simple recipe application made for a **live workshop** I conducted on my friend's **[discord server](https://discord.gg/vtbc5EktTm)**",
