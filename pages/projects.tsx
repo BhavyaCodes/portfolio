@@ -102,6 +102,22 @@ const projects: ProjectType[] = [
       logos.nodejs,
     ],
   },
+  {
+    title: "The Meal Hub",
+    description: ["asdfasdf ", "sdfsd fs"],
+    links: {
+      live: "https://recipe-material-ui-juggernaut9.vercel.app/",
+      github: "https://github.com/Juggernaut9/recipe-material-ui",
+    },
+    stack: [logos.react, logos.materialui],
+    images: {
+      main: {
+        link: "/project/the-meal-hub/main.png",
+        height: 841,
+        width: 1195,
+      },
+    },
+  },
 ];
 
 function projectsPage() {

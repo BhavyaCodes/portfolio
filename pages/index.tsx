@@ -112,17 +112,6 @@ const projects: ProjectType[] = [
       link:
         "https://www.linkedin.com/posts/mintbean_mintbeanhackathon-mintbean-hackathon-activity-6757030650957619200-xUa8",
     },
-    // {
-    //   title: "The Meal Hub",
-    //   description: ["asdfasdf ", 'sdfsd fs'],
-    //   links: {
-    //     live: "https://recipe-material-ui-juggernaut9.vercel.app/",
-    //     github: "https://github.com/Juggernaut9/recipe-material-ui"
-    //   },
-    //   stack: [
-    //     logos.react
-    //   ]
-    // }
   },
 ];
 
