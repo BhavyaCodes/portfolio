@@ -30,6 +30,7 @@ function Icon({
       },
       logo: {
         width: "100%",
+        height: "auto",
         flexGrow: 1,
         filter: `invert(${
           invert && theme.palette.type === "dark" ? "100%" : "0%"
