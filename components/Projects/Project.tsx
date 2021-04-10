@@ -99,27 +99,26 @@ function Project({
     );
     const classes = useStyles();
 
-    return description.map((para, index) => (
-      <Typography
-        key={index}
-        className={classes.text}
-        gutterBottom
-        itemProp="abstract"
-      >
-        <ReactMarkdown
-          renderers={{
-            paragraph: "span",
-            link: ({ href, children }) => (
-              <a href={href} target="_blank" rel="noopener noreferrer">
-                {children}
-              </a>
-            ),
-          }}
-        >
-          {para}
-        </ReactMarkdown>
-      </Typography>
-    ));
+    return (
+      <div itemProp="abstract">
+        {description.map((para, index) => (
+          <Typography key={index} className={classes.text} gutterBottom>
+            <ReactMarkdown
+              renderers={{
+                paragraph: "span",
+                link: ({ href, children }) => (
+                  <a href={href} target="_blank" rel="noopener noreferrer">
+                    {children}
+                  </a>
+                ),
+              }}
+            >
+              {para}
+            </ReactMarkdown>
+          </Typography>
+        ))}
+      </div>
+    );
   };
 
   const renderProject = () => (
