@@ -1,12 +1,3 @@
-// type LogosType = {
-//   [key: string]: {
-//     label: string;
-//     logo: string;
-//     invert?: boolean;
-//     spin?: boolean;
-//   };
-// };
-
 const logos = {
   react: {
     label: "React",

@@ -63,100 +63,23 @@ const useStyles = makeStyles((theme: Theme) =>
 function Skills() {
   const iconsArray: iconsArray[] = useMemo(
     () => [
-      // {
-      //   title: "TypeScript",
-      //   logo: typescript,
-      // },
       logos.typescript,
-      // {
-      //   title: "node.js",
-      //   logo: nodejs,
-      // },
       logos.nodejs,
-      // {
-      //   title: "react.js",
-      //   logo: react,
-      //   spin: true,
-      // },
       logos.react,
-      // {
-      //   title: "next.js",
-      //   logo: nextjs,
-      //   invert: true,
-      // },
       logos.nextjs,
-      // {
-      //   title: "mongoDB",
-      //   logo: mongodb,
-      // },
       logos.mongodb,
-      // {
-      //   title: "git",
-      //   logo: git,
-      // },
       logos.git,
-      // {
-      //   title: "GitHub",
-      //   logo: github,
-      //   invert: true,
-      // },
       logos.github,
-
-      // {
-      //   title: "JavaScript",
-      //   logo: javascript,
-      // },
       logos.javascript,
-      // {
-      //   title: "aws S3",
-      //   logo: s3,
-      // },
       logos.s3,
-      // {
-      //   title: "Material-UI",
-      //   logo: materialui,
-      // },
       logos.materialui,
-      // {
-      //   title: "Postgres",
-      //   logo: postgresql,
-      // },
       logos.postgresql,
-      // {
-      //   title: "Redux",
-      //   logo: redux,
-      // },
       logos.redux,
-      // {
-      //   title: "Sass",
-      //   logo: sass,
-      // },
       logos.sass,
-      // {
-      //   title: "express.js",
-      //   logo: expressjs,
-      // },
       logos.expressjs,
-      // {
-      //   title: "Bootstrap",
-      //   logo: bootstrap,
-      // },
       logos.bootstrap,
-      // {
-      //   title: "bash shell",
-      //   logo: bash,
-      // },
       logos.bash,
-      // {
-      //   title: "socket.io",
-      //   logo: socketio,
-      // },
       logos.socketio,
-      // {
-      //   title: "vercel",
-      //   logo: vercel,
-      //   invert: true,
-      // },
       logos.vercel,
     ],
     []
