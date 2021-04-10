@@ -352,7 +352,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#2b5797" />
       </Head>
       <CssBaseline />
-      <AppBar>
+      <AppBar component="nav">
         <Toolbar>
           {/* <Link href="/" passHref> */}
           <Typography

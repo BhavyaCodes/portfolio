@@ -50,7 +50,7 @@ function Header() {
   );
   const classes = useStyles();
   return (
-    <div className={classes.root} id="home">
+    <header className={classes.root} id="home">
       <Toolbar />
       <Container className={classes.container}>
         <Grid container>
@@ -81,7 +81,7 @@ function Header() {
           <ExpandMoreIcon fontSize="large" />
         </IconButton>
       </div>
-    </div>
+    </header>
   );
 }
 

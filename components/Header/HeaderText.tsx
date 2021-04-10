@@ -28,26 +28,38 @@ const useStyles = makeStyles((theme: Theme) =>
 function HeaderText() {
   const classes = useStyles();
   return (
-    <Box className={classes.root}>
-      <article itemScope itemType="http://schema.org/Author">
-        <Typography
-          className={classes.title}
-          variant="h2"
-          component="h1"
-          gutterBottom
-          itemProp="name"
-        >
-          <span className={classes.hi}>Hi, </span>I'm Bhavya
-        </Typography>
-        <Typography variant="h4" component="h2" gutterBottom>
-          A fullstack developer
-        </Typography>
-        <Typography className={classes.paragraph}>
-          I specialize in developing and deploying responsive websites and web
-          applications
-        </Typography>
-        <Buttons />
-      </article>
+    <Box
+      component="main"
+      role="main"
+      itemScope
+      itemType="https://schema.org/Person"
+      className={classes.root}
+    >
+      <meta itemProp="familyName" content="Tomar" />
+      <meta itemProp="gender" content="https://schema.org/Male" />
+      <meta itemProp="name" content="Bhavya Tomar" />
+      <Typography
+        className={classes.title}
+        variant="h2"
+        component="h1"
+        gutterBottom
+      >
+        <span className={classes.hi}>Hi, </span>I'm{" "}
+        <span itemProp="givenName">Bhavya</span>
+      </Typography>
+      <Typography
+        variant="h4"
+        itemProp="disambiguatingDescription"
+        component="h2"
+        gutterBottom
+      >
+        A fullstack developer
+      </Typography>
+      <Typography itemProp="knowsAbout" className={classes.paragraph}>
+        I specialize in developing and deploying responsive websites and web
+        applications
+      </Typography>
+      <Buttons />
     </Box>
   );
 }

@@ -42,7 +42,7 @@ function Projects({ projects }: { projects: ProjectType[] }) {
     );
   };
 
-  return <>{renderProjects()}</>;
+  return <section>{renderProjects()}</section>;
 }
 
 export default memo(Projects);

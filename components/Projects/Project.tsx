@@ -99,28 +99,36 @@ function Project({
     );
     const classes = useStyles();
 
-    return description.map((para, index) => (
-      <Typography key={index} className={classes.text} gutterBottom>
-        <ReactMarkdown
-          renderers={{
-            paragraph: "span",
-            link: ({ href, children }) => (
-              <a href={href} target="_blank" rel="noopener noreferrer">
-                {children}
-              </a>
-            ),
-          }}
-        >
-          {para}
-        </ReactMarkdown>
-      </Typography>
-    ));
+    return (
+      <div itemProp="abstract">
+        {description.map((para, index) => (
+          <Typography key={index} className={classes.text} gutterBottom>
+            <ReactMarkdown
+              renderers={{
+                paragraph: "span",
+                link: ({ href, children }) => (
+                  <a href={href} target="_blank" rel="noopener noreferrer">
+                    {children}
+                  </a>
+                ),
+              }}
+            >
+              {para}
+            </ReactMarkdown>
+          </Typography>
+        ))}
+      </div>
+    );
   };
 
   const renderProject = () => (
-    <div className={classes.root}>
+    <article
+      itemType="https://schema.org/SoftwareSourceCode"
+      itemScope
+      className={classes.root}
+    >
       <Container className={classes.container}>
-        <Typography variant="h2" align="center" gutterBottom>
+        <Typography variant="h2" align="center" gutterBottom itemProp="name">
           {title}
         </Typography>
         <Grid container>
@@ -144,6 +152,8 @@ function Project({
                 <Box>
                   {links.github && (
                     <Button
+                      itemScope
+                      itemProp="codeRepository"
                       className={classes.chip}
                       variant="contained"
                       color="secondary"
@@ -166,6 +176,7 @@ function Project({
                       rel="noopener noreferrer"
                       endIcon={<OpenInNewIcon />}
                       size="small"
+                      itemProp="url"
                     >
                       Live project
                     </Button>
@@ -179,8 +190,9 @@ function Project({
             <Grid item md={6} xs={12}>
               <Box className={classes.imageContainer}>
                 {images.main && (
-                  <Box mb={2}>
+                  <Box mb={2} component="figure">
                     <Image
+                      itemProp="image"
                       src={images.main.link}
                       width={images.main.width}
                       height={images.main.height}
@@ -220,7 +232,7 @@ function Project({
           </Box>
         </Grid>
       </Container>
-    </div>
+    </article>
   );
   if (odd) {
     return (
