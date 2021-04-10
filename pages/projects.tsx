@@ -118,6 +118,27 @@ const projects: ProjectType[] = [
       },
     },
   },
+  {
+    special: {
+      text: "hacktoberfest - 55 pull requests",
+      link:
+        "https://github.com/Juggernaut9/pokemon/pulls?q=is%3Apr+is%3Aclosed",
+    },
+    title: "Pokemon",
+    description: ["pokemon"],
+    links: {
+      live: "https://pokemon-hacktoberfest.vercel.app/",
+      github: "https://github.com/Juggernaut9/pokemon",
+    },
+    stack: [logos.github, logos.git, logos.react, logos.bootstrap],
+    images: {
+      main: {
+        link: "/project/pokemon/main.png",
+        height: 936,
+        width: 1020,
+      },
+    },
+  },
 ];
 
 function projectsPage() {
