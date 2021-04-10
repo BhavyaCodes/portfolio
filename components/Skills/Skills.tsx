@@ -10,25 +10,6 @@ import Icon from "./Icon";
 import githubDots from "public/assets/github-dots.svg";
 import logos from "lib/logos";
 
-// const git = "/assets/icons/git.svg";
-// const github = "/assets/icons/github.svg";
-// const javascript = "/assets/icons/javascript.svg";
-// const materialui = "/assets/icons/materialui.svg";
-// const mongodb = "/assets/icons/mongodb.svg";
-// const nextjs = "/assets/icons/nextjs.svg";
-// const nodejs = "/assets/icons/nodejs.svg";
-// const postgresql = "/assets/icons/postgresql.svg";
-// const react = "/assets/icons/react.png";
-// const redux = "/assets/icons/redux.svg";
-// const sass = "/assets/icons/sass.svg";
-// const typescript = "/assets/icons/typescript.svg";
-// const expressjs = "/assets/icons/expressjs.png";
-// const bootstrap = "/assets/icons/bootstrap.svg";
-// const bash = "/assets/icons/bash.svg";
-// const s3 = "/assets/icons/s3.svg";
-// const socketio = "/assets/icons/socketio.svg";
-// const vercel = "/assets/icons/vercel.svg";
-
 type iconsArray = {
   label: string;
   logo: any;
