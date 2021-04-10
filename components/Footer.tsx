@@ -139,7 +139,7 @@ function Footer() {
   };
 
   return (
-    <div className={classes.root}>
+    <footer className={classes.root}>
       <img
         className={classes.wave}
         src={
@@ -297,7 +297,7 @@ function Footer() {
           </Grid>
         </Grid>
       </Container>
-    </div>
+    </footer>
   );
 }
 
