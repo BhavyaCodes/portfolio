@@ -28,7 +28,11 @@ const useStyles = makeStyles((theme: Theme) =>
 function HeaderText() {
   const classes = useStyles();
   return (
-    <Box className={classes.root}>
+    <Box
+      itemScope
+      itemType="https://schema.org/Person"
+      className={classes.root}
+    >
       <Typography
         className={classes.title}
         variant="h2"
