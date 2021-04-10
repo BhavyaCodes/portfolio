@@ -1,4 +1,4 @@
-Sitemap: https://portfolio-alpha-two-88.vercel.app/sitemap.xml
+Sitemap: https://bhavya.dev/sitemap.xml
 
 User-agent: *
 Allow: /*
