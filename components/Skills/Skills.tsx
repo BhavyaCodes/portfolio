@@ -8,28 +8,10 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Icon from "./Icon";
 
 import githubDots from "public/assets/github-dots.svg";
-
-const git = "/assets/icons/git.svg";
-const github = "/assets/icons/github.svg";
-const javascript = "/assets/icons/javascript.svg";
-const materialui = "/assets/icons/materialui.svg";
-const mongodb = "/assets/icons/mongodb.svg";
-const nextjs = "/assets/icons/nextjs.svg";
-const nodejs = "/assets/icons/nodejs.svg";
-const postgresql = "/assets/icons/postgresql.svg";
-const react = "/assets/icons/react.png";
-const redux = "/assets/icons/redux.svg";
-const sass = "/assets/icons/sass.svg";
-const typescript = "/assets/icons/typescript.svg";
-const expressjs = "/assets/icons/expressjs.png";
-const bootstrap = "/assets/icons/bootstrap.svg";
-const bash = "/assets/icons/bash.svg";
-const s3 = "/assets/icons/s3.svg";
-const socketio = "/assets/icons/socketio.svg";
-const vercel = "/assets/icons/vercel.svg";
+import logos from "lib/logos";
 
 type iconsArray = {
-  title: string;
+  label: string;
   logo: any;
   invert?: boolean;
   spin?: boolean;
@@ -62,82 +44,24 @@ const useStyles = makeStyles((theme: Theme) =>
 function Skills() {
   const iconsArray: iconsArray[] = useMemo(
     () => [
-      {
-        title: "TypeScript",
-        logo: typescript,
-      },
-      {
-        title: "node.js",
-        logo: nodejs,
-      },
-      {
-        title: "react.js",
-        logo: react,
-        spin: true,
-      },
-      {
-        title: "next.js",
-        logo: nextjs,
-        invert: true,
-      },
-      {
-        title: "mongoDB",
-        logo: mongodb,
-      },
-      {
-        title: "git",
-        logo: git,
-      },
-      {
-        title: "GitHub",
-        logo: github,
-        invert: true,
-      },
-      {
-        title: "JavaScript",
-        logo: javascript,
-      },
-      {
-        title: "aws S3",
-        logo: s3,
-      },
-      {
-        title: "Material-UI",
-        logo: materialui,
-      },
-      {
-        title: "Postgres",
-        logo: postgresql,
-      },
-      {
-        title: "Redux",
-        logo: redux,
-      },
-      {
-        title: "Sass",
-        logo: sass,
-      },
-      {
-        title: "express.js",
-        logo: expressjs,
-      },
-      {
-        title: "Bootstrap",
-        logo: bootstrap,
-      },
-      {
-        title: "bash shell",
-        logo: bash,
-      },
-      {
-        title: "socket.io",
-        logo: socketio,
-      },
-      {
-        title: "vercel",
-        logo: vercel,
-        invert: true,
-      },
+      logos.typescript,
+      logos.nodejs,
+      logos.react,
+      logos.nextjs,
+      logos.mongodb,
+      logos.git,
+      logos.github,
+      logos.javascript,
+      logos.s3,
+      logos.materialui,
+      logos.postgresql,
+      logos.redux,
+      logos.sass,
+      logos.expressjs,
+      logos.bootstrap,
+      logos.bash,
+      logos.socketio,
+      logos.vercel,
     ],
     []
   );
@@ -180,7 +104,7 @@ function Skills() {
   const renderIcons = () => {
     return trail.map(({ transform }, index) => (
       <Grid
-        key={iconsArray[index].title}
+        key={iconsArray[index].label}
         item
         className={classes.gridItem}
         md={2}
@@ -194,7 +118,7 @@ function Skills() {
         >
           <a.div>
             <Icon
-              title={iconsArray[index].title}
+              label={iconsArray[index].label}
               logo={iconsArray[index].logo}
               spin={iconsArray[index].spin}
               invert={iconsArray[index].invert}
