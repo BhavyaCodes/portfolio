@@ -124,7 +124,7 @@ function Project({
 
   const renderProject = () => (
     <article
-      itemType="https://schema.org/Code"
+      itemType="https://schema.org/SoftwareSourceCode"
       itemScope
       className={classes.root}
     >
@@ -154,7 +154,6 @@ function Project({
                   {links.github && (
                     <Button
                       itemScope
-                      itemType="https://schema.org/SoftwareSourceCode"
                       itemProp="codeRepository"
                       className={classes.chip}
                       variant="contained"
