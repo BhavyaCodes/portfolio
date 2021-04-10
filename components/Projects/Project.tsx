@@ -124,7 +124,7 @@ function Project({
 
   const renderProject = () => (
     <article
-      itemType="https://schema.org/Code"
+      itemType="https://schema.org/SoftwareSourceCode"
       itemScope
       className={classes.root}
     >
@@ -152,25 +152,20 @@ function Project({
                 </Box>
                 <Box>
                   {links.github && (
-                    <div
-                      itemType="https://schema.org/SoftwareSourceCode"
+                    <Button
                       itemScope
+                      itemProp="codeRepository"
+                      className={classes.chip}
+                      variant="contained"
+                      color="secondary"
+                      href={links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      endIcon={<GitHubIcon />}
+                      size="small"
                     >
-                      <Button
-                        itemScope
-                        itemProp="codeRepository"
-                        className={classes.chip}
-                        variant="contained"
-                        color="secondary"
-                        href={links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        endIcon={<GitHubIcon />}
-                        size="small"
-                      >
-                        Source code
-                      </Button>
-                    </div>
+                      Source code
+                    </Button>
                   )}
                   {links.live && (
                     <Button
