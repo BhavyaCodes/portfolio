@@ -29,6 +29,8 @@ function HeaderText() {
   const classes = useStyles();
   return (
     <Box
+      component="main"
+      role="main"
       itemScope
       itemType="https://schema.org/Person"
       className={classes.root}
