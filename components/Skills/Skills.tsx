@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     illustration: {
       width: "80%",
+      height: "auto",
       [theme.breakpoints.down("md")]: {
         width: "100%",
       },
@@ -212,6 +213,8 @@ function Skills() {
           <Box clone order={{ xs: 2, md: 1 }}>
             <Grid xs={12} md={6} item className={classes.illustrationContainer}>
               <img
+                width={1144}
+                height={617}
                 src={githubDots}
                 alt="github activity illustration"
                 className={classes.illustration}
