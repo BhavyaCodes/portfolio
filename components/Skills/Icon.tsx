@@ -77,7 +77,14 @@ function Icon({
         style={{ transform: props.xys.interpolate(trans) }}
         className={classes.logoContainer}
       >
-        <img ref={logoRef} className={classes.logo} src={logo} alt={title} />
+        <img
+          height={100}
+          width={100}
+          ref={logoRef}
+          className={classes.logo}
+          src={logo}
+          alt={title}
+        />
       </a.div>
     </Box>
   );
