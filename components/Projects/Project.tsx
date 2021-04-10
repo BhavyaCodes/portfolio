@@ -191,7 +191,7 @@ function Project({
             <Grid item md={6} xs={12}>
               <Box className={classes.imageContainer}>
                 {images.main && (
-                  <Box mb={2}>
+                  <Box mb={2} component="figure">
                     <Image
                       itemProp="image"
                       src={images.main.link}
@@ -209,9 +209,6 @@ function Project({
                 <Box style={{ textAlign: "center" }}>
                   {images.webm && (
                     <video
-                      itemProp="subjectOf"
-                      itemScope
-                      itemType="https://schema.org/VideoObject"
                       autoPlay
                       loop
                       playsInline
