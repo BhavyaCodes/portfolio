@@ -10,85 +10,6 @@ import AllProjectsButton from "components/Projects/AllProjectsButton";
 
 import logos from "lib/logos";
 
-// const logos = {
-//   react: "/assets/icons/react.png",
-//   bootstrap: "/assets/icons/bootstrap.svg",
-//   chartjs: "/assets/icons/chartjs.svg",
-//   expressjs: "/assets/icons/expressjs.png",
-//   git: "/assets/icons/git.svg",
-//   materialui: "/assets/icons/materialui.svg",
-//   mongodb: "/assets/icons/mongodb.svg",
-//   nextjs: "/assets/icons/nextjs.svg",
-//   nodejs: "/assets/icons/nodejs.svg",
-//   s3: "/assets/icons/s3.svg",
-//   socketio: "/assets/icons/socketio.svg",
-//   typescript: "/assets/icons/typescript.svg",
-//   vercel: "/assets/icons/vercel.svg",
-//   ejs: "/assets/icons/ejs.svg",
-// };
-
-// const logos = {
-//   react: {
-//     label: "React",
-//     logo: "/assets/icons/react.png",
-//   },
-//   bootstrap: {
-//     label: "Bootstrap",
-//     logo: "/assets/icons/bootstrap.svg",
-//   },
-//   chartjs: {
-//     label: "Chart.js",
-//     logo: "/assets/icons/chartjs.svg",
-//   },
-//   expressjs: {
-//     label: "Expressjs",
-//     logo: "/assets/icons/expressjs.png",
-//   },
-//   git: {
-//     label: "git",
-//     logo: "/assets/icons/git.svg",
-//   },
-//   materialui: {
-//     label: "Material-UI",
-//     logo: "/assets/icons/materialui.svg",
-//   },
-//   mongodb: {
-//     label: "MongoDB",
-//     logo: "/assets/icons/mongodb.svg",
-//   },
-//   nextjs: {
-//     label: "Next.js",
-//     logo: "/assets/icons/nextjs.svg",
-//     invert: true,
-//   },
-//   s3: {
-//     label: "AWS-S3",
-//     logo: "/assets/icons/s3.svg",
-//   },
-//   socketio: {
-//     label: "Socket.IO",
-//     logo: "/assets/icons/socketio.svg",
-//   },
-//   typescript: {
-//     label: "TypeScript",
-//     logo: "/assets/icons/typescript.svg",
-//   },
-//   vercel: {
-//     label: "Vercel",
-//     logo: "/assets/icons/vercel.svg",
-//     invert: true,
-//   },
-//   ejs: {
-//     label: "EJS",
-//     logo: "/assets/icons/ejs.svg",
-//     invert: true,
-//   },
-//   nodejs: {
-//     label: "Node.js",
-//     logo: "/assets/icons/nodejs.svg",
-//   },
-// };
-
 import { ProjectType } from "components/Projects/Projects";
 
 const projects: ProjectType[] = [
@@ -108,12 +29,6 @@ const projects: ProjectType[] = [
       },
     },
     stack: [
-      // { label: "nodejs", logo: logos.nodejs },
-      // { label: "expressjs", logo: logos.expressjs },
-      // { label: "aws-s3", logo: logos.s3 },
-      // { label: "mongodb", logo: logos.mongodb },
-      // { label: "bootstrap", logo: logos.bootstrap },
-      // { label: "EJS", logo: logos.ejs, invert: true },
       logos.nodejs,
       logos.expressjs,
       logos.s3,
@@ -143,14 +58,7 @@ const projects: ProjectType[] = [
         height: 571,
       },
     },
-    stack: [
-      // { label: "chartjs", logo: logos.chartjs },
-      // { label: "reactjs", logo: logos.react },
-      // { label: "material-ui", logo: logos.materialui },
-      logos.chartjs,
-      logos.react,
-      logos.materialui,
-    ],
+    stack: [logos.chartjs, logos.react, logos.materialui],
     links: {
       github: "https://github.com/Juggernaut9/covid-tracker-material-ui-react",
       live: "https://covid-tracker-beta.vercel.app/",
@@ -165,16 +73,7 @@ const projects: ProjectType[] = [
       "The app supports multiple games running parallel, means many pair of people can play on the same website at the same time without any interference",
       "If you wish to test this project, you must run the url on different browsers, or better check my **[video explaining how it works](https://www.linkedin.com/posts/bhavya-tomar-1967b6202_careerhack-github-hackathon-activity-6760854974944694272--QFx)** that I posted on **LinkedIn**",
     ],
-    stack: [
-      // { label: "nodejs", logo: logos.nodejs },
-      // { label: "reactjs", logo: logos.react },
-      // { label: "socket.io", logo: logos.socketio },
-      // { label: "material-ui", logo: logos.materialui },
-      logos.nodejs,
-      logos.react,
-      logos.socketio,
-      logos.materialui,
-    ],
+    stack: [logos.nodejs, logos.react, logos.socketio, logos.materialui],
     links: {
       github: "https://github.com/Juggernaut9/connect-4-online-multiplayer",
       live: "https://konnect-4.vercel.app/",
@@ -200,16 +99,7 @@ const projects: ProjectType[] = [
       github: "https://github.com/Juggernaut9/get-it-done",
       live: "https://get-it-done-git-master-juggernaut9.vercel.app",
     },
-    stack: [
-      // { label: "react", logo: logos.react },
-      // { label: "chartjs", logo: logos.chartjs },
-      // { label: "material-ui", logo: logos.materialui },
-      // { label: "vercel", logo: logos.vercel, invert: true },
-      logos.react,
-      logos.chartjs,
-      logos.materialui,
-      logos.vercel,
-    ],
+    stack: [logos.react, logos.chartjs, logos.materialui, logos.vercel],
     images: {
       main: {
         link: "/project/get-it-done/main.png",
