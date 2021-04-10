@@ -1,4 +1,12 @@
-const logos = {
+type LogosType = {
+  [key: string]: {
+    label: string;
+    logo: string;
+    invert?: boolean;
+  };
+};
+
+const logos: LogosType = {
   react: {
     label: "React",
     logo: "/assets/icons/react.png",
