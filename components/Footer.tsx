@@ -151,13 +151,17 @@ function Footer() {
       />
       <Container id="contact">
         <Grid container>
-          <Grid item md={6} sm={12} className={classes.left}>
-            <Typography variant="h3" align="center">
+          <Grid item md={6} sm={12}>
+            <Typography variant="h3" align="left">
               Connect with me
             </Typography>
-            <article itemScope itemType="http://schema.org/Author">
+            <article
+              itemScope
+              itemType="http://schema.org/Author"
+              className={classes.left}
+            >
               <Grid container className={classes.leftContainer}>
-                <Grid item md={6} sm={12} className={classes.iconsGrid}>
+                <Grid item md={6} sm={6} className={classes.iconsGrid}>
                   <Link
                     className={classes.socialItem}
                     href="https://github.com/Juggernaut9"
@@ -209,10 +213,10 @@ function Footer() {
                 <Grid
                   item
                   md={6}
-                  sm={12}
+                  sm={6}
                   className={classes.illustrationContainer}
                 >
-                  <Hidden smDown>
+                  <Hidden xsDown>
                     <img
                       src="/assets/message.svg"
                       className={classes.illustration}
@@ -224,7 +228,7 @@ function Footer() {
             </article>
           </Grid>
           <Grid item md={6} sm={12}>
-            <Typography variant="h3" align="center">
+            <Typography variant="h3" align="left">
               Say Hi
             </Typography>
             <form onSubmit={handleFormSubmit}>
