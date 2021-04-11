@@ -82,10 +82,19 @@ function Project({
         margin: 0,
         marginBottom: theme.spacing(2),
       },
+      chipContainer: {
+        [theme.breakpoints.down("xs")]: {
+          display: "flex",
+          justifyContent: "space-around",
+        },
+      },
       chip: {
         borderRadius: "100px",
         marginBottom: theme.spacing(2),
         marginRight: theme.spacing(1),
+        [theme.breakpoints.down("xs")]: {
+          width: "50%",
+        },
       },
       btnSpecial: {
         background: "linear-gradient(to right, #40e0d0 , #ff8c00, #ff0080 )",
@@ -167,7 +176,7 @@ function Project({
                   )}
                   {renderDescription()}
                 </Box>
-                <Box>
+                <Box className={classes.chipContainer}>
                   {links.github && (
                     <Button
                       itemScope
