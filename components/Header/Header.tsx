@@ -41,6 +41,9 @@ function Header() {
       },
       downArrowContainer: {
         textAlign: "center",
+        [theme.breakpoints.down("sm")]: {
+          paddingTop: theme.spacing(10),
+        },
       },
       downArrow: {
         position: "relative",
