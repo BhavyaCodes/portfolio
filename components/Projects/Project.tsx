@@ -87,6 +87,7 @@ function Project({
           display: "flex",
           justifyContent: "space-around",
         },
+        marginBottom: theme.spacing(1),
       },
       chip: {
         borderRadius: "100px",
