@@ -81,7 +81,13 @@ const projects: ProjectType[] = [
   },
   {
     title: "URL shortener",
-    description: ["url shortener made with ts blah blah blah"],
+    description: [
+      "My very first **fullstack Typescript** web application.",
+      "As the title suggests, the app can be used to shorten urls that can be shared with anyone on the internet",
+      "A **QR code** is also generated when submitting a URL that can be scanned to redirect to the original URL",
+      "The frontend is built using **React** with **Material-UI** for styling.",
+      "The backend is build with **Node.js** with **Express.js** framework along with **MongoDB** database to store the URLs",
+    ],
     images: {
       main: {
         link: "/project/url-short/main.png",
@@ -90,7 +96,7 @@ const projects: ProjectType[] = [
       },
     },
     links: {
-      github: "https://github.com",
+      github: "https://github.com/Juggernaut9/url-shortener-ts-backend",
       live: "https://short-url-three.vercel.app/",
     },
     stack: [
@@ -101,6 +107,132 @@ const projects: ProjectType[] = [
       logos.mongodb,
       logos.nodejs,
     ],
+  },
+  {
+    title: "Get-It-Done",
+    description: [
+      "Goal tracker app made with my friend for a **hackthon that we won.**",
+      "The challenge for the hackathon was to make a **CRUDy** web application for goal management",
+      "The application is made using **react** and styled using **material-ui**",
+      "Features of the app are **create, update and delete** goals. Add **labels** to goal, Start a **timer to track** the time spent for goal, **timer keeps running even when the window is closed!**",
+      "**Filter** the goals by hashtag and/or text, **sort** goals by time spent per goal,",
+      "view a **Bar graph** that displays the amount of time spent per goal",
+      "Check this video made by my hackathon partner **Priya Aswani** **[explaining how it works](https://www.linkedin.com/posts/activity-6755554068011319296-VlpE)**",
+    ],
+    links: {
+      github: "https://github.com/Juggernaut9/get-it-done",
+      live: "https://get-it-done-git-master-juggernaut9.vercel.app",
+    },
+    stack: [logos.react, logos.chartjs, logos.materialui, logos.vercel],
+    images: {
+      main: {
+        link: "/project/get-it-done/main.png",
+        width: 1173,
+        height: 847,
+      },
+    },
+    special: {
+      text: "Hackathon winner",
+      link:
+        "https://www.linkedin.com/posts/mintbean_mintbeanhackathon-mintbean-hackathon-activity-6757030650957619200-xUa8",
+    },
+  },
+  {
+    title: "This website",
+    description: [
+      "My portfolio website build with **React** using **Next.js** framework.",
+      "The source code is writting in **TypeScript** and the project is easy to maintain with the **type safety** provided by Typescript. The source code is very **moduler** allowing easy **debugging**.",
+      "Styling is done using **Material-UI**, the website comes with two **themes, dark and light.**",
+      "Animations are done using two libraries, **react-spring** for the bouncy logo animations, and **framer-motion** for page transitions.",
+      "**next/image** which is a new Next.js 10 feature is being used to automatically resize images according to display and also **prevent html elements shifting** from slow loading images.",
+      "This description is typed as **markdown** in source code, the Project component takes in props for links, icons, title, images, etc; nothing is hard coded.",
+    ],
+    links: {
+      live: "https://bhavya.dev",
+      github: "https://github.com/Juggernaut9/portfolio",
+    },
+    stack: [
+      logos.typescript,
+      logos.nextjs,
+      logos.react,
+      logos.materialui,
+      logos.reactSpring,
+      logos.framerMotion,
+    ],
+    images: {
+      main: {
+        link: "/project/portfolio/main.png",
+        width: 859,
+        height: 509,
+      },
+    },
+  },
+  {
+    title: "The Meal Hub",
+    description: [
+      "A simple recipe application made for a **live workshop** I conducted on my friend's **[discord server](https://discord.gg/vtbc5EktTm)**",
+      "Goal of the workshop was to make a small recipe app using **[TheMealDB api](https://www.themealdb.com/)** and learn about react hooks, **useState, useEffect, useRef** and **react-router-dom** for routing",
+      "Note - styling was not done during the workshop, as the focus was more on react concepts",
+    ],
+    links: {
+      live: "https://recipe-material-ui-juggernaut9.vercel.app/",
+      github: "https://github.com/Juggernaut9/recipe-material-ui",
+    },
+    stack: [logos.react, logos.materialui],
+    images: {
+      main: {
+        link: "/project/the-meal-hub/main.png",
+        height: 841,
+        width: 1195,
+      },
+    },
+  },
+  {
+    special: {
+      text: "hacktoberfest - 55 pull requests",
+      link:
+        "https://github.com/Juggernaut9/pokemon/pulls?q=is%3Apr+is%3Aclosed",
+    },
+    title: "Pokemon",
+    description: [
+      "I started this projects for beginners in **open source** to help them make their first **pull request** on Github for **Hacktoberfest**",
+      "I learned a lot about **merge conflits,** **github issues,** and **maitaining open source project** while also helping lots of people make their contribution count for Hacktoberfest",
+      "The project received about **55 pull requests in total!!**",
+    ],
+    links: {
+      live: "https://pokemon-hacktoberfest.vercel.app/",
+      github: "https://github.com/Juggernaut9/pokemon",
+    },
+    stack: [logos.github, logos.git, logos.react, logos.bootstrap],
+    images: {
+      main: {
+        link: "/project/pokemon/main.png",
+        height: 936,
+        width: 1020,
+      },
+    },
+  },
+  {
+    title: "Lit Jokes",
+    description: [
+      "Jokes app build using **React** and styled using **Material-UI.**",
+      "The app uses **[Sv443's JokeAPI](https://v2.jokeapi.dev/)** to fetch jokes.",
+      "features of the app are **filtering** jokes by category, **searching** jokes, **Blacklisting** controversial/inappropriate jokes.",
+      "Users can also **favorite a joke**, after which they may view it on the **[favorites page](https://jokes-hooks.vercel.app/favorites)** by navigating to it thought the navbar.",
+      "There are also two ways to **share jokes**, either copy the link that will take you to the webpage for that joke, or copy the joke directly to computer's **clipboard.**",
+    ],
+    links: {
+      live: "https://jokes-hooks.vercel.app/",
+      github: "https://github.com/Juggernaut9/Jokes-v2",
+    },
+    stack: [logos.react, logos.materialui],
+    images: {
+      main: {
+        link: "/project/jokes/main.png",
+        width: 1273,
+        height: 873,
+      },
+    },
   },
 ];
 

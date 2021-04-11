@@ -84,6 +84,14 @@ const logos = {
     label: "Bash",
     logo: "/assets/icons/bash.svg",
   },
+  reactSpring: {
+    label: "react-spring",
+    logo: "/assets/icons/react-spring.svg",
+  },
+  framerMotion: {
+    label: "Framer Motion",
+    logo: "/assets/icons/framer.png",
+  },
 };
 
 export default logos;
