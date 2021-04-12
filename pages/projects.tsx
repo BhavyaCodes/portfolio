@@ -245,10 +245,12 @@ function projectsPage() {
         <meta
           name="description"
           content="Come check out projects made by Bhavya Tomar."
+          key="description"
         />
         <meta
           property="og:description"
           content="Come check out projects made by Bhavya Tomar."
+          key="og-description"
         />
       </Head>
       <motion.div
