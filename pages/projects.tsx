@@ -252,6 +252,11 @@ function projectsPage() {
           content="Come check out projects made by Bhavya Tomar."
           key="og-description"
         />
+        <meta
+          property="twitter:description"
+          content="Come check out projects made by Bhavya Tomar."
+          key="twitter-description"
+        />
       </Head>
       <motion.div
         key="projects"

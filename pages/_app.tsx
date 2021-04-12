@@ -328,7 +328,8 @@ export function MyApp({ Component, pageProps }: AppProps) {
         <meta property="twitter:title" content="Bhavya Tomar" />
         <meta
           property="twitter:description"
-          content="My personal website and portfolio"
+          content="Hi, I am Bhavya Tomar, a passionate individual who thrives to work on end-to-end products to develop sustainable and scalable technical systems that leave an impact."
+          key="twitter-description"
         />
         <meta
           property="twitter:image"
