@@ -295,7 +295,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
         <meta name="title" content="Bhavya Tomar" />
         <meta
           name="description"
-          content="Hi, I am Bhavya Tomar, a passionate individual who thrives to work on end to end products to develop sustainable and scalable technical systems that leave an impact."
+          content="Hi, I am Bhavya Tomar, a passionate individual who thrives to work on end-to-end products to develop sustainable and scalable technical systems that leave an impact."
           key="description"
         />
 
@@ -308,7 +308,7 @@ export function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="Bhavya Tomar" />
         <meta
           property="og:description"
-          content="Hi, I am Bhavya Tomar, a passionate individual who thrives to work on end to end products to develop sustainable and scalable technical systems that leave an impact."
+          content="Hi, I am Bhavya Tomar, a passionate individual who thrives to work on end-to-end products to develop sustainable and scalable technical systems that leave an impact."
           key="og-description"
         />
         <meta
