@@ -304,12 +304,12 @@ export function MyApp({ Component, pageProps }: AppProps) {
         <meta
           property="og:url"
           content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}
-          key="og-description"
         />
         <meta property="og:title" content="Bhavya Tomar" />
         <meta
           property="og:description"
           content="Hi, I am Bhavya Tomar, a passionate individual who thrives to work on end to end products to develop sustainable and scalable technical systems that leave an impact."
+          key="og-description"
         />
         <meta
           property="og:image"
