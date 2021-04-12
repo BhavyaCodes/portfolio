@@ -288,12 +288,16 @@ export function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
-        <title>Bhavya Tomar</title>
+        {/* <title>Bhavya Tomar</title> */}
         {/* PWA primary color */}
         <meta name="theme-color" content="#161625" />
         {/* <!-- Primary Meta Tags --> */}
         <meta name="title" content="Bhavya Tomar" />
-        <meta name="description" content="My personal website and portfolio" />
+        <meta
+          name="description"
+          content="Hi, I am Bhavya Tomar, an adventurer in web development."
+          key="description"
+        />
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
@@ -304,7 +308,8 @@ export function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="Bhavya Tomar" />
         <meta
           property="og:description"
-          content="My personal website and portfolio"
+          content="Hi, I am Bhavya Tomar, an adventurer in web development."
+          key="og-description"
         />
         <meta
           property="og:image"
@@ -323,7 +328,8 @@ export function MyApp({ Component, pageProps }: AppProps) {
         <meta property="twitter:title" content="Bhavya Tomar" />
         <meta
           property="twitter:description"
-          content="My personal website and portfolio"
+          content="Hi, I am Bhavya Tomar, an adventurer in web development."
+          key="twitter-description"
         />
         <meta
           property="twitter:image"
