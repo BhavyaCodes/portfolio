@@ -7,6 +7,7 @@ import {
   useContext,
 } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { event } from "lib/gtag";
 
 const DarkModeContext = createContext<boolean>(true);
 const ToggleDarkModeContext = createContext<Dispatch<
@@ -27,7 +28,7 @@ export const DarkModeProvider = ({ children }: { children: ReactNode }) => {
 export function useDarkMode() {
   const darkMode = useContext(DarkModeContext);
   if (typeof darkMode === "undefined") {
-    throw new Error("useCountState must be used within a CountProvider");
+    throw new Error("useDarkMode must be used within a DarkModeProvider");
   }
   return darkMode;
 }
@@ -35,10 +36,16 @@ export function useDarkMode() {
 export function useToggleDarkMode() {
   const toggleDarkMode = useContext(ToggleDarkModeContext);
   if (typeof toggleDarkMode === "undefined") {
-    throw new Error("useCountUpdater must be used within a CountProvider");
+    throw new Error(
+      "useToggleDarkMode must be used within a ToggleDarkModeProvider"
+    );
   }
-  const toggle = useCallback(() => toggleDarkMode!((bool) => !bool), [
-    toggleDarkMode,
-  ]);
+  const toggle = useCallback(() => {
+    event({
+      action: "toggle-dark-mode",
+      category: "toggle-dark-mode",
+    });
+    toggleDarkMode!((bool) => !bool);
+  }, [toggleDarkMode]);
   return toggle;
 }
