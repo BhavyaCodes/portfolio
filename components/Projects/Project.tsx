@@ -243,11 +243,16 @@ function Project({
                       poster={images.poster || "/assets/Spinner-3.gif"}
                       muted
                       controls
+                      // width={images.vidWidth}
+                      // height={images.vidHeight}
                       style={{
-                        objectFit: "scale-down",
+                        objectFit: "contain",
                         maxWidth: "100%",
                         marginLeft: "auto",
                         minHeight: "200px",
+                        aspectRatio: (
+                          images.vidHeight! / images.vidWidth!
+                        ).toString(),
                       }}
                     >
                       <source src={images.webm} type="video/webm" />

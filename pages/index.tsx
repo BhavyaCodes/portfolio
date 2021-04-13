@@ -51,13 +51,16 @@ const projects: ProjectType[] = [
       "The application is styled using **material-ui** and is fully responsive for all screen sizes and has a **dark mode** toggle. ",
     ],
     images: {
-      webm: "/project/covid-19/covid-3.webm",
-      mp4: "/project/covid-19/rick.mp4",
-      main: {
-        link: "/project/covid-19/covid.png",
-        width: 1225,
-        height: 571,
-      },
+      webm: "/project/covid-19/c4.webm",
+      mp4: "/project/covid-19/c4.mp4",
+      poster: "/project/covid-19/poster.png",
+      // main: {
+      //   link: "/project/covid-19/covid.png",
+      //   width: 1225,
+      //   height: 571,
+      // },
+      vidHeight: 676,
+      vidWidth: 963,
     },
     stack: [logos.chartjs, logos.react, logos.materialui],
     links: {
