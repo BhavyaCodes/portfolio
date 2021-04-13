@@ -11,6 +11,8 @@ export type ProjectType = {
     mp4?: string;
     main?: { link: string; height: number; width: number };
     poster?: string;
+    vidHeight?: number;
+    vidWidth?: number;
   };
   links: { github?: string; live: string };
   stack: StackType[];
