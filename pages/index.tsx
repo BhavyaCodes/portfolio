@@ -54,11 +54,6 @@ const projects: ProjectType[] = [
       webm: "/project/covid-19/c4.webm",
       mp4: "/project/covid-19/c4.mp4",
       poster: "/project/covid-19/poster.png",
-      // main: {
-      //   link: "/project/covid-19/covid.png",
-      //   width: 1225,
-      //   height: 571,
-      // },
       vidHeight: 676,
       vidWidth: 963,
     },
@@ -86,6 +81,8 @@ const projects: ProjectType[] = [
       poster: "/project/connect-4/poster.png",
       mp4: "/project/connect-4/c4mp4.mp4",
       webm: "/project/connect-4/c4webm.webm",
+      vidHeight: 958,
+      vidWidth: 1916,
     },
   },
   {

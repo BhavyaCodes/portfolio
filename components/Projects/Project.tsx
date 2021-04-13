@@ -243,8 +243,6 @@ function Project({
                       poster={images.poster || "/assets/Spinner-3.gif"}
                       muted
                       controls
-                      // width={images.vidWidth}
-                      // height={images.vidHeight}
                       style={{
                         objectFit: "contain",
                         maxWidth: "100%",
