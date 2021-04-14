@@ -16,7 +16,7 @@ type Projects = {
   [K in ProjectName]: ProjectType;
 };
 
-export const projects: Projects = {
+const projects: Projects = {
   dogmash: {
     title: "Dogmash",
     description: [
@@ -244,3 +244,5 @@ export const projects: Projects = {
     },
   },
 };
+
+export default projects;
