@@ -2,7 +2,7 @@ import { memo } from "react";
 import { Grid } from "@material-ui/core";
 import Chip from "./Chip";
 
-import { StackType } from "../Projects";
+import { StackType } from "lib/projects";
 
 type appProps = {
   stack: StackType[];
