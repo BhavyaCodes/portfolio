@@ -20,7 +20,7 @@ import StarsIcon from "@material-ui/icons/Stars";
 
 import { useDarkMode } from "context/themeContext";
 
-import { ProjectType } from "./Projects";
+import { ProjectType } from "lib/projects";
 import Wave from "./Wave";
 interface AppProps extends ProjectType {
   index: number;

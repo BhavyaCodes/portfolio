@@ -1,23 +1,25 @@
 import { memo } from "react";
 import Project from "./Project";
 
-export type StackType = { label: string; logo: string; invert?: boolean };
+import { ProjectType } from "lib/projects";
 
-export type ProjectType = {
-  title: string;
-  description: string[];
-  images: {
-    webm?: string;
-    mp4?: string;
-    main?: { link: string; height: number; width: number };
-    poster?: string;
-    vidHeight?: number;
-    vidWidth?: number;
-  };
-  links: { github?: string; live: string };
-  stack: StackType[];
-  special?: { text: string; link: string };
-};
+// export type StackType = { label: string; logo: string; invert?: boolean };
+
+// export type ProjectType = {
+//   title: string;
+//   description: string[];
+//   images: {
+//     webm?: string;
+//     mp4?: string;
+//     main?: { link: string; height: number; width: number };
+//     poster?: string;
+//     vidHeight?: number;
+//     vidWidth?: number;
+//   };
+//   links: { github?: string; live: string };
+//   stack: StackType[];
+//   special?: { text: string; link: string };
+// };
 // interface Projects extends ProjectType {}
 
 function Projects({ projects }: { projects: ProjectType[] }) {

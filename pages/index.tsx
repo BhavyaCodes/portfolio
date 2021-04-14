@@ -9,9 +9,9 @@ import ProjectsTitle from "components/Projects/ProjectsTitle";
 import Footer from "components/Footer";
 import AllProjectsButton from "components/Projects/AllProjectsButton";
 
-import allProjects from "lib/projects";
+import allProjects, { ProjectType } from "lib/projects";
 
-import { ProjectType } from "components/Projects/Projects";
+// import { ProjectType } from "components/Projects/Projects";
 
 const projects: ProjectType[] = [
   allProjects.dogmash,

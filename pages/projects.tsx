@@ -5,8 +5,7 @@ import Projects from "components/Projects";
 import ProjectsTitle from "components/Projects/ProjectsTitle";
 import BackHomeButton from "components/Projects/BackHomeButton";
 
-import { ProjectType } from "components/Projects/Projects";
-import allProjects from "lib/projects";
+import allProjects, { ProjectType } from "lib/projects";
 
 const projects: ProjectType[] = [
   allProjects.dogmash,

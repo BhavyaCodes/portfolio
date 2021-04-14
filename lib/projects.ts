@@ -1,4 +1,3 @@
-import { ProjectType } from "components/Projects/Projects";
 import logos from "./logos";
 
 type ProjectName =
@@ -11,6 +10,24 @@ type ProjectName =
   | "theMealHub"
   | "pokemon"
   | "jokes";
+
+export type StackType = { label: string; logo: string; invert?: boolean };
+
+export type ProjectType = {
+  title: string;
+  description: string[];
+  images: {
+    webm?: string;
+    mp4?: string;
+    main?: { link: string; height: number; width: number };
+    poster?: string;
+    vidHeight?: number;
+    vidWidth?: number;
+  };
+  links: { github?: string; live: string };
+  stack: StackType[];
+  special?: { text: string; link: string };
+};
 
 type Projects = {
   [K in ProjectName]: ProjectType;
