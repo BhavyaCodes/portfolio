@@ -56,8 +56,15 @@ function HeaderText() {
         A fullstack developer
       </Typography>
       <Typography itemProp="knowsAbout" className={classes.paragraph}>
-        I specialize in developing and deploying responsive websites and web
-        applications
+        {/* I specialize in developing and deploying responsive websites and web
+        applications */}
+        I enjoy solving complex problems.{" "}
+        {/* I provide sustainable and scalable solutions.{" "} */}
+        {/* Nothing brings me more excitement and motivation than
+        building something out of nothing. */}
+        Frequently praised as detail-oriented by my peers, I can be relied upon
+        to help your company achieve its goals by providing sustainable and
+        scalabe solutions.
       </Typography>
       <Buttons />
     </Box>
