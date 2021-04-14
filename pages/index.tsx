@@ -11,8 +11,6 @@ import AllProjectsButton from "components/Projects/AllProjectsButton";
 
 import allProjects, { ProjectType } from "lib/projects";
 
-// import { ProjectType } from "components/Projects/Projects";
-
 const projects: ProjectType[] = [
   allProjects.dogmash,
   allProjects.covid19,
