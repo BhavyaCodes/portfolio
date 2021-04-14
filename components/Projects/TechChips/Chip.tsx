@@ -5,12 +5,6 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 import { StackType } from "lib/projects";
 
-// type AppProps = {
-//   label: string;
-//   logo: string;
-//   invert?: boolean;
-// };
-
 function Chip({ label, logo, invert }: StackType) {
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
