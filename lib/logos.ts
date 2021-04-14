@@ -1,4 +1,37 @@
-const logos = {
+type logoNames =
+  | "react"
+  | "bootstrap"
+  | "chartjs"
+  | "expressjs"
+  | "git"
+  | "github"
+  | "materialui"
+  | "mongodb"
+  | "nextjs"
+  | "s3"
+  | "socketio"
+  | "typescript"
+  | "vercel"
+  | "ejs"
+  | "nodejs"
+  | "javascript"
+  | "postgresql"
+  | "redux"
+  | "sass"
+  | "bash"
+  | "reactSpring"
+  | "framerMotion";
+
+type Logos = {
+  [k in logoNames]: {
+    label: string;
+    logo: string;
+    spin?: boolean;
+    invert?: boolean;
+  };
+};
+
+const logos: Logos = {
   react: {
     label: "React",
     logo: "/assets/icons/react.png",
