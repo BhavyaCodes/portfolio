@@ -3,7 +3,7 @@ import { useSpring, animated as a } from "react-spring";
 import { Box, Typography } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
-import { StackType } from "../Projects";
+import { StackType } from "lib/projects";
 
 // type AppProps = {
 //   label: string;
