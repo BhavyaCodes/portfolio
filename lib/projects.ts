@@ -1,19 +1,27 @@
-import Head from "next/head";
-import { motion } from "framer-motion";
-import { Toolbar } from "@material-ui/core";
-import Projects from "components/Projects";
-import ProjectsTitle from "components/Projects/ProjectsTitle";
-import BackHomeButton from "components/Projects/BackHomeButton";
-
 import { ProjectType } from "components/Projects/Projects";
-import logos from "lib/logos";
+import logos from "./logos";
 
-const projects: ProjectType[] = [
-  {
+type ProjectName =
+  | "dogmash"
+  | "covid19"
+  | "connect4"
+  | "getItDone"
+  | "urlShortener"
+  | "thisWebsite"
+  | "theMealHub"
+  | "pokemon"
+  | "jokes";
+
+type Projects = {
+  [K in ProjectName]: ProjectType;
+};
+
+export const projects: Projects = {
+  dogmash: {
     title: "Dogmash",
     description: [
       "**Upload**, **view** and **vote** for the cutest dogs, Dogmash project is inspired by Mark Zuckerberg's infamous website **facemash.**",
-      "This was my first big backend project made using **node.js** with **express.js** and styled using **Bootstrap**. Any user can upload their dog pics to the website without any registration which will only be made public once the admin logs in and approve the uploaded image. Yes this project has an **Admin panel** built into it to ensure images are appropriate.",
+      "This was my first big backend project made using **node.js** with **express.js** and styled using **Bootstrap**. users can upload their dog pics to the website without any registration which will only be made public once the admin logs in and approve the uploaded image. Yes this project has an **Admin panel** built into it to ensure images are appropriate.",
       "Uploaded images are stored on **amazon s3 bucket**, uploaded using **presigned URL** straight from browser to s3 bucket.",
       "This project also has **rate limiting** to avoid spam and uses **CSRF token** protection.",
     ],
@@ -36,7 +44,7 @@ const projects: ProjectType[] = [
       live: "https://dogmash.herokuapp.com/",
     },
   },
-  {
+  covid19: {
     title: "covid-19 India tracker",
     description: [
       "covid-19 tracker for India made using **react**",
@@ -58,7 +66,7 @@ const projects: ProjectType[] = [
       live: "https://covid-tracker-beta.vercel.app/",
     },
   },
-  {
+  connect4: {
     title: "Connect-4 online multiplayer",
     description: [
       "connect-4 board game that allows you to **play with anyone around the world** with no registration or downloads. You and your friend just need to open the link in the browser and you're ready to play 🙂",
@@ -80,36 +88,7 @@ const projects: ProjectType[] = [
       vidWidth: 1916,
     },
   },
-  {
-    title: "URL shortener",
-    description: [
-      "My very first **fullstack Typescript** web application.",
-      "As the title suggests, the app can be used to shorten urls that can be shared with anyone on the internet",
-      "A **QR code** is also generated when submitting a URL that can be scanned to redirect to the original URL",
-      "The frontend is built using **React** with **Material-UI** for styling.",
-      "The backend is build with **Node.js** with **Express.js** framework along with **MongoDB** database to store the URLs",
-    ],
-    images: {
-      main: {
-        link: "/project/url-short/main.png",
-        width: 964,
-        height: 751,
-      },
-    },
-    links: {
-      github: "https://github.com/Juggernaut9/url-shortener-ts-backend",
-      live: "https://short-url-three.vercel.app/",
-    },
-    stack: [
-      logos.typescript,
-      logos.react,
-      logos.expressjs,
-      logos.materialui,
-      logos.mongodb,
-      logos.nodejs,
-    ],
-  },
-  {
+  getItDone: {
     title: "Get-It-Done",
     description: [
       "Goal tracker app made with my friend for a **hackthon that we won.**",
@@ -138,7 +117,36 @@ const projects: ProjectType[] = [
         "https://www.linkedin.com/posts/mintbean_mintbeanhackathon-mintbean-hackathon-activity-6757030650957619200-xUa8",
     },
   },
-  {
+  urlShortener: {
+    title: "URL shortener",
+    description: [
+      "My very first **fullstack Typescript** web application.",
+      "As the title suggests, the app can be used to shorten urls that can be shared with anyone on the internet",
+      "A **QR code** is also generated when submitting a URL that can be scanned to redirect to the original URL",
+      "The frontend is built using **React** with **Material-UI** for styling.",
+      "The backend is build with **Node.js** with **Express.js** framework along with **MongoDB** database to store the URLs",
+    ],
+    images: {
+      main: {
+        link: "/project/url-short/main.png",
+        width: 964,
+        height: 751,
+      },
+    },
+    links: {
+      github: "https://github.com/Juggernaut9/url-shortener-ts-backend",
+      live: "https://short-url-three.vercel.app/",
+    },
+    stack: [
+      logos.typescript,
+      logos.react,
+      logos.expressjs,
+      logos.materialui,
+      logos.mongodb,
+      logos.nodejs,
+    ],
+  },
+  thisWebsite: {
     title: "This website",
     description: [
       "My portfolio website build with **React** using **Next.js** framework.",
@@ -168,7 +176,7 @@ const projects: ProjectType[] = [
       },
     },
   },
-  {
+  theMealHub: {
     title: "The Meal Hub",
     description: [
       "A simple recipe application made for a **live workshop** I conducted on my friend's **[discord server](https://discord.gg/vtbc5EktTm)**",
@@ -188,7 +196,7 @@ const projects: ProjectType[] = [
       },
     },
   },
-  {
+  pokemon: {
     special: {
       text: "hacktoberfest - 55 pull requests",
       link:
@@ -213,7 +221,7 @@ const projects: ProjectType[] = [
       },
     },
   },
-  {
+  jokes: {
     title: "Lit Jokes",
     description: [
       "Jokes app build using **React** and styled using **Material-UI.**",
@@ -235,46 +243,4 @@ const projects: ProjectType[] = [
       },
     },
   },
-];
-
-function projectsPage() {
-  return (
-    <>
-      <Head>
-        <title>Bhavya Tomar - Projects</title>
-        <meta
-          name="description"
-          content="Come check out projects made by Bhavya Tomar."
-          key="description"
-        />
-        <meta
-          property="og:description"
-          content="Come check out projects made by Bhavya Tomar."
-          key="og-description"
-        />
-        <meta
-          property="twitter:description"
-          content="Come check out projects made by Bhavya Tomar."
-          key="twitter-description"
-        />
-      </Head>
-      <motion.div
-        key="projects"
-        initial={{ opacity: 0, x: +1000 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 1, x: +1000 }}
-        transition={{
-          x: { type: "spring", stiffness: 300, damping: 30 },
-          opacity: { duration: 0.2 },
-        }}
-      >
-        <Toolbar />
-        <ProjectsTitle text="Projects I Have Worked On" />
-        <Projects projects={projects} />
-        <BackHomeButton />
-      </motion.div>
-    </>
-  );
-}
-
-export default projectsPage;
+};
