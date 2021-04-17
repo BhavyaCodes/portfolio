@@ -79,7 +79,7 @@ const projects: Projects = {
     },
     stack: [logos.chartjs, logos.react, logos.materialui],
     links: {
-      github: "https://github.com/Juggernaut9/covid-tracker-material-ui-react",
+      github: "https://github.com/BhavyaCodes/covid-tracker-material-ui-react",
       live: "https://covid-tracker-beta.vercel.app/",
     },
   },
@@ -94,7 +94,7 @@ const projects: Projects = {
     ],
     stack: [logos.nodejs, logos.react, logos.socketio, logos.materialui],
     links: {
-      github: "https://github.com/Juggernaut9/connect-4-online-multiplayer",
+      github: "https://github.com/BhavyaCodes/connect-4-online-multiplayer",
       live: "https://konnect-4.vercel.app/",
     },
     images: {
@@ -117,7 +117,7 @@ const projects: Projects = {
       "Check this video made by my hackathon partner **Priya Aswani** **[explaining how it works](https://www.linkedin.com/posts/activity-6755554068011319296-VlpE)**",
     ],
     links: {
-      github: "https://github.com/Juggernaut9/get-it-done",
+      github: "https://github.com/BhavyaCodes/get-it-done",
       live: "https://get-it-done-git-master-juggernaut9.vercel.app",
     },
     stack: [logos.react, logos.chartjs, logos.materialui, logos.vercel],
@@ -151,7 +151,7 @@ const projects: Projects = {
       },
     },
     links: {
-      github: "https://github.com/Juggernaut9/url-shortener-ts-backend",
+      github: "https://github.com/BhavyaCodes/url-shortener-ts-backend",
       live: "https://short-url-three.vercel.app/",
     },
     stack: [
@@ -175,7 +175,7 @@ const projects: Projects = {
     ],
     links: {
       live: "https://bhavya.dev",
-      github: "https://github.com/Juggernaut9/portfolio",
+      github: "https://github.com/BhavyaCodes/portfolio",
     },
     stack: [
       logos.typescript,
@@ -202,7 +202,7 @@ const projects: Projects = {
     ],
     links: {
       live: "https://recipe-material-ui-juggernaut9.vercel.app/",
-      github: "https://github.com/Juggernaut9/recipe-material-ui",
+      github: "https://github.com/BhavyaCodes/recipe-material-ui",
     },
     stack: [logos.react, logos.materialui],
     images: {
@@ -217,7 +217,7 @@ const projects: Projects = {
     special: {
       text: "hacktoberfest - 55 pull requests",
       link:
-        "https://github.com/Juggernaut9/pokemon/pulls?q=is%3Apr+is%3Aclosed",
+        "https://github.com/BhavyaCodes/pokemon/pulls?q=is%3Apr+is%3Aclosed",
     },
     title: "Pokemon",
     description: [
@@ -227,7 +227,7 @@ const projects: Projects = {
     ],
     links: {
       live: "https://pokemon-hacktoberfest.vercel.app/",
-      github: "https://github.com/Juggernaut9/pokemon",
+      github: "https://github.com/BhavyaCodes/pokemon",
     },
     stack: [logos.github, logos.git, logos.react, logos.bootstrap],
     images: {
@@ -249,7 +249,7 @@ const projects: Projects = {
     ],
     links: {
       live: "https://jokes-hooks.vercel.app/",
-      github: "https://github.com/Juggernaut9/Jokes-v2",
+      github: "https://github.com/BhavyaCodes/Jokes-v2",
     },
     stack: [logos.react, logos.materialui],
     images: {
