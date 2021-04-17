@@ -176,7 +176,7 @@ function Footer() {
 
                   <Link
                     className={classes.socialItem}
-                    href="https://www.linkedin.com/in/bhavya-tomar-1967b6202"
+                    href="https://www.linkedin.com/in/bhavya-tomar/"
                     target="_blank"
                     rel="noopener noreferrer"
                     color="inherit"
