@@ -32,7 +32,7 @@ function Buttons() {
     <>
       <Box mx={-1}>
         <Link
-          href="https://github.com/Juggernaut9"
+          href="https://github.com/BhavyaCodes"
           target="_blank"
           rel="noopener noreferrer"
           color="inherit"

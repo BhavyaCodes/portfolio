@@ -164,7 +164,7 @@ function Footer() {
                 <Grid item md={6} sm={6} className={classes.iconsGrid}>
                   <Link
                     className={classes.socialItem}
-                    href="https://github.com/Juggernaut9"
+                    href="https://github.com/BhavyaCodes"
                     target="_blank"
                     rel="noopener noreferrer"
                     color="inherit"
