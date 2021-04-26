@@ -1,6 +1,8 @@
-# My portfolio website made using
+<h1 align="center">Bhavya Tomar's Portfolio</h1>
 
-<img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="srv_1030" height="30" width="40" />
+<div align="center">
+	<img align="center" src="https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square" alt="srv_1030" height="30" width="40" />  
+</div>
 
 <!-- # TypeScript Next.js example
 
