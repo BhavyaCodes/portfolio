@@ -2,7 +2,7 @@
 
 <div align="center">
 	<img align="center" src="/public/assets/icons/nextjs.svg" alt="srv_1030" width="40" />
-	<img align="center" src="/public/assets/icons/react.svg" alt="srv_1030" width="40" />
+	<img align="center" src="/public/assets/icons/react.png" alt="srv_1030" width="40" />
 </div>
 
 <!-- # TypeScript Next.js example
