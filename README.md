@@ -1,19 +1,22 @@
 <h1 align="center">Bhavya Tomar's Portfolio</h1>
 
 <div align="center">
-	<img align="center" src="/public/assets/icons/nextjs.svg" alt="srv_1030" width="60" />
+	<img align="center" src="/public/assets/icons/nextjs.svg" alt="srv_1030" width="60px" />
 	<img align="center" src="/public/assets/icons/react.png" alt="srv_1030" width="60" />
 	<img align="center" src="/public/assets/icons/materialui.svg" alt="srv_1030" width="60" />
 	<img align="center" src="/public/assets/icons/framer.png" alt="srv_1030" width="60" />
 	<img align="center" src="/public/assets/icons/react-spring.svg" alt="srv_1030" width="60" />
 </div>
-| 	<img align="center" src="/public/assets/icons/nextjs.svg" alt="srv_1030" width="60" />  
+<!-- | 	<img align="center" src="/public/assets/icons/nextjs.svg" alt="srv_1030" width="60" />  
 |  <img align="center" src="/public/assets/icons/react.png" alt="srv_1030" width="60" /> 
 |  <img align="center" src="/public/assets/icons/materialui.svg" alt="srv_1030" width="60" />
 |   	<img align="center" src="/public/assets/icons/framer.png" alt="srv_1030" width="60" />
 |  <img align="center" src="/public/assets/icons/react-spring.svg" alt="srv_1030" width="60" />
  |
-|---|---|---|---|---|
+|---|---|---|---|---| -->
+| <img align="center" src="/public/assets/icons/nextjs.svg" alt="srv_1030" width="200" />          | <img align="center" src="/public/assets/icons/react.png" alt="srv_1030" width="200" />  | <img align="center" src="/public/assets/icons/materialui.svg" alt="srv_1030" width="200" />        | <img align="center" src="/public/assets/icons/framer.png" alt="srv_1030" width="200" />                            | 	<img align="center" src="/public/assets/icons/react-spring.svg" alt="srv_1030" width="200" /> |
+| :------------------: | :----------------: | :-----------: | :---------------------------------: | :-----------------: |
+| Next.js  | React | Material-UI | Framer Motion       | react-spring|
 
 <!-- # TypeScript Next.js example
 
