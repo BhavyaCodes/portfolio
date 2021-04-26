@@ -1,7 +1,8 @@
 <h1 align="center">Bhavya Tomar's Portfolio</h1>
 
 <div align="center">
-	<img align="center" src="https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square" alt="srv_1030" height="30" width="40" />  
+	<img align="center" src="/public/assets/icons/nextjs.svg" alt="srv_1030" width="40" />
+	<img align="center" src="/public/assets/icons/react.svg" alt="srv_1030" width="40" />
 </div>
 
 <!-- # TypeScript Next.js example
