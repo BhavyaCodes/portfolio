@@ -20,11 +20,11 @@
 
 <table>
   <tr>
-    <td align="center"> <img align="center" src="/public/assets/icons/nextjs.svg" alt="nextjs logo" width="50" /></td>
-		<td align="center"> <img align="center" src="/public/assets/icons/react.png" alt="react logo" width="50" /></td>
-		<td align="center"> <img align="center" src="/public/assets/icons/materialui.svg" alt="material-ui logo" width="50" /></td>
-		<td align="center"> <img align="center" src="/public/assets/icons/framer.png" alt="framer-motion logo" width="50" /></td>
-		<td align="center"> <img align="center" src="/public/assets/icons/react-spring.svg" alt="react-spring logo" width="50" /></td>
+    <td align="center"> <img align="center" src="/public/assets/icons/nextjs.svg" alt="nextjs logo" width="100" /></td>
+		<td align="center"> <img align="center" src="/public/assets/icons/react.png" alt="react logo" width="100" /></td>
+		<td align="center"> <img align="center" src="/public/assets/icons/materialui.svg" alt="material-ui logo" width="100" /></td>
+		<td align="center"> <img align="center" src="/public/assets/icons/framer.png" alt="framer-motion logo" width="100" /></td>
+		<td align="center"> <img align="center" src="/public/assets/icons/react-spring.svg" alt="react-spring logo" width="100" /></td>
   </tr> 
    <tr>
       <td align="center"><b> Next.js </b></td>
