@@ -21,10 +21,10 @@
 <table>
   <tr>
     <td> <img align="center" src="/public/assets/icons/nextjs.svg" alt="srv_1030" width="50" /></td>
+		<td> <img align="center" src="/public/assets/icons/react.png" alt="srv_1030" width="50" /></td>
 
-    <td><img align="center" src="/public/assets/icons/react.png" alt="srv_1030" width="50" /></td>
 
-   </tr> 
+  </tr> 
    <tr>
       <td><b> Next.js </b></td>
 			<td><b> React </b></td>
