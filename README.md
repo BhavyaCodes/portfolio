@@ -20,14 +20,18 @@
 
 <table>
   <tr>
-    <td> <img align="center" src="/public/assets/icons/nextjs.svg" alt="srv_1030" width="50" /></td>
-		<td> <img align="center" src="/public/assets/icons/react.png" alt="srv_1030" width="50" /></td>
-
-
+    <td> <img align="center" src="/public/assets/icons/nextjs.svg" alt="nextjs logo" width="50" /></td>
+		<td> <img align="center" src="/public/assets/icons/react.png" alt="react logo" width="50" /></td>
+		<td> <img align="center" src="/public/assets/icons/materialui.svg" alt="material-ui logo" width="50" /></td>
+		<td> <img align="center" src="/public/assets/icons/framer.png" alt="framer-motion logo" width="50" /></td>
+		<td> <img align="center" src="/public/assets/icons/react-spring.svg" alt="react-spring logo" width="50" /></td>
   </tr> 
    <tr>
       <td><b> Next.js </b></td>
 			<td><b> React </b></td>
+			<td><b> Material-UI </b></td>
+			<td><b> Framer Motion </b></td>
+			<td><b> react-spring </b></td>
 
   </td>
   </tr>
