@@ -58,6 +58,8 @@ The motive of this project is to showcase my current and future projects. This i
 
 Built by <a href="https://github.com/BhavyaCodes">@BhavyaCodes</a> for his own portfolio. **Copyright (c) 2021 by Bhavya Tomar**. You are allowed to use this webpage for both personal and commercial use, but **NOT** to claim it as your own design. **A credit to the original author, Bhavya Tomar, is a must!**
 
+I value keeping my site open source, but as you all know, _**plagiarism is bad**_. It's always disheartening whenever I find that someone has copied my site without giving me credit. I spent a non-trivial amount of effort building and designing this iteration of my website, and I am proud of it! All I ask of you all is to not claim this effort as your own.
+
 <!-- # TypeScript Next.js example
 
 This is a really simple project that shows the usage of Next.js with TypeScript.
