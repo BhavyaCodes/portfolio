@@ -1,5 +1,7 @@
 <h1 align="center">Bhavya Tomar's Portfolio</h1>
 
+<h3>libraries used</h3>
+
 <table>
   <tr>
     <td align="center"> <img align="center" src="/public/assets/icons/nextjs.svg" alt="nextjs logo" width="100" /></td>
