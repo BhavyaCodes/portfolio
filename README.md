@@ -2,7 +2,37 @@
 
 ![Lines of code](https://img.shields.io/tokei/lines/github/BhavyaCodes/portfolio?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/BhavyaCodes/portfolio?style=flat-square&logo=github) <a href="https://discord.gg/az7Au3ZDGW">![Discord](https://img.shields.io/discord/686069011481362462?logo=discord&style=flat-square)</a> ![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/BhavyaCodes/portfolio?logo=LGTM&style=flat-square) ![GitHub top language](https://img.shields.io/github/languages/top/BhavyaCodes/portfolio?logo=typescript&logoColor=white&style=flat-square) ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?style=flat-square&app=portfolio-git-main-juggernaut9)
 
+---
+
+<h2>Demo</h2>
 <img src="/.github/portfolio.gif">
+
+---
+
+## Motive
+
+The motive of this project is to showcase my current and future projects. This is the first version of my portfolio, more features will be added in future, feel free to drop your suggestions in <a href="https://github.com/BhavyaCodes/portfolio/discussions">Discussions</a>
+
+---
+
+## Highlights
+
+- 100% **TypeScript** code.
+- Static Site generated using **Next.js**
+- Modular code for easy maintenance and adding features in the future.
+- **dark/light theme** toggle.
+- **SEO** Appears as 1st or 2nd result when searching Bhavya Tomar on duckduckgo and bing, 1st or 2nd page on google.
+- **Responsive** for all screen sizes
+- Animations added using **react-spring** and **framer-motion**
+
+---
+
+## Lightroom performance
+
+<img src="/public/project/portfolio/main.png" alt="lighthouse performance">
+
+---
+
 <h2>libraries used</h2>
 
 <table>
