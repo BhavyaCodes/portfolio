@@ -23,7 +23,7 @@
 
 <h2>License</h2>
 
-![GitHub](https://img.shields.io/github/license/BhavyaCodes/portfolio?style=flat-square)
+![GitHub](https://img.shields.io/github/license/BhavyaCodes/portfolio?style=for-the-badge)
 
 <!-- # TypeScript Next.js example
 
