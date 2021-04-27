@@ -1,4 +1,29 @@
-# TypeScript Next.js example
+<h1 align="center">Bhavya Tomar's Portfolio</h1>
+
+<h2>libraries used</h2>
+
+<table>
+  <tr>
+    <td align="center"> <img align="center" src="/public/assets/icons/nextjs.svg" alt="nextjs logo" width="100" /></td>
+		<td align="center"> <img align="center" src="/public/assets/icons/react.png" alt="react logo" width="100" /></td>
+		<td align="center"> <img align="center" src="/public/assets/icons/materialui.svg" alt="material-ui logo" width="100" /></td>
+		<td align="center"> <img align="center" src="/public/assets/icons/framer.png" alt="framer-motion logo" width="100" /></td>
+		<td align="center"> <img align="center" src="/public/assets/icons/react-spring.svg" alt="react-spring logo" width="100" /></td>
+  </tr> 
+   <tr>
+      <td align="center"><b> Next.js </b></td>
+			<td align="center"><b> React </b></td>
+			<td align="center"><b> Material-UI </b></td>
+			<td align="center"><b> Framer Motion </b></td>
+			<td align="center"><b> react-spring </b></td>
+  </tr>
+</table>
+
+<h2>License</h2>
+
+![GitHub](https://img.shields.io/github/license/bhavyacodes/portfolio?style=flat-square)
+
+<!-- # TypeScript Next.js example
 
 This is a really simple project that shows the usage of Next.js with TypeScript.
 
@@ -38,4 +63,4 @@ When we run `next dev` the next time, Next.js will start looking for any `.ts` o
 
 Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
 
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts. -->
