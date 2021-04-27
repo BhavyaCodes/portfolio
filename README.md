@@ -1,6 +1,6 @@
 <h1 align="center">Bhavya Tomar's Portfolio</h1>
 
-<h3>libraries used</h3>
+<h2>libraries used</h2>
 
 <table>
   <tr>
@@ -18,6 +18,10 @@
 			<td align="center"><b> react-spring </b></td>
   </tr>
 </table>
+
+<h2>License</h2>
+
+![GitHub](https://img.shields.io/github/license/bhavyacodes/portfolio?style=flat-square)
 
 <!-- # TypeScript Next.js example
 
