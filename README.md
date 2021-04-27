@@ -1,4 +1,6 @@
-<h1 align="center">Bhavya Tomar's Portfolio</h1>
+<h1 align="center"><a href="https://bhavya.dev">Bhavya.dev</a> - Bhavya Tomar's Portfolio</h1>
+
+![Lines of code](https://img.shields.io/tokei/lines/github/BhavyaCodes/portfolio?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/BhavyaCodes/portfolio?style=flat-square&logo=github) ![Discord](https://img.shields.io/discord/686069011481362462?logo=discord&style=flat-square) ![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/BhavyaCodes/portfolio?logo=LGTM&style=flat-square) ![GitHub top language](https://img.shields.io/github/languages/top/BhavyaCodes/portfolio?logo=typescript&logoColor=white&style=flat-square) ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?style=flat-square&app=portfolio-git-main-juggernaut9)
 
 <h2>libraries used</h2>
 
@@ -21,7 +23,7 @@
 
 <h2>License</h2>
 
-![GitHub](https://img.shields.io/github/license/bhavyacodes/portfolio?style=flat-square)
+![GitHub](https://img.shields.io/github/license/BhavyaCodes/portfolio?style=flat-square)
 
 <!-- # TypeScript Next.js example
 
