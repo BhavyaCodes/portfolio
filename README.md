@@ -18,6 +18,21 @@
 | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
 | Next.js                                                                                | React                                                                                 | Material-UI                                                                                | Framer Motion                                                                          | react-spring                                                                                 |
 
+<table>
+  <tr>
+    <td> <img align="center" src="/public/assets/icons/nextjs.svg" alt="srv_1030" width="50" /></td>
+
+    <td><img align="center" src="/public/assets/icons/react.png" alt="srv_1030" width="50" /></td>
+
+   </tr> 
+   <tr>
+      <td><b> Next.js </b></td>
+			<td><b> React </b></td>
+
+  </td>
+  </tr>
+</table>
+
 <!-- # TypeScript Next.js example
 
 This is a really simple project that shows the usage of Next.js with TypeScript.
