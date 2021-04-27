@@ -1,4 +1,4 @@
-<h1 align="center">Bhavya Tomar's Portfolio</h1>
+<h1 align="center"><a href="https://bhavya.dev" target="_blank">Bhavya.dev</a> - Bhavya Tomar's Portfolio</h1>
 
 <h2>libraries used</h2>
 
