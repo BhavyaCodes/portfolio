@@ -2,6 +2,7 @@
 
 ![Lines of code](https://img.shields.io/tokei/lines/github/BhavyaCodes/portfolio?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/BhavyaCodes/portfolio?style=flat-square&logo=github) <a href="https://discord.gg/az7Au3ZDGW">![Discord](https://img.shields.io/discord/686069011481362462?logo=discord&style=flat-square)</a> ![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/BhavyaCodes/portfolio?logo=LGTM&style=flat-square) ![GitHub top language](https://img.shields.io/github/languages/top/BhavyaCodes/portfolio?logo=typescript&logoColor=white&style=flat-square) ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?style=flat-square&app=portfolio-git-main-juggernaut9)
 
+<img src="/.github/portfolio.gif">
 <h2>libraries used</h2>
 
 <table>
