@@ -1,7 +1,7 @@
 <h1 align="center"><a href="https://bhavya.dev">Bhavya.dev</a> - Bhavya Tomar's Portfolio</h1>
 
 ![Lines of code](https://img.shields.io/tokei/lines/github/BhavyaCodes/portfolio?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/BhavyaCodes/portfolio?style=flat-square?logo=GitHub)
+![GitHub last commit](https://img.shields.io/github/last-commit/BhavyaCodes/portfolio?style=flat-square&logo=github)
 
 <h2>libraries used</h2>
 
