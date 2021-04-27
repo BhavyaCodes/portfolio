@@ -21,7 +21,7 @@
 
 <h2>License</h2>
 
-![GitHub](https://img.shields.io/github/license/bhavyacodes/portfolio?style=flat-square)
+![GitHub](https://img.shields.io/github/license/BhavyaCodes/portfolio?style=flat-square)
 
 <!-- # TypeScript Next.js example
 
