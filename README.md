@@ -56,6 +56,8 @@ The motive of this project is to showcase my current and future projects. This i
 
 ![GitHub](https://img.shields.io/github/license/BhavyaCodes/portfolio?style=for-the-badge)
 
+Built by @BhavyaCodes for his own portfolio. **Copyright (c) 2021 by Bhavya Tomar**. You are allowed to use this webpage for both personal and commercial use, but **NOT** to claim it as your own design. **A credit to the original author, Bhavya Tomar, is a must!**
+
 <!-- # TypeScript Next.js example
 
 This is a really simple project that shows the usage of Next.js with TypeScript.
