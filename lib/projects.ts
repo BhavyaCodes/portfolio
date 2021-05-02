@@ -90,7 +90,7 @@ const projects: Projects = {
       "The frontend is built using **react** and styled using **material-ui** and backend built using **node.js**.",
       "**socket.io** library is used for live transfer of data from client to server using websockets.",
       "The app supports multiple games running parallel, means multiple pair of people can play on the same website at the same time without any interference.",
-      "If you wish to test this project, you must run the url on different browsers, or better check my **[video explaining how it works](https://www.linkedin.com/posts/bhavya-tomar-1967b6202_careerhack-github-hackathon-activity-6760854974944694272--QFx)** that I posted on LinkedIn.",
+      "If you wish to test this project, you must run the url on different browsers, or better check my **[video explaining how it works](https://www.linkedin.com/posts/bhavya-tomar_careerhack-github-hackathon-activity-6760854974944694272-aEDM)** that I posted on LinkedIn.",
     ],
     stack: [logos.nodejs, logos.react, logos.socketio, logos.materialui],
     links: {
