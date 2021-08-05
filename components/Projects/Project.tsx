@@ -248,9 +248,6 @@ function Project({
                         maxWidth: "100%",
                         marginLeft: "auto",
                         minHeight: "200px",
-                        aspectRatio: (
-                          images.vidHeight! / images.vidWidth!
-                        ).toString(),
                       }}
                     >
                       <source src={images.webm} type="video/webm" />
