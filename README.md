@@ -27,7 +27,7 @@ The motive of this project is to showcase my current and future projects. This i
 
 ---
 
-## Lightroom performance
+## Lighthouse performance
 
 <img src="/public/project/portfolio/main.png" alt="lighthouse performance">
 
