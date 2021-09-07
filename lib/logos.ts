@@ -50,7 +50,7 @@ const logos: Logos = {
     logo: "/assets/icons/expressjs.png",
   },
   git: {
-    label: "git",
+    label: "Git",
     logo: "/assets/icons/git.svg",
   },
   github: {
