@@ -33,7 +33,7 @@ The motive of this project is to showcase my current and future projects. This i
 
 ---
 
-<h2>libraries used</h2>
+<h2>Libraries used</h2>
 
 <table>
   <tr>
