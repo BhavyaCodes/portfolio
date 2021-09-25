@@ -1,6 +1,7 @@
 import logos from "./logos";
 
 type ProjectName =
+  | "devGram"
   | "dogmash"
   | "covid19"
   | "connect4"
@@ -34,6 +35,37 @@ type Projects = {
 };
 
 const projects: Projects = {
+  devGram: {
+    title: "DevGram",
+    description: [
+      "A social networking twitter like web app. Users can **create** posts, **like** posts and **comment** on posts.",
+      "User can visit any **user profile** by clicking at their name or avatar to view posts by them.",
+      "This is my first **Graphql** project made using apollo client and Apollo express server with Nestjs.",
+      "Fully strong typed code with **auto generated schema** using nestjs graphql code-first approach, this schema is also used to generate types for client using **graphql-let** that makes code less error prone",
+    ],
+    images: {
+      main: {
+        link: "/project/devGram/poster.png",
+        width: 979,
+        height: 892,
+      },
+    },
+    stack: [
+      logos.nestjs,
+      logos.apollo,
+      logos.react,
+      logos.postgresql,
+      logos.graphql,
+      logos.typescript,
+      logos.nodejs,
+      logos.materialui,
+    ],
+    links: {
+      live: "https://devgram-graphql.herokuapp.com",
+      github: "https://github.com/BhavyaCodes/social-nest-gql-typeorm-oauth",
+    },
+  },
+
   dogmash: {
     title: "Dogmash",
     description: [
@@ -130,8 +162,7 @@ const projects: Projects = {
     },
     special: {
       text: "Hackathon winner",
-      link:
-        "https://www.linkedin.com/posts/mintbean_mintbeanhackathon-mintbean-hackathon-activity-6757030650957619200-xUa8",
+      link: "https://www.linkedin.com/posts/mintbean_mintbeanhackathon-mintbean-hackathon-activity-6757030650957619200-xUa8",
     },
   },
   urlShortener: {
@@ -216,8 +247,7 @@ const projects: Projects = {
   pokemon: {
     special: {
       text: "hacktoberfest - 55 pull requests",
-      link:
-        "https://github.com/BhavyaCodes/pokemon/pulls?q=is%3Apr+is%3Aclosed",
+      link: "https://github.com/BhavyaCodes/pokemon/pulls?q=is%3Apr+is%3Aclosed",
     },
     title: "Pokemon",
     description: [

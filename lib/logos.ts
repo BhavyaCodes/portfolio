@@ -1,4 +1,7 @@
 type logoNames =
+  | "apollo"
+  | "graphql"
+  | "nestjs"
   | "react"
   | "bootstrap"
   | "chartjs"
@@ -32,6 +35,22 @@ type Logos = {
 };
 
 const logos: Logos = {
+  apollo: {
+    label: "Apollo",
+    logo: "/assets/icons/apollo.svg",
+    spin: false,
+    invert: true,
+  },
+  graphql: {
+    label: "GraphQl",
+    logo: "/assets/icons/graphql.svg",
+    spin: false,
+  },
+  nestjs: {
+    label: "Nest.js",
+    logo: "/assets/icons/nestjs.svg",
+    spin: false,
+  },
   react: {
     label: "React",
     logo: "/assets/icons/react.png",

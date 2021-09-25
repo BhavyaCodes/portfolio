@@ -12,6 +12,7 @@ import AllProjectsButton from "components/Projects/AllProjectsButton";
 import allProjects, { ProjectType } from "lib/projects";
 
 const projects: ProjectType[] = [
+  allProjects.devGram,
   allProjects.dogmash,
   allProjects.covid19,
   allProjects.connect4,
