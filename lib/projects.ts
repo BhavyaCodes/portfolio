@@ -41,7 +41,7 @@ const projects: Projects = {
       "A social networking twitter like web app. Users can **create** posts, **like** posts and **comment** on posts.",
       "User can visit any **user profile** by clicking at their name or avatar to view posts by them.",
       "This is my first **Graphql** project made using apollo client and Apollo express server with Nestjs.",
-      "Fully strong typed code with **auto generated schema** using nestjs graphql code-first approach, this schema is also used to generate types for client using **graphql-let** that makes your code less error prone",
+      "Fully strong typed code with **auto generated schema** using nestjs graphql code-first approach, this schema is also used to generate types for client using **graphql-let** that makes code less error prone",
     ],
     images: {
       main: {
@@ -51,13 +51,13 @@ const projects: Projects = {
       },
     },
     stack: [
-      logos.nodejs,
       logos.nestjs,
       logos.apollo,
-      logos.postgresql,
-      logos.typescript,
       logos.react,
+      logos.postgresql,
       logos.graphql,
+      logos.typescript,
+      logos.nodejs,
       logos.materialui,
     ],
     links: {
