@@ -1,6 +1,7 @@
 import logos from "./logos";
 
 type ProjectName =
+  | "devGram"
   | "dogmash"
   | "covid19"
   | "connect4"
@@ -34,6 +35,32 @@ type Projects = {
 };
 
 const projects: Projects = {
+  devGram: {
+    title: "DevGram",
+    description: ["some description"],
+    images: {
+      main: {
+        link: "/project/devGram/poster.png",
+        width: 979,
+        height: 892,
+      },
+    },
+    stack: [
+      logos.nodejs,
+      logos.nestjs,
+      logos.apollo,
+      logos.postgresql,
+      logos.typescript,
+      logos.react,
+      logos.graphql,
+      logos.materialui,
+    ],
+    links: {
+      live: "https://devgram-graphql.herokuapp.com",
+      github: "https://github.com/BhavyaCodes/social-nest-gql-typeorm-oauth",
+    },
+  },
+
   dogmash: {
     title: "Dogmash",
     description: [
@@ -130,8 +157,7 @@ const projects: Projects = {
     },
     special: {
       text: "Hackathon winner",
-      link:
-        "https://www.linkedin.com/posts/mintbean_mintbeanhackathon-mintbean-hackathon-activity-6757030650957619200-xUa8",
+      link: "https://www.linkedin.com/posts/mintbean_mintbeanhackathon-mintbean-hackathon-activity-6757030650957619200-xUa8",
     },
   },
   urlShortener: {
@@ -216,8 +242,7 @@ const projects: Projects = {
   pokemon: {
     special: {
       text: "hacktoberfest - 55 pull requests",
-      link:
-        "https://github.com/BhavyaCodes/pokemon/pulls?q=is%3Apr+is%3Aclosed",
+      link: "https://github.com/BhavyaCodes/pokemon/pulls?q=is%3Apr+is%3Aclosed",
     },
     title: "Pokemon",
     description: [
