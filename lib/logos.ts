@@ -8,7 +8,7 @@ type logoNames =
   | "expressjs"
   | "git"
   | "github"
-  | "materialui"
+  | "mui"
   | "mongodb"
   | "nextjs"
   | "s3"
