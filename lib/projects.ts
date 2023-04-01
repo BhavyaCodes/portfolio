@@ -130,7 +130,7 @@ const projects: Projects = {
       live: "https://konnect-4.vercel.app/",
     },
     images: {
-      poster: "/project/connect-4/poster.png",
+      poster: "/project/connect-4/poster.jpeg",
       mp4: "/project/connect-4/c4mp4.mp4",
       webm: "/project/connect-4/c4webm.webm",
       vidHeight: 958,
