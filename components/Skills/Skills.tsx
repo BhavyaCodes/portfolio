@@ -107,34 +107,6 @@ function Skills() {
     }
   }, [intersectionExit]);
 
-  const renderIcons = () => {
-    return trail.map(({ transform }, index) => (
-      <Grid
-        key={iconsArray[index].label}
-        item
-        className={classes.gridItem}
-        md={2}
-        xs={3}
-      >
-        <a.div
-          key={index}
-          style={{
-            transform,
-          }}
-        >
-          <a.div>
-            <Icon
-              label={iconsArray[index].label}
-              logo={iconsArray[index].logo}
-              spin={iconsArray[index].spin}
-              invert={iconsArray[index].invert}
-            ></Icon>
-          </a.div>
-        </a.div>
-      </Grid>
-    ));
-  };
-
   return (
     <>
       <Toolbar id="skills" />
