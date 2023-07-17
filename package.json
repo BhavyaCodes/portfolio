@@ -23,7 +23,7 @@
     "react-use": "^17.2.1"
   },
   "devDependencies": {
-    "@svgr/webpack": "^5.5.0",
+    "@svgr/webpack": "^8.0.1",
     "@types/gtag.js": "0.0.4",
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",

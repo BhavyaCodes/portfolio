@@ -23,7 +23,10 @@ type logoNames =
   | "sass"
   | "bash"
   | "reactSpring"
-  | "framerMotion";
+  | "framerMotion"
+  | "trpc"
+  | "cypress"
+  | "reactQuery";
 
 type Logos = {
   [k in logoNames]: {
@@ -143,6 +146,18 @@ const logos: Logos = {
   framerMotion: {
     label: "Framer Motion",
     logo: "/assets/icons/framer.png",
+  },
+  trpc: {
+    label: "tRPC",
+    logo: "/assets/icons/trpc.svg",
+  },
+  cypress: {
+    label: "Cypress",
+    logo: "/assets/icons/cypress.svg",
+  },
+  reactQuery: {
+    label: "React Query",
+    logo: "/assets/icons/react-query.svg",
   },
 };
 
