@@ -47,24 +47,27 @@ function Skills() {
       logos.typescript,
       logos.nodejs,
       logos.react,
-      logos.nestjs,
-      logos.graphql,
-      logos.apollo,
       logos.nextjs,
       logos.mongodb,
       logos.postgresql,
-      logos.git,
-      logos.github,
-      logos.javascript,
-      logos.s3,
-      logos.materialui,
-      logos.redux,
-      logos.sass,
+      logos.trpc,
+      logos.nestjs,
+      // logos.graphql,
+      // logos.apollo,
+      // logos.git,
+      // logos.github,
+      // logos.s3,
+      // logos.redux,
+      // logos.sass,
       // logos.expressjs,
-      logos.bootstrap,
-      logos.bash,
-      logos.socketio,
-      logos.vercel,
+      // logos.bootstrap,
+      // logos.bash,
+      // logos.socketio,
+      // logos.vercel,
+      logos.cypress,
+      logos.reactQuery,
+      logos.materialui,
+      logos.javascript,
     ],
     []
   );
@@ -104,34 +107,6 @@ function Skills() {
     }
   }, [intersectionExit]);
 
-  const renderIcons = () => {
-    return trail.map(({ transform }, index) => (
-      <Grid
-        key={iconsArray[index].label}
-        item
-        className={classes.gridItem}
-        md={2}
-        xs={3}
-      >
-        <a.div
-          key={index}
-          style={{
-            transform,
-          }}
-        >
-          <a.div>
-            <Icon
-              label={iconsArray[index].label}
-              logo={iconsArray[index].logo}
-              spin={iconsArray[index].spin}
-              invert={iconsArray[index].invert}
-            ></Icon>
-          </a.div>
-        </a.div>
-      </Grid>
-    ));
-  };
-
   return (
     <>
       <Toolbar id="skills" />
@@ -166,7 +141,31 @@ function Skills() {
                   className={classes.gridContainer}
                   ref={intersectionRef}
                 >
-                  {renderIcons()}
+                  {trail.map(({ transform }, index) => (
+                    <Grid
+                      key={iconsArray[index].label}
+                      item
+                      className={classes.gridItem}
+                      md={2}
+                      xs={3}
+                    >
+                      <a.div
+                        key={index}
+                        style={{
+                          transform,
+                        }}
+                      >
+                        <a.div>
+                          <Icon
+                            label={iconsArray[index].label}
+                            logo={iconsArray[index].logo}
+                            spin={iconsArray[index].spin}
+                            invert={iconsArray[index].invert}
+                          ></Icon>
+                        </a.div>
+                      </a.div>
+                    </Grid>
+                  ))}
                 </Grid>
               </div>
             </Grid>
