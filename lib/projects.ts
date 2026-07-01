@@ -10,7 +10,8 @@ type ProjectName =
   | "thisWebsite"
   | "theMealHub"
   | "pokemon"
-  | "jokes";
+  | "jokes"
+  | "chatarooni";
 
 export type StackType = { label: string; logo: string; invert?: boolean };
 
@@ -35,6 +36,24 @@ type Projects = {
 };
 
 const projects: Projects = {
+  chatarooni: {
+    title: "Chatarooni - A Free Omegle Alternative",
+    description: [
+      "Looking for a good **Omegle alternative?** Chatarooni pairs you with a random stranger in seconds - **no account, no downloads, completely free.** Start a text chat, watch videos together, or play a quick game while you talk. Choose who you want to meet, skip anytime, and match again with one tap.",
+      "Since Omegle shut down, millions have wanted a safer place to talk to strangers online. Chatarooni is built for exactly that: instant matching, real moderation, and full anonymity until you choose to add a friend. Open the site and start chatting - your next conversation is one click away.",
+    ],
+    stack: [logos.nextjs, logos.nodejs, logos.d1, logos.tailwind, logos.sqlite],
+    images: {
+      main: {
+        link: "/project/chatarooni/poster.png",
+        width: 1024,
+        height: 500,
+      },
+    },
+    links: {
+      live: "https://chatarooni.com/",
+    },
+  },
   devGram: {
     title: "DevGram",
     description: [

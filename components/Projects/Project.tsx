@@ -106,7 +106,7 @@ function Project({
         // display: "inline-block",
         marginBottom: theme.spacing(2),
       },
-    })
+    }),
   );
   const classes = useStyles();
 
@@ -118,7 +118,7 @@ function Project({
             color: "inherit",
           },
         },
-      })
+      }),
     );
     const classes = useStyles();
 
@@ -151,9 +151,26 @@ function Project({
       className={classes.root}
     >
       <Container className={classes.container}>
-        <Typography variant="h2" align="center" gutterBottom itemProp="name">
+        <Typography
+          color="inherit"
+          style={{
+            textDecoration: "none",
+            display: "block",
+            position: "relative",
+            zIndex: 100000,
+          }}
+          variant="h2"
+          align="center"
+          gutterBottom
+          itemProp="name"
+          component="a"
+          href={links.live}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {title}
         </Typography>
+
         <Grid container>
           <Box clone order={{ xs: 2, md: index % 2 === 0 ? 2 : 1 }}>
             <Grid item md={6} xs={12} className={classes.textSide}>
@@ -229,7 +246,7 @@ function Project({
                       sizes="(max-width: 960px) 90vw, 40vw"
                       layout="responsive"
                       alt="project image"
-                      aria-label={`image of project titled - ${title}`}
+                      aria-label={`image of ${title}`}
                     />
                   </Box>
                 )}
