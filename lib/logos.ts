@@ -26,10 +26,7 @@ type logoNames =
   | "framerMotion"
   | "trpc"
   | "cypress"
-  | "reactQuery"
-  | "d1"
-  | "tailwind"
-  | "sqlite";
+  | "reactQuery";
 
 type Logos = {
   [k in logoNames]: {
@@ -161,18 +158,6 @@ const logos: Logos = {
   reactQuery: {
     label: "React Query",
     logo: "/assets/icons/react-query.svg",
-  },
-  d1: {
-    label: "Cloudflare D1",
-    logo: "/assets/icons/d1.svg",
-  },
-  tailwind: {
-    label: "Tailwind",
-    logo: "/assets/icons/tailwind.svg",
-  },
-  sqlite: {
-    label: "SQLite",
-    logo: "/assets/icons/sqlite.png",
   },
 };
 

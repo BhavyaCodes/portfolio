@@ -8,7 +8,6 @@ import BackHomeButton from "components/Projects/BackHomeButton";
 import allProjects, { ProjectType } from "lib/projects";
 
 const projects: ProjectType[] = [
-  allProjects.chatarooni,
   allProjects.devGram,
   allProjects.dogmash,
   allProjects.covid19,
